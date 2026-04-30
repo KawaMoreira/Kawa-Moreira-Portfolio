@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Negócio - Neve Encantada Gelatto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slides-container {
+            flex: 1;
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .slide {
+            display: none;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            min-height: 600px;
+        }
+
+        .slide.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #ff6b6b;
+        }
+
+        .slide-title {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .slide-subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        .content {
+            line-height: 1.6;
+            color: #34495e;
+        }
+
+        .content h3 {
+            color: #e74c3c;
+            margin: 20px 0 10px 0;
+        }
+
+        .content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .content li {
+            margin-bottom: 8px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #f8f9fa;
+            color: #2c3e50;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            bottom: 0;
+        }
+
+        .nav-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            margin: 0 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #e74c3c;
+            transform: translateY(-2px);
+        }
+
+        .nav-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slide-counter {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ff6b6b 0%, #ff6b6b 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.2em;
+            background-position: 0 88%;
+            font-weight: bold;
+        }
+
+        .persona-card {
+            background: #f8f9fa;
+            border-left: 4px solid #ff6b6b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .fofa-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .fofa-item {
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid;
+        }
+
+        .forcas { border-color: #27ae60; background: #d5f4e6; }
+        .oportunidades { border-color: #3498db; background: #d6eaf8; }
+        .fraquezas { border-color: #e74c3c; background: #fadbd8; }
+        .ameacas { border-color: #f39c12; background: #fdebd0; }
+    </style>
+</head>
+<body>
+    <div class="slides-container">
+        <!-- Slide 1 - Capa -->
+        <div class="slide active" id="slide1">
+            <div class="slide-header">
+                <h1 class="slide-title">Plano de Negócio</h1>
+                <p class="slide-subtitle">Sorveteria Neve Encantada Gelatto LTDA</p>
+            </div>
+            <div class="content" style="text-align: center; margin-top: 80px;">
+                <h2 style="color: #e74c3c; font-size: 2em;">Neve Encantada</h2>
+                <p style="font-size: 1.3em; color: #7f8c8d; margin-top: 20px;">
+                    Experiências Geladas com Sabor de Felicidade
+                </p>
+                <div style="margin-top: 60px;">
+                    <p><strong>Fundadores:</strong></p>
+                    <p>Kawã Fernandes, Pedro Henrique, Kaynã Marques</p>
+                    <p style="margin-top: 40px; color: #95a5a6;">2025</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 - Sumário Executivo -->
+        <div class="slide" id="slide2">
+            <div class="slide-header">
+                <h1 class="slide-title">Sumário Executivo</h1>
+            </div>
+            <div class="content">
+                <h3>Visão Geral do Negócio</h3>
+                <p>A <span class="highlight">Neve Encantada Gelatto LTDA</span> é uma microempresa focada em sorvetes artesanais de alta qualidade, oferecendo uma experiência única de consumo através de ambiente acolhedor e atendimento humanizado.</p>
+                
+                <h3>Destaques Principais</h3>
+                <ul>
+                    <li><strong>Investimento Total:</strong> R$ 185.020,35</li>
+                    <li><strong>Receita Anual Estimada:</strong> R$ 657.775,00</li>
+                    <li><strong>Forma Jurídica:</strong> Sociedade Limitada (LTDA)</li>
+                    <li><strong>Enquadramento:</strong> Simples Nacional</li>
+                    <li><strong>Localização:</strong> Rua Gelada, 123 - São Paulo/SP</li>
+                </ul>
+
+                <h3>Proposta de Valor</h3>
+                <p>Proporcionar momentos de bem-estar, conforto e nostalgia através de sorvetes artesanais em ambiente familiar e acessível.</p>
+            </div>
+        </div>
+
+        <!-- Slide 3 - Empreendedores -->
+        <div class="slide" id="slide3">
+            <div class="slide-header">
+                <h1 class="slide-title">Dados dos Empreendedores</h1>
+            </div>
+            <div class="content">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Cargo</th>
+                            <th>Atribuições</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kawã Fernandes</td>
+                            <td>Diretor Geral</td>
+                            <td>Coordena operações, administração e estratégia</td>
+                        </tr>
+                        <tr>
+                            <td>Pedro Henrique</td>
+                            <td>Gestor Financeiro</td>
+                            <td>Administra fluxo de caixa, custos e análises financeiras</td>
+                        </tr>
+                        <tr>
+                            <td>Kaynã Marques</td>
+                            <td>Gestor de Logística</td>
+                            <td>Abastecimento, armazenagem e controle de estoque</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slide 4 - Missão, Visão e Valores -->
+        <div class="slide" id="slide4">
+            <div class="slide-header">
+                <h1 class="slide-title">Missão, Visão e Valores</h1>
+            </div>
+            <div class="content">
+                <div class="persona-card">
+                    <h3 style="color: #e74c3c;">🎯 Missão</h3>
+                    <p>"Proporcionar momentos de bem-estar, conforto e nostalgia por meio de sorvetes artesanais de alta qualidade, oferecidos em um ambiente acolhedor, familiar e acessível."</p>
+                </div>
+
+                <div class="persona-card">
+                    <h3 style="color: #e74c3c;">👁️ Visão</h3>
+                    <p>"Ser referência regional em sorvetes artesanais e experiências afetivas, reconhecida pela variedade, sabor, atendimento humano e ambiente acolhedor, expandindo a marca de forma sustentável."</p>
+                </div>
+
+                <div class="persona-card">
+                    <h3 style="color: #e74c3c;">❤️ Valores</h3>
+                    <ul>
+                        <li>Atendimento humanizado</li>
+                        <li>Família e convivência</li>
+                        <li>Qualidade e sabor</li>
+                        <li>Variedade e criatividade</li>
+                        <li>Sustentabilidade</li>
+                        <li>Simplicidade</li>
+                        <li>Bem-estar e experiência positiva</li>
+                        <li>Respeito ao cliente e à comunidade</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5 - Setor e Segmento -->
+        <div class="slide" id="slide5">
+            <div class="slide-header">
+                <h1 class="slide-title">Setor e Segmento</h1>
+            </div>
+            <div class="content">
+                <h3>Caracterização do Negócio</h3>
+                
+                <table class="table">
+                    <tr>
+                        <th>Setor</th>
+                        <td>Comércio</td>
+                    </tr>
+                    <tr>
+                        <th>Segmento</th>
+                        <td>Alimentos e Bebidas / Varejo</td>
+                    </tr>
+                    <tr>
+                        <th>Porte</th>
+                        <td>Microempresa</td>
+                    </tr>
+                    <tr>
+                        <th>Período de Planejamento</th>
+                        <td>1 ano</td>
+                    </tr>
+                    <tr>
+                        <th>Atuação</th>
+                        <td>Venda de sorvetes artesanais, picolés e produtos complementares</td>
+                    </tr>
+                </table>
+
+                <h3>Enquadramento Legal</h3>
+                <ul>
+                    <li><strong>Forma Jurídica:</strong> Sociedade Limitada (LTDA)</li>
+                    <li><strong>Enquadramento Tributário:</strong> Simples Nacional</li>
+                    <li><strong>Capital Social:</strong> R$ 185.020,35</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 6 - Análise de Clientes -->
+        <div class="slide" id="slide6">
+            <div class="slide-header">
+                <h1 class="slide-title">Análise de Mercado - Clientes</h1>
+            </div>
+            <div class="content">
+                <h3>Público-Alvo Principal</h3>
+                <ul>
+                    <li><strong>Desacelerados:</strong> Buscam momentos de pausa e relaxamento</li>
+                    <li><strong>Pessoas Ocupadas:</strong> Valorizam praticidade e conveniência</li>
+                    <li><strong>Nostálgicos:</strong> Procuram experiências afetivas e reconfortantes</li>
+                    <li><strong>Minimalistas:</strong> Preferem qualidade sobre quantidade</li>
+                </ul>
+
+                <h3>Personas</h3>
+                
+                <div class="persona-card">
+                    <h4>👨‍💻 Kawã Senna (25 anos, Técnico de Informática)</h4>
+                    <p><strong>Busca:</strong> Momentos de pausa, sorvetes de qualidade, ambiente descontraído</p>
+                    <p><strong>Desafios:</strong> Medo de baixa qualidade, opções exageradas, falta de experiências simples</p>
+                </div>
+
+                <div class="persona-card">
+                    <h4>👩‍💻 Ana Machado (19 anos, Programadora)</h4>
+                    <p><strong>Busca:</strong> Variedade, conveniência, preços acessíveis, experiências sociais</p>
+                    <p><strong>Preferências:</strong> Ambientes familiares, shopping, momentos em família</p>
+                </div>
+
+                <h3>Benefícios Valorizados</h3>
+                <p>Conforto, conveniência, variedade, sustentabilidade, economia, bem-estar, nostalgia, rapidez, exclusividade, diversão e entretenimento.</p>
+            </div>
+        </div>
+
+        <!-- Slide 7 - Concorrentes -->
+        <div class="slide" id="slide7">
+            <div class="slide-header">
+                <h1 class="slide-title">Análise de Mercado - Concorrentes</h1>
+            </div>
+            <div class="content">
+                <h3>Principais Concorrentes</h3>
+                <ul>
+                    <li><strong>Oggi Sorvetes:</strong> Diversidade e disponibilidade</li>
+                    <li><strong>Kibon - Jardim São Luiz:</strong> Grande escala e onipresença</li>
+                    <li><strong>Chiquinho Sorvetes:</strong> Forte padrão de equipe e marca</li>
+                </ul>
+
+                <h3>Pontos Fortes da Neve Encantada</h3>
+                <div class="persona-card">
+                    <ul>
+                        <li>Atendimento acima da média</li>
+                        <li>Equipe competente e motivada</li>
+                        <li>Proposta artesanal e personalizada</li>
+                        <li>Ambiente familiar e acolhedor</li>
+                    </ul>
+                </div>
+
+                <h3>Estratégia Competitiva</h3>
+                <p><strong>Diferenciação pela experiência:</strong> Competir não pelo preço, mas pela qualidade da experiência oferecida ao cliente, com sabores autorais e ambiente único.</p>
+
+                <h3>Oportunidades Identificadas</h3>
+                <ul>
+                    <li>Criar diferenciação com sabores autorais</li>
+                    <li>Destacar ambiente familiar e acolhedor</li>
+                    <li>Competir pela experiência, não pelo preço</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 8 - Fornecedores -->
+        <div class="slide" id="slide8">
+            <div class="slide-header">
+                <h1 class="slide-title">Análise de Mercado - Fornecedores</h1>
+            </div>
+            <div class="content">
+                <h3>Principais Insumos</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Itens</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Laticínios</td>
+                            <td>Leite e derivados (base para sorvetes)</td>
+                        </tr>
+                        <tr>
+                            <td>Frutas</td>
+                            <td>Frescas para sabores naturais</td>
+                        </tr>
+                        <tr>
+                            <td>Condimentos</td>
+                            <td>Chocotoppings, caldas</td>
+                        </tr>
+                        <tr>
+                            <td>Confeitaria</td>
+                            <td>Brownie, massa, chocolate</td>
+                        </tr>
+                        <tr>
+                            <td>Bebidas</td>
+                            <td>Pó de café, chá</td>
+                        </tr>
+                        <tr>
+                            <td>Embalagens</td>
+                            <td>Copos, colheres, embalagens para picolé</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Critérios de Seleção</h3>
+                <ul>
+                    <li>Qualidade comprovada</li>
+                    <li>Entregas frequentes e pontuais</li>
+                    <li>Preço competitivo</li>
+                    <li>Facilidade de negociação</li>
+                    <li>Proximidade geográfica (importante para perecíveis)</li>
+                </ul>
+
+                <h3>Categorias de Fornecedores</h3>
+                <ul>
+                    <li>Distribuidoras de laticínios</li>
+                    <li>Atacadistas de alimentos</li>
+                    <li>Fornecedores de embalagens</li>
+                    <li>Fornecedores de gás e energia</li>
+                    <li>Lojas de equipamentos comerciais</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 9 - Produtos -->
+        <div class="slide" id="slide9">
+            <div class="slide-header">
+                <h1 class="slide-title">Plano de Marketing - Produtos</h1>
+            </div>
+            <div class="content">
+                <h3>Linha de Produtos Principal</h3>
+                
+                <div class="persona-card">
+                    <h4>🍦 Sorvetes Artesanais de Massa</h4>
+                    <ul>
+                        <li>Chocolate</li>
+                        <li>Morango</li>
+                        <li>Baunilha</li>
+                        <li>Flocos</li>
+                        <li>Chocomenta</li>
+                        <li>Abacaxi ao Vinho</li>
+                    </ul>
+                </div>
+
+                <div class="persona-card">
+                    <h4>🍭 Picolés Variados</h4>
+                    <p>Diversos sabores frutais e cremosos</p>
+                </div>
+
+                <div class="persona-card">
+                    <h4>🧇 Produtos Complementares</h4>
+                    <ul>
+                        <li>Waffles</li>
+                        <li>Brownies</li>
+                        <li>Cafés especiais</li>
+                        <li>Chás aromáticos</li>
+                        <li>Chocolate quente premium</li>
+                    </ul>
+                </div>
+
+                <h3>Proposta de Valor Embutida</h3>
+                <ul>
+                    <li>Sabores exclusivos e autorais</li>
+                    <li>Ingredientes naturais e selecionados</li>
+                    <li>Ambiente temático e acolhedor</li>
+                    <li>Sustentabilidade em práticas de produção</li>
+                    <li>Experiência sensorial completa</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 10 - Preços -->
+        <div class="slide" id="slide10">
+            <div class="slide-header">
+                <h1 class="slide-title">Plano de Marketing - Preços</h1>
+            </div>
+            <div class="content">
+                <h3>Tabela de Preços</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Preço (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Picolé</td>
+                            <td>R$ 5,00</td>
+                        </tr>
+                        <tr>
+                            <td>Sorvete Artesanal</td>
+                            <td>R$ 5,75 a R$ 6,00</td>
+                        </tr>
+                        <tr>
+                            <td>Waffle</td>
+                            <td>R$ 2,00</td>
+                        </tr>
+                        <tr>
+                            <td>Brownie</td>
+                            <td>R$ 3,00</td>
+                        </tr>
+                        <tr>
+                            <td>Café</td>
+                            <td>R$ 2,00</td>
+                        </tr>
+                        <tr>
+                            <td>Chá</td>
+                            <td>R$ 1,50</td>
+                        </tr>
+                        <tr>
+                            <td>Chocolate Quente</td>
+                            <td>R$ 5,50</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Estratégia de Precificação</h3>
+                <ul>
+                    <li><strong>Preços acessíveis</strong> para atrair fluxo constante</li>
+                    <li>Manutenção de <strong>margens positivas</strong></li>
+                    <li><strong>Promoções pontuais</strong> para sazonalidade</li>
+                    <li><strong>Combos degustação</strong> para aumentar ticket médio</li>
+                    <li>Posicionamento como <strong>valor agregado</strong>, não commodity</li>
+                </ul>
+
+                <h3>Objetivos da Estratégia</h3>
+                <p>Estabelecer preços competitivos que reflitam a qualidade premium dos produtos, mantendo acessibilidade e atratividade para o público-alvo.</p>
+            </div>
+        </div>
+
+        <!-- Slide 11 - Promoção -->
+        <div class="slide" id="slide11">
+            <div class="slide-header">
+                <h1 class="slide-title">Plano de Marketing - Promoção</h1>
+            </div>
+            <div class="content">
+                <h3>Estratégias Promocionais</h3>
+                
+                <div class="persona-card">
+                    <h4>📱 Marketing Digital</h4>
+                    <ul>
+                        <li>Redes sociais (TikTok, Instagram, Facebook, YouTube)</li>
+                        <li>Conteúdo orgânico e engajador</li>
+                        <li>Repost de clientes marcando a sorveteria</li>
+                        <li>Marketing de influenciadores locais</li>
+                    </ul>
+                </div>
+
+                <div class="persona-card">
+                    <h4>🎯 Programas de Fidelidade</h4>
+                    <ul>
+                        <li>Cartão "Compre 10 e Ganhe 1"</li>
+                        <li>Programa Família Premium</li>
+                        <li>Descontos para clientes frequentes</li>
+                    </ul>
+                </div>
+
+                <div class="persona-card">
+                    <h4>🎪 Eventos e Experiências</h4>
+                    <ul>
+                        <li>Degustações gratuitas</li>
+                        <li>Eventos sociais e temáticos</li>
+                        <li>Promoções sazonais (verão/inverno)</li>
+                        <li>Parcerias com estabelecimentos locais</li>
+                    </ul>
+                </div>
+
+                <h3>Ações Específicas</h3>
+                <ul>
+                    <li><strong>Campanhas sazonais:</strong> Verão (sorvetes refrescantes) e Inverno (bebidas quentes)</li>
+                    <li><strong>Marketing de conteúdo:</strong> Receitas, dicas, behind the scenes</li>
+                    <li><strong>Marketing de relacionamento:</strong> Comunidade online, newsletter</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 12 - Localização -->
+        <div class="slide" id="slide12">
+            <div class="slide-header">
+                <h1 class="slide-title">Plano de Marketing - Localização</h1>
+            </div>
+            <div class="content">
+                <h3>Endereço do Negócio</h3>
+                <div class="persona-card">
+                    <h4>📍 Neve Encantada Gelatto</h4>
+                    <p><strong>Endereço:</strong> Rua Gelada, 123 - Bairro Congelado</p>
+                    <p><strong>Cidade:</strong> São Paulo/SP</p>
+                    <p><strong>Telefone:</strong> (11) 9 6969-6968</p>
+                </div>
+
+                <h3>Vantagens da Localização</h3>
+                <ul>
+                    <li><strong>Região urbana com grande fluxo</strong> de pessoas</li>
+                    <li><strong>Público variado</strong> compatível com os segmentos selecionados</li>
+                    <li><strong>Facilidade de acesso</strong> local e transporte</li>
+                    <li><strong>Visibilidade</strong> em área comercial</li>
+                    <li><strong>Proximidade</strong> com público-alvo (estudantes, profissionais, famílias)</li>
+                </ul>
+
+                <h3>Estrutura de Comercialização</h3>
+                <ul>
+                    <li><strong>Vendas no balcão</strong> (presencial)</li>
+                    <li><strong>Ambiente físico</strong> para consumo no local</li>
+                    <li><strong>Vendas por delivery</strong> (iFood/99Food - expansão potencial)</li>
+                    <li><strong>Marketing digital</strong> integrado</li>
+                </ul>
+
+                <h3>Justificativa da Escolha</h3>
+                <p>A localização foi selecionada por oferecer o equilíbrio ideal entre fluxo de clientes em potencial, acessibilidade e compatibilidade com o perfil do público-alvo identificado na pesquisa de mercado.</p>
+            </div>
+        </div>
+
+        <!-- Slide 13 - Layout -->
+        <div class="slide" id="slide13">
+            <div class="slide-header">
+                <h1 class="slide-title">Plano Operacional - Layout</h1>
+            </div>
+            <div class="content">
+                <h3>Distribuição do Espaço Físico</h3>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <h4 style="color: #e74c3c; text-align: center;">🏪 Layout da Sorveteria</h4>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                        <div style="background: #e8f5e8; padding: 15px; border-radius: 8px;">
+                            <h5>🛎️ Área Frontal</h5>
+                            <ul>
+                                <li>Fachada temática</li>
+                                <li>Balcão de atendimento</li>
+                                <li>Vitrine de sorvetes</li>
+                                <li>Caixa</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: #e8f5e8; padding: 15px; border-radius: 8px;">
+                            <h5>🧊 Área de Exposição</h5>
+                            <ul>
+                                <li>Freezers refrigerados</li>
+                                <li>Balcões refrigerados</li>
+                                <li>Posicionamento lateral</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: #e3f2fd; padding: 15px; border-radius: 8px;">
+                            <h5>🪑 Área de Convivência</h5>
+                            <ul>
+                                <li>Mesas para consumo</li>
+                                <li>Ambiente "instagramável"</li>
+                                <li>Prateleiras complementares</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: #e3f2fd; padding: 15px; border-radius: 8px;">
+                            <h5>🔧 Área Técnica</h5>
+                            <ul>
+                                <li>Cozinha e preparação</li>
+                                <li>Estoque organizado</li>
+                                <li>Sistema de climatização</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Características do Ambiente</h3>
+                <ul>
+                    <li><strong>Fachada temática</strong> com sinalização externa atrativa</li>
+                    <li><strong>Ambiente "instagramável"</strong> para marketing orgânico</li>
+                    <li><strong>Sistema de climatização</strong> para conforto térmico</li>
+                    <li><strong>Layout funcional</strong> que otimiza fluxo de clientes e produção</li>
+                    <li><strong>Áreas bem definidas</strong> para diferentes funções</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 14 - Processos -->
+        <div class="slide" id="slide14">
+            <div class="slide-header">
+                <h1 class="slide-title">Plano Operacional - Processos</h1>
+            </div>
+            <div class="content">
+                <h3>Fluxo Operacional Padrão</h3>
+                
+                <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <h4 style="color: #e74c3c; text-align: center;">📋 Sequência Operacional</h4>
+                    
+                    <ol style="margin-left: 20px;">
+                        <li><strong>Recebimento de insumos</strong> - Controle de qualidade</li>
+                        <li><strong>Armazenamento</strong> - Refrigerado e seco</li>
+                        <li><strong>Preparo das bases</strong> - Padronização de receitas</li>
+                        <li><strong>Processamento</strong> - Batimento, pasteurização, congelamento</li>
+                        <li><strong>Exposição</strong> - Balcão de atendimento</li>
+                        <li><strong>Atendimento ao cliente</strong> - Serviço personalizado</li>
+                        <li><strong>Consumo local</strong> - Experiência completa</li>
+                        <li><strong>Limpeza e sanitização</strong> - Diária e rigorosa</li>
+                        <li><strong>Controle de estoque</strong> - Pedidos semanais</li>
+                    </ol>
+                </div>
+
+                <h3>Controles de Qualidade</h3>
+                <ul>
+                    <li><strong>Padronização de receitas</strong> para consistência</li>
+                    <li><strong>Controle de temperatura</strong> em todas as etapas</li>
+                    <li><strong>Higienização rigorosa</strong> de equipamentos e áreas</li>
+                    <li><strong>Treinamento contínuo</strong> da equipe</li>
+                    <li><strong>Monitoramento de estoque</strong> para frescor</li>
+                </ul>
+
+                <h3>Capacidade Operacional</h3>
+                <ul>
+                    <li><strong>Produção interna</strong> de sorvetes, waffles e bebidas</li>
+                    <li><strong>Atendimento presencial</strong> com equipe enxuta</li>
+                    <li><strong>Funcionamento diário</strong> com turnos otimizados</li>
+                    <li><strong>Projeção:</strong> Centenas de clientes mensais</li>
+                    <li><strong>Meta inicial:</strong> 450 atendimentos/mês</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 15 - Equipe -->
+        <div class="slide" id="slide15">
+            <div class="slide-header">
+                <h1 class="slide-title">Plano Operacional - Equipe</h1>
+            </div>
+            <div class="content">
+                <h3>Estrutura Organizacional Mínima</h3>
+                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Cargo/Função</th>
+                            <th>Quantidade</th>
+                            <th>Atribuições Principais</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Atendentes</td>
+                            <td>2-3 (turnos)</td>
+                            <td>Servir, montar pedidos, limpeza do salão</td>
+                        </tr>
+                        <tr>
+                            <td>Auxiliar de Produção</td>
+                            <td>1</td>
+                            <td>Preparar sorvetes, waffles, bebidas</td>
+                        </tr>
+                        <tr>
+                            <td>Caixa</td>
+                            <td>1 (pode ser atendente)</td>
+                            <td>Operação de caixa, fechamento</td>
+                        </tr>
+                        <tr>
+                            <td>Sócios Gestores</td>
+                            <td>5</td>
+                            <td>Administração, compras, estoque, finanças, marketing</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Distribuição de Funções dos Sócios</h3>
+                <ul>
+                    <li><strong>Diretor Geral:</strong> Operações, administração, estratégia</li>
+                    <li><strong>Gerente de Vendas:</strong> Atendimento, metas comerciais</li>
+                    <li><strong>Gestor Financeiro:</strong> Fluxo de caixa, custos, pagamentos</li>
+                    <li><strong>Gestor de RH:</strong> Recrutamento, treinamento, integração</li>
+                    <li><strong>Gestor de Logística:</strong> Abastecimento, armazenagem, estoque</li>
+                </ul>
+
+                <h3>Políticas de Pessoal</h3>
+                <ul>
+                    <li><strong>Treinamento inicial</strong> para padronização do atendimento</li>
+                    <li><strong>Desenvolvimento contínuo</strong> da equipe</li>
+                    <li><strong>Incentivos por performance</strong> e produtividade</li>
+                    <li><strong>Clima organizacional</strong> positivo e colaborativo</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 16 - Investimentos -->
+        <div class="slide" id="slide16">
+            <div class="slide-header">
+                <h1 class="slide-title">Plano Financeiro - Investimentos</h1>
+            </div>
+            <div class="content">
+                <h3>Estrutura do Investimento Total</h3>
+                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Tipo de Investimento</th>
+                            <th>Valor (R$)</th>
+                            <th>% do Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Investimentos Fixos</td>
+                            <td>67.683,00</td>
+                            <td>36,6%</td>
+                        </tr>
+                        <tr>
+                            <td>Capital de Giro</td>
+                            <td>56.950,35</td>
+                            <td>30,8%</td>
+                        </tr>
+                        <tr>
+                            <td>Investimentos Pré-Operacionais</td>
+                            <td>60.387,00</td>
+                            <td>32,6%</td>
+                        </tr>
+                        <tr style="background-color: #e8f5e8; font-weight: bold;">
+                            <td>TOTAL</td>
+                            <td>185.020,35</td>
+                            <td>100%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Detalhamento dos Investimentos Fixos</h3>
+                <ul>
+                    <li><strong>Freezers e equipamentos:</strong> R$ 25.000,00</li>
+                    <li><strong>Balcões e móveis:</strong> R$ 15.000,00</li>
+                    <li><strong>Máquinas e utensílios:</strong> R$ 12.000,00</li>
+                    <li><strong>Sistema de climatização:</strong> R$ 8.000,00</li>
+                    <li><strong>Outros equipamentos:</strong> R$ 7.683,00</li>
+                </ul>
+
+                <h3>Composição do Capital de Giro</h3>
+                <ul>
+                    <li><strong>Estoque inicial:</strong> R$ 30.000,00</li>
+                    <li><strong>Caixa mínimo:</strong> R$ 26.950,35</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 17 - Fontes de Recursos -->
+        <div class="slide" id="slide17">
+            <div class="slide-header">
+                <h1 class="slide-title">Plano Financeiro - Fontes de Recursos</h1>
+            </div>
+            <div class="content">
+                <h3>Origem dos Recursos</h3>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <div style="background: #e8f5e8; padding: 30px; border-radius: 10px; display: inline-block;">
+                        <h2 style="color: #27ae60; font-size: 2.5em;">100%</h2>
+                        <p style="font-size: 1.2em;">Recursos Próprios dos Sócios</p>
+                    </div>
+                </div>
+
+                <h3>Distribuição por Sócio</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Sócio</th>
+                            <th>Valor Investido (R$)</th>
+                            <th>% Participação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kawã Fernandes</td>
+                            <td>111.012,21</td>
+                            <td>60%</td>
+                        </tr>
+                        <tr>
+                            <td>Pedro Henrique</td>
+                            <td>37.004,07</td>
+                            <td>20%</td>
+                        </tr>
+                        <tr>
+                            <td>Kaynã Marques</td>
+                            <td>37.004,07</td>
+                            <td>20%</td>
+                        </tr>
+                        <tr style="background-color: #e8f5e8; font-weight: bold;">
+                            <td>TOTAL</td>
+                            <td>185.020,35</td>
+                            <td>100%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Vantagens dos Recursos Próprios</h3>
+                <ul>
+                    <li><strong>Independência financeira</strong> sem dívidas ou juros</li>
+                    <li><strong>Agilidade na tomada de decisões</strong></li>
+                    <li><strong>Maior flexibilidade operacional</strong></li>
+                    <li><strong>Retorno integral</strong> do lucro para os sócios</li>
+                    <li><strong>Menor risco financeiro</strong> inicial</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 18 - Receita e Viabilidade -->
+        <div class="slide" id="slide18">
+            <div class="slide-header">
+                <h1 class="slide-title">Plano Financeiro - Receita e Viabilidade</h1>
+            </div>
+            <div class="content">
+                <h3>Projeção Financeira</h3>
+                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Indicador</th>
+                            <th>Valor Anual</th>
+                            <th>Valor Mensal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Receita Bruta Estimada</td>
+                            <td>R$ 657.775,00</td>
+                            <td>R$ 54.814,58</td>
+                        </tr>
+                        <tr>
+                            <td>Custos Variáveis (60%)</td>
+                            <td>R$ 394.665,00</td>
+                            <td>R$ 32.888,75</td>
+                        </tr>
+                        <tr>
+                            <td>Custos Fixos (25%)</td>
+                            <td>R$ 164.443,75</td>
+                            <td>R$ 13.703,65</td>
+                        </tr>
+                        <tr style="background-color: #e8f5e8; font-weight: bold;">
+                            <td>Lucro Líquido Estimado (15%)</td>
+                            <td>R$ 98.666,25</td>
+                            <td>R$ 8.222,18</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Indicadores de Viabilidade</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                    <div style="background: #d5f4e6; padding: 20px; border-radius: 10px; text-align: center;">
+                        <h4>📈 Lucratividade</h4>
+                        <p style="font-size: 2em; color: #27ae60; font-weight: bold;">15%</p>
+                        <p>Margem líquida sobre receita</p>
+                    </div>
+                    <div style="background: #d6eaf8; padding: 20px; border-radius: 10px; text-align: center;">
+                        <h4>💰 Rentabilidade</h4>
+                        <p style="font-size: 2em; color: #3498db; font-weight: bold;">53%</p>
+                        <p>Retorno sobre investimento anual</p>
+                    </div>
+                    <div style="background: #fdebd0; padding: 20px; border-radius: 10px; text-align: center;">
+                        <h4>⚖️ Ponto de Equilíbrio</h4>
+                        <p style="font-size: 2em; color: #f39c12; font-weight: bold;">R$ 36.500</p>
+                        <p>Faturamento mensal necessário</p>
+                    </div>
+                    <div style="background: #e8f6f3; padding: 20px; border-radius: 10px; text-align: center;">
+                        <h4>⏱️ Retorno do Investimento</h4>
+                        <p style="font-size: 2em; color: #16a085; font-weight: bold;">1,9 anos</p>
+                        <p>Aproximadamente 23 meses</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 19 - Análise FOFA -->
+        <div class="slide" id="slide19">
+            <div class="slide-header">
+                <h1 class="slide-title">Análise Estratégica - FOFA</h1>
+            </div>
+            <div class="content">
+                <h3>Análise SWOT (FOFA)</h3>
+                
+                <div class="fofa-grid">
+                    <div class="fofa-item forcas">
+                        <h4>✅ FORÇAS</h4>
+                        <ul>
+                            <li>Atendimento humanizado e personalizado</li>
+                            <li>Equipe qualificada e motivada</li>
+                            <li>Proposta artesanal diferenciada</li>
+                            <li>Ambiente acolhedor e familiar</li>
+                            <li>Localização estratégica</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fofa-item oportunidades">
+                        <h4>🔍 OPORTUNIDADES</h4>
+                        <ul>
+                            <li>Crescimento do mercado de sorvetes premium</li>
+                            <li>Expansão para delivery via aplicativos</li>
+                            <li>Parcerias com estabelecimentos locais</li>
+                            <li>Eventos sazonais e temáticos</li>
+                            <li>Mercado de experiências em alta</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fofa-item fraquezas">
+                        <h4>⚠️ FRAQUEZAS</h4>
+                        <ul>
+                            <li>Dependência de fornecedores específicos</li>
+                            <li>Capital inicial limitado</li>
+                            <li>Marca desconhecida inicialmente</li>
+                            <li>Concorrência com marcas estabelecidas</li>
+                            <li>Sazonalidade do consumo</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fofa-item ameacas">
+                        <h4>🚨 AMEAÇAS</h4>
+                        <ul>
+                            <li>Concorrência agressiva de grandes marcas</li>
+                            <li>Variação nos preços de insumos</li>
+                            <li>Mudanças nos hábitos de consumo</li>
+                            <li>Fatores climáticos adversos</li>
+                            <li>Instabilidade econômica do país</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Estratégias Desenvolvidas</h3>
+                <ul>
+                    <li><strong>Explorar Forças:</strong> Destaque do atendimento e ambiente como diferenciais principais</li>
+                    <li><strong>Aproveitar Oportunidades:</strong> Foco em experiências e parcerias locais</li>
+                    <li><strong>Minimizar Fraquezas:</strong> Diversificação de fornecedores e marketing agressivo</li>
+                    <li><strong>Contornar Ameaças:</strong> Produtos para todas as estações e controle de custos rigoroso</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 20 - Conclusão -->
+        <div class="slide" id="slide20">
+            <div class="slide-header">
+                <h1 class="slide-title">Conclusão e Próximos Passos</h1>
+            </div>
+            <div class="content">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <h2 style="color: #e74c3c; font-size: 2.5em;">🎯 Viabilidade Confirmada</h2>
+                    <p style="font-size: 1.2em; color: #7f8c8d;">O plano demonstra sólido potencial de sucesso e retorno</p>
+                </div>
+
+                <h3>✅ Pontos Fortes do Plano</h3>
+                <ul>
+                    <li><strong>Proposta de valor diferenciada</strong> no mercado</li>
+                    <li><strong>Público-alvo bem definido</strong> e pesquisado</li>
+                    <li><strong>Análise de mercado completa</strong> e realista</li>
+                    <li><strong>Projeções financeiras conservadoras</strong> e viáveis</li>
+                    <li><strong>Equipe multidisciplinar</strong> e comprometida</li>
+                </ul>
+
+                <h3>📅 Próximos Passos</h3>
+                <ol>
+                    <li><strong>Legalização:</strong> Registro da empresa e obtenção de alvarás</li>
+                    <li><strong>Infraestrutura:</strong> Reforma do local e compra de equipamentos</li>
+                    <li><strong>Contratação:</strong> Seleção e treinamento da equipe operacional</li>
+                    <li><strong>Marketing pré-lançamento:</strong> Campanha nas redes sociais</li>
+                    <li><strong>Evento de inauguração:</strong> Ação de lançamento com degustações</li>
+                    <li><strong>Monitoramento:</strong> Acompanhamento dos indicadores mensais</li>
+                </ol>
+
+                <h3>📞 Contato e Informações</h3>
+                <div class="persona-card">
+                    <p><strong>Empresa:</strong> Sorveteria Neve Encantada Gelatto LTDA</p>
+                    <p><strong>Endereço:</strong> Rua Gelada, 123 - Bairro Congelado - São Paulo/SP</p>
+                    <p><strong>Telefone:</strong> (11) 9 6969-6968</p>
+                    <p><strong>Fundadores:</strong> Kawã Fernandes, Pedro Henrique, Kaynã Marques</p>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #eee;">
+                    <p style="font-size: 1.1em; color: #7f8c8d;">Obrigado pela atenção!</p>
+                    <p style="font-size: 1.3em; color: #e74c3c; font-weight: bold;">Neve Encantada Gelatto</p>
+                    <p style="color: #95a5a6;">Experiências que derretem corações ❄️</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="prevSlide()" disabled>Anterior</button>
+        <button class="nav-btn" id="nextBtn" onclick="nextSlide()">Próximo</button>
+        <div class="slide-counter">
+            Slide <span id="currentSlide">1</span> de <span id="totalSlides">20</span>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 20;
+
+        function updateNavigation() {
+            document.getElementById('currentSlide').textContent = currentSlide;
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+            
+            // Esconde todos os slides
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Mostra o slide atual
+            document.getElementById(`slide${currentSlide}`).classList.add('active');
+            
+            // Rola para o topo do slide
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                updateNavigation();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                updateNavigation();
+            }
+        }
+
+        // Inicializa a navegação
+        updateNavigation();
+
+        // Adiciona navegação por teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+    </script>
+</body>
+</html>
