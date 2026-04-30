@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reorganização do Armazém - Moda & Cia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .slides-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        .slide {
+            min-width: 100vw;
+            height: 100vh;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-y: auto;
+        }
+        
+        .slide-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .slide-title {
+            color: #2575fc;
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            border-bottom: 3px solid #6a11cb;
+            padding-bottom: 10px;
+        }
+        
+        .slide-subtitle {
+            color: #6a11cb;
+            margin: 20px 0 10px;
+            font-size: 1.4rem;
+        }
+        
+        .slide-list {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .slide-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .nav-buttons {
+            position: fixed;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 100;
+        }
+        
+        .nav-btn {
+            background: #2575fc;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-btn:hover {
+            background: #6a11cb;
+            transform: translateY(-3px);
+        }
+        
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: #6a11cb;
+            transition: width 0.3s;
+            z-index: 101;
+        }
+        
+        .slide-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #2575fc;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 102;
+        }
+        
+        .company-logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-weight: bold;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: 20px;
+            }
+            
+            .slide-content {
+                padding: 25px;
+            }
+            
+            .slide-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="company-logo">Moda & Cia</div>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="slide-indicator" id="slideIndicator">Slide 1 de 8</div>
+    
+    <div class="slides-container" id="slidesContainer">
+        <!-- Slide 1: Capa -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">Reorganização do Armazém</h1>
+                <h2 class="slide-subtitle">Moda & Cia</h2>
+                <p style="margin-top: 20px; line-height: 1.6;">Proposta de solução para os problemas de armazenagem identificados na empresa</p>
+                <div style="margin-top: 40px; padding: 15px; background: #f0f8ff; border-radius: 10px;">
+                    <p><strong>Desafio:</strong> Otimizar processos de armazenagem para reduzir custos, aumentar eficiência e melhorar a satisfação do cliente.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2: Problemas Identificados -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">1. Problemas Identificados</h1>
+                <ul class="slide-list">
+                    <li>Produtos armazenados sem critério de coleção, tamanho ou categoria</li>
+                    <li>Falta de sinalização nas prateleiras e cabides</li>
+                    <li>Controle de estoque realizado em planilhas manuais, sujeito a erros</li>
+                    <li>Colaboradores sem treinamento para organizar e localizar peças</li>
+                    <li>Acúmulo de itens de coleções passadas sem destinação adequada</li>
+                </ul>
+                <div style="margin-top: 25px; padding: 15px; background: #fff0f0; border-radius: 10px;">
+                    <p><strong>Impacto:</strong> Esses problemas geram ineficiência operacional e aumentam os custos da empresa.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3: Consequências -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">2. Consequências</h1>
+                <h3 class="slide-subtitle">Para a empresa e clientes:</h3>
+                <ul class="slide-list">
+                    <li>Atrasos na separação de pedidos de e-commerce e atacado</li>
+                    <li>Envio de produtos incorretos (tamanho, cor, modelo)</li>
+                    <li>Alto índice de devoluções e insatisfação do cliente</li>
+                    <li>Perda de vendas por não localizar produtos no estoque</li>
+                    <li>Desvalorização de peças de coleções sazonais</li>
+                </ul>
+                <div style="margin-top: 25px; padding: 15px; background: #fff0f0; border-radius: 10px;">
+                    <p><strong>Resultado:</strong> Prejuízos financeiros e danos à reputação da marca.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 4: Sistema de Controle -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">3. Sistema de Controle de Estoque Sugerido</h1>
+                <ul class="slide-list">
+                    <li><strong>Sistema WMS (Warehouse Management System)</strong> integrado ao ERP, com módulo de moda</li>
+                    <li><strong>Códigos de barras ou RFID</strong> para etiquetagem de peças e lotes</li>
+                    <li><strong>Separador de pedidos por onda</strong> para otimizar o picking</li>
+                    <li><strong>Controle de validade comercial</strong> para coleções sazonais</li>
+                </ul>
+                <div style="margin-top: 25px; padding: 15px; background: #f0fff0; border-radius: 10px;">
+                    <p><strong>Benefício:</strong> Maior precisão no controle de estoque e agilidade nos processos.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 5: Sinalização e Layout -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">4. Sinalização e Layout do Armazém</h1>
+                <ul class="slide-list">
+                    <li><strong>Layout por categorias:</strong> feminino, masculino, infantil, acessórios</li>
+                    <li><strong>Subdivisão por tipo de produto:</strong> camisetas, calças, vestidos, etc.</li>
+                    <li><strong>Sinalização visual com cores</strong> para tamanhos (P, M, G, GG) e por coleção</li>
+                    <li><strong>Mapa digital do armazém</strong> acessível via tablet</li>
+                </ul>
+                <div style="margin-top: 25px; padding: 15px; background: #f0fff0; border-radius: 10px;">
+                    <p><strong>Vantagem:</strong> Redução do tempo de localização de produtos em até 60%.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 6: POPs Sugeridos -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">5. Procedimentos Operacionais Padrão (POPs)</h1>
+                <h3 class="slide-subtitle">Sugeridos:</h3>
+                <ul class="slide-list">
+                    <li><strong>Entrada:</strong> conferência, etiquetagem, classificação por coleção/tamanho, registro no sistema</li>
+                    <li><strong>Saída:</strong> separação por pedido com dupla conferência, embalagem específica para e-commerce/atacado</li>
+                    <li><strong>Inventário rotativo:</strong> contagem semanal de uma categoria</li>
+                    <li><strong>Descarte/queima de estoque:</strong> procedimento para itens obsoletos</li>
+                </ul>
+                <div style="margin-top: 25px; padding: 15px; background: #f0f8ff; border-radius: 10px;">
+                    <p><strong>Resultado:</strong> Padronização de processos e redução de erros.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 7: Tecnologia -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">6. Tecnologia Aplicada</h1>
+                <ul class="slide-list">
+                    <li><strong>Etiquetas inteligentes RFID</strong> para rastreamento em tempo real</li>
+                    <li><strong>Coletores de dados móveis</strong> para inventário e picking</li>
+                    <li><strong>Software de gestão de coleções</strong> integrado ao WMS</li>
+                    <li><strong>Picking por voz</strong> para aumentar a precisão na separação</li>
+                </ul>
+                <div style="margin-top: 25px; padding: 15px; background: #f0f8ff; border-radius: 10px;">
+                    <p><strong>Impacto:</strong> Automação de processos e aumento da produtividade.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 8: Plano de Ação -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">7. Plano de Ação para Reorganização</h1>
+                <ol class="slide-list">
+                    <li><strong>Diagnóstico e limpeza:</strong> identificar e categorizar todo o estoque atual</li>
+                    <li><strong>Reorganização física:</strong> implantar layout por zona e sinalização</li>
+                    <li><strong>Implementação do WMS + RFID:</strong> migração dos dados e treinamento</li>
+                    <li><strong>Treinamento da equipe:</strong> em novos POPs, sistema e organização</li>
+                    <li><strong>Teste e ajustes:</strong> operação piloto com um subsetor</li>
+                    <li><strong>Monitoramento contínuo:</strong> com indicadores de acurácia, tempo de picking e satisfação do cliente</li>
+                </ol>
+                <div style="margin-top: 25px; padding: 15px; background: #f0fff0; border-radius: 10px;">
+                    <p><strong>Meta:</strong> Implementação completa em 120 dias com ROI estimado em 12 meses.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 9: Considerações Finais -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">Considerações Finais</h1>
+                <p style="line-height: 1.7; margin-bottom: 20px;">
+                    A reestruturação do armazém da Moda & Cia é fundamental para alinhar a operação ao dinamismo do varejo de moda. A desorganização atual gera não apenas custos operacionais, mas também impacta diretamente na experiência do cliente, especialmente em um mercado cada vez mais digital e competitivo.
+                </p>
+                <p style="line-height: 1.7; margin-bottom: 20px;">
+                    A implementação de um sistema WMS integrado, aliado à identificação por RFID, permitirá um controle preciso e em tempo real do estoque, essencial para coleções com curto ciclo de vida. A reorganização física com sinalização clara e layout intuitivo agilizará significativamente os processos de picking e packing, reduzindo erros e atrasos.
+                </p>
+                <p style="line-height: 1.7; margin-bottom: 20px;">
+                    A padronização de procedimentos assegura que todas as ações, desde o recebimento até a expedição, sejam realizadas com eficiência e qualidade. O treinamento contínuo da equipe é vital para a sustentabilidade das melhorias, promovendo uma cultura de organização e responsabilidade.
+                </p>
+                <p style="line-height: 1.7;">
+                    Com um plano de ação estruturado e monitorado, a empresa não apenas resolverá os problemas imediatos, mas estará preparada para escalar suas operações com consistência e confiabilidade, fortalecendo sua marca e fidelizando clientes.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="nav-buttons">
+        <button class="nav-btn" id="prevBtn">Anterior</button>
+        <button class="nav-btn" id="nextBtn">Próximo</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slidesContainer = document.getElementById('slidesContainer');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const progressBar = document.getElementById('progressBar');
+            const slideIndicator = document.getElementById('slideIndicator');
+            
+            let currentSlide = 0;
+            const totalSlides = document.querySelectorAll('.slide').length;
+            
+            function updateSlide() {
+                slidesContainer.style.transform = `translateX(-${currentSlide * 100}vw)`;
+                progressBar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+                slideIndicator.textContent = `Slide ${currentSlide + 1} de ${totalSlides}`;
+                
+                // Atualizar estado dos botões
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === totalSlides - 1;
+            }
+            
+            prevBtn.addEventListener('click', function() {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlide();
+                }
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    updateSlide();
+                }
+            });
+            
+            // Navegação por teclado
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    prevBtn.click();
+                } else if (e.key === 'ArrowRight') {
+                    nextBtn.click();
+                }
+            });
+            
+            // Inicializar
+            updateSlide();
+        });
+    </script>
+</body>
+</html>
