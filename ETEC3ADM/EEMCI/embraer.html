@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exportação EMBRAER E195-E2 para EUA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
+        
+        .header {
+            background-color: #0d47a1;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 5px solid #ff9800;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .slide {
+            padding: 40px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-title {
+            color: #0d47a1;
+            border-bottom: 2px solid #ff9800;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .slide-title i {
+            margin-right: 10px;
+            color: #ff9800;
+        }
+        
+        .slide-content {
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        .document-box {
+            background-color: #f5f7ff;
+            border-left: 4px solid #0d47a1;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .document-title {
+            font-weight: bold;
+            color: #0d47a1;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .document-detail {
+            margin: 8px 0;
+            display: flex;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            min-width: 180px;
+            color: #555;
+        }
+        
+        .detail-value {
+            color: #222;
+        }
+        
+        .flowchart-container {
+            width: 100%;
+            overflow-x: auto;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .flowchart {
+            min-width: 800px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .flowchart-node {
+            background-color: #0d47a1;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 10px;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .flowchart-arrow {
+            color: #ff9800;
+            font-size: 24px;
+            margin: 0 5px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background-color: #ff9800;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 40px;
+            background-color: #f5f7ff;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .nav-btn {
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-btn:hover {
+            background-color: #1565c0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-btn:disabled {
+            background-color: #b0bec5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .nav-btn i {
+            margin: 0 5px;
+        }
+        
+        .slide-counter {
+            color: #0d47a1;
+            font-weight: bold;
+            font-size: 16px;
+            align-self: center;
+        }
+        
+        .footer {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 10px;
+            }
+            
+            .slide {
+                padding: 25px;
+            }
+            
+            .slide-title {
+                font-size: 20px;
+            }
+            
+            .document-detail {
+                flex-direction: column;
+                margin: 10px 0;
+            }
+            
+            .detail-label {
+                margin-bottom: 3px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Processo de Exportação - EMBRAER E195-E2 para EUA</h1>
+            <p>Apresentação completa dos documentos e etapas da operação de exportação</p>
+        </div>
+        
+        <!-- Slide 1: Introdução -->
+        <div class="slide active" id="slide1">
+            <div class="slide-title">
+                <div class="step-number">1</div>
+                <i class="fas fa-plane"></i> Introdução
+            </div>
+            <div class="slide-content">
+                <p>Esta apresentação descreve o processo completo de exportação da aeronave EMBRAER E195-E2 para os Estados Unidos, incluindo todos os documentos necessários e o fluxo operacional.</p>
+                
+                <div class="document-box">
+                    <div class="document-title">Dados da Operação</div>
+                    <div class="document-detail">
+                        <div class="detail-label">Produto:</div>
+                        <div class="detail-value">Aeronave comercial EMBRAER E195-E2</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Empresa Exportadora:</div>
+                        <div class="detail-value">EMBRAER S.A. (Brasil)</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">País Importador:</div>
+                        <div class="detail-value">Estados Unidos</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Importador:</div>
+                        <div class="detail-value">American Regional Airlines LLC</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Valor da Operação:</div>
+                        <div class="detail-value">US$ 72.000.000</div>
+                    </div>
+                </div>
+                
+                <p>O processo envolve múltiplas etapas documentais, desde o contato inicial até a entrega final, com atenção especial à conformidade legal e segurança financeira.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 2: Contato Prévio -->
+        <div class="slide" id="slide2">
+            <div class="slide-title">
+                <div class="step-number">2</div>
+                <i class="fas fa-envelope"></i> Contato Prévio com Importador
+            </div>
+            <div class="slide-content">
+                <p>Primeira etapa do processo: estabelecimento de contato comercial com a empresa importadora por meio de proposta formal.</p>
+                
+                <div class="document-box">
+                    <div class="document-title">E-mail Comercial Simulado</div>
+                    <div class="document-detail">
+                        <div class="detail-label">Assunto:</div>
+                        <div class="detail-value">Commercial Offer -- EMBRAER E195-E2 Aircraft</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Remetente:</div>
+                        <div class="detail-value">Export Department -- EMBRAER S.A.</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Destinatário:</div>
+                        <div class="detail-value">American Regional Airlines LLC</div>
+                    </div>
+                </div>
+                
+                <p><strong>Conteúdo do e-mail:</strong></p>
+                <p>"EMBRAER S.A., Brazil's leading aerospace manufacturer, is pleased to present a commercial proposal for the export of the E195-E2 aircraft to your company. We believe this model meets the operational efficiency, fuel economy, and passenger capacity required by U.S. regional carriers."</p>
+                
+                <p>O e-mail serve como ponto de partida para negociações e demonstração de interesse comercial.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 3: Proforma Invoice -->
+        <div class="slide" id="slide3">
+            <div class="slide-title">
+                <div class="step-number">3</div>
+                <i class="fas fa-file-invoice-dollar"></i> Proforma Invoice
+            </div>
+            <div class="slide-content">
+                <p>Documento preliminar que formaliza a proposta comercial com todas as condições negociadas.</p>
+                
+                <div class="document-box">
+                    <div class="document-title">PROFORMA INVOICE</div>
+                    <div class="document-detail">
+                        <div class="detail-label">Número:</div>
+                        <div class="detail-value">PI-2025-001</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Data:</div>
+                        <div class="detail-value">29/11/2025</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Descrição:</div>
+                        <div class="detail-value">Aeronave comercial EMBRAER E195-E2 (132 assentos)</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Quantidade:</div>
+                        <div class="detail-value">1 unidade</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Preço unitário:</div>
+                        <div class="detail-value">US$ 72.000.000</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Preço total:</div>
+                        <div class="detail-value">US$ 72.000.000</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Condições de Pagamento:</div>
+                        <div class="detail-value">Carta de Crédito Irrevogável</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Incoterm:</div>
+                        <div class="detail-value">FOB São José dos Campos (SJK)</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Prazo de Entrega:</div>
+                        <div class="detail-value">90 dias após confirmação</div>
+                    </div>
+                </div>
+                
+                <p>A Proforma Invoice serve como orçamento formal e base para abertura da Carta de Crédito.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 4: Commercial Invoice -->
+        <div class="slide" id="slide4">
+            <div class="slide-title">
+                <div class="step-number">4</div>
+                <i class="fas fa-file-invoice"></i> Commercial Invoice
+            </div>
+            <div class="slide-content">
+                <p>Fatura comercial definitiva que formaliza a venda e serve como documento base para desembaraço aduaneiro.</p>
+                
+                <div class="document-box">
+                    <div class="document-title">COMMERCIAL INVOICE</div>
+                    <div class="document-detail">
+                        <div class="detail-label">Número:</div>
+                        <div class="detail-value">CI-2025-045</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Data:</div>
+                        <div class="detail-value">29/11/2025</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Produto:</div>
+                        <div class="detail-value">Aeronave EMBRAER E195-E2</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Quantidade:</div>
+                        <div class="detail-value">1 unidade</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Preço Total:</div>
+                        <div class="detail-value">US$ 72.000.000</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Incoterm:</div>
+                        <div class="detail-value">FOB São José dos Campos</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Modal de Transporte:</div>
+                        <div class="detail-value">Aéreo especializado</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Aeroporto de Embarque:</div>
+                        <div class="detail-value">SJK - São José dos Campos</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Aeroporto de Destino:</div>
+                        <div class="detail-value">DFW - Dallas/Fort Worth</div>
+                    </div>
+                </div>
+                
+                <p>Documento essencial para fins fiscais, cambiais e de controle aduaneiro tanto no Brasil como nos EUA.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 5: Packing List -->
+        <div class="slide" id="slide5">
+            <div class="slide-title">
+                <div class="step-number">5</div>
+                <i class="fas fa-boxes"></i> Packing List
+            </div>
+            <div class="slide-content">
+                <p>Documento que descreve detalhadamente a composição física da carga, volumes, pesos e dimensões.</p>
+                
+                <div class="document-box">
+                    <div class="document-title">PACKING LIST</div>
+                    <div class="document-detail">
+                        <div class="detail-label">Número:</div>
+                        <div class="detail-value">PKG-2025-010</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Data:</div>
+                        <div class="detail-value">29/11/2025</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Mercadoria:</div>
+                        <div class="detail-value">Aeronave EMBRAER E195-E2 parcialmente desmontada</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Volumes:</div>
+                        <div class="detail-value">12 volumes (asas, fuselagem, trem de pouso, interiores, sistemas)</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Peso Bruto Total:</div>
+                        <div class="detail-value">41.000 kg</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Peso Líquido:</div>
+                        <div class="detail-value">38.900 kg</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Dimensões:</div>
+                        <div class="detail-value">Variáveis conforme o componente</div>
+                    </div>
+                </div>
+                
+                <p>Utilizada pela transportadora para planejamento logístico e pelas autoridades aduaneiras para verificação física da carga.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 6: Habilitação RADAR/SISCOMEX -->
+        <div class="slide" id="slide6">
+            <div class="slide-title">
+                <div class="step-number">6</div>
+                <i class="fas fa-user-check"></i> Habilitação RADAR/SISCOMEX
+            </div>
+            <div class="slide-content">
+                <p>Pré-requisito obrigatório para empresas brasileiras que desejam exportar. A EMBRAER já possui habilitação consolidada.</p>
+                
+                <div class="document-box">
+                    <div class="document-title">Registro do Exportador</div>
+                    <div class="document-detail">
+                        <div class="detail-label">Sistema:</div>
+                        <div class="detail-value">RADAR (Registro de Exportadores da Receita Federal)</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Integração:</div>
+                        <div class="detail-value">SISCOMEX (Sistema Integrado de Comércio Exterior)</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Habilitação EMBRAER:</div>
+                        <div class="detail-value">ILIMITADA</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Motivo:</div>
+                        <div class="detail-value">Alto volume de exportações e porte empresarial</div>
+                    </div>
+                </div>
+                
+                <p><strong>Processo de habilitação inclui:</strong></p>
+                <ul>
+                    <li>Cadastro no SISCOMEX</li>
+                    <li>Envio de documentação jurídica e fiscal</li>
+                    <li>Definição do tipo de habilitação (Expressa, Limitada ou Ilimitada)</li>
+                </ul>
+                
+                <p>A habilitação ilimitada permite à EMBRAER operar sem restrições de valor ou frequência nas exportações.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 7: DU-E (Declaração Única de Exportação) -->
+        <div class="slide" id="slide7">
+            <div class="slide-title">
+                <div class="step-number">7</div>
+                <i class="fas fa-file-alt"></i> DU-E - Declaração Única de Exportação
+            </div>
+            <div class="slide-content">
+                <p>Documento eletrônico obrigatório que substitui o antigo RE (Registro de Exportação) desde 2018.</p>
+                
+                <div class="document-box">
+                    <div class="document-title">Declaração Única de Exportação (DU-E)</div>
+                    <div class="document-detail">
+                        <div class="detail-label">Finalidade:</div>
+                        <div class="detail-value">Reunir todas as informações da exportação em um único documento</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Integração:</div>
+                        <div class="detail-value">Receita Federal, Aduana e órgãos anuentes (ANAC, MDIC, etc.)</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Liberação de carga:</div>
+                        <div class="detail-value">Somente após aprovação da DU-E</div>
+                    </div>
+                </div>
+                
+                <p><strong>A DU-E reúne:</strong></p>
+                <ul>
+                    <li>Dados comerciais da operação</li>
+                    <li>Informações fiscais e tributárias</li>
+                    <li>Documentos da carga (invoice, packing list, etc.)</li>
+                    <li>Dados logísticos e de transporte</li>
+                </ul>
+                
+                <p><strong>Observação importante:</strong> O RE (Registro de Exportação) existia antes de 2018; hoje foi 100% substituído pela DU-E.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 8: Air Waybill (AWB) -->
+        <div class="slide" id="slide8">
+            <div class="slide-title">
+                <div class="step-number">8</div>
+                <i class="fas fa-shipping-fast"></i> Air Waybill (AWB)
+            </div>
+            <div class="slide-content">
+                <p>Conhecimento de embarque aéreo que comprova o contrato de transporte entre exportador e transportadora.</p>
+                
+                <div class="document-box">
+                    <div class="document-title">AIR WAYBILL (AWB)</div>
+                    <div class="document-detail">
+                        <div class="detail-label">Transportadora:</div>
+                        <div class="detail-value">LATAM Cargo</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Número do AWB:</div>
+                        <div class="detail-value">995-55214321</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Data:</div>
+                        <div class="detail-value">29/11/2025</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Aeroporto de Embarque:</div>
+                        <div class="detail-value">SJK - São José dos Campos</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Aeroporto de Destino:</div>
+                        <div class="detail-value">DFW - Dallas/Fort Worth</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Modal:</div>
+                        <div class="detail-value">Aéreo</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Descrição da Carga:</div>
+                        <div class="detail-value">Aeronave E195-E2 - partes e componentes</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Peso Total:</div>
+                        <div class="detail-value">41.000 kg</div>
+                    </div>
+                </div>
+                
+                <p>Documento essencial para o transporte, seguro e desembaraço aduaneiro da carga no destino.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 9: Certificado de Origem -->
+        <div class="slide" id="slide9">
+            <div class="slide-title">
+                <div class="step-number">9</div>
+                <i class="fas fa-certificate"></i> Certificado de Origem
+            </div>
+            <div class="slide-content">
+                <p>Documento que comprova a origem brasileira da mercadoria, necessário para fins aduaneiros e tributários nos EUA.</p>
+                
+                <div class="document-box">
+                    <div class="document-title">CERTIFICADO DE ORIGEM</div>
+                    <div class="document-detail">
+                        <div class="detail-label">Emitente:</div>
+                        <div class="detail-value">FIESP (Federação das Indústrias do Estado de São Paulo)</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Exportador:</div>
+                        <div class="detail-value">EMBRAER S.A.</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Importador:</div>
+                        <div class="detail-value">American Regional Airlines LLC</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Produto:</div>
+                        <div class="detail-value">Aeronave EMBRAER E195-E2</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Origem:</div>
+                        <div class="detail-value">Brasil</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Destino:</div>
+                        <div class="detail-value">Estados Unidos</div>
+                    </div>
+                    <div class="document-detail">
+                        <div class="detail-label">Data e local:</div>
+                        <div class="detail-value">São José dos Campos, 29/11/2025</div>
+                    </div>
+                </div>
+                
+                <p><strong>Declaração contida no certificado:</strong> "Certificamos que o produto acima é de origem brasileira."</p>
+                
+                <p>Este documento é fundamental para comprovar a origem da mercadoria e pode influenciar na aplicação de tarifas aduaneiras e acordos comerciais entre países.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 10: Formas de Pagamento -->
+        <div class="slide" id="slide10">
+            <div class="slide-title">
+                <div class="step-number">10</div>
+                <i class="fas fa-credit-card"></i> Formas de Pagamento Internacional
+            </div>
+            <div class="slide-content">
+                <p>Análise das modalidades de pagamento internacional e justificativa da escolha pela Carta de Crédito.</p>
+                
+                <div class="document-box">
+                    <div class="document-title">Métodos de Pagamento Internacional</div>
+                    
+                    <div class="document-detail">
+                        <div class="detail-label" style="color:#0d47a1; font-size:17px;">• Carta de Crédito (L/C):</div>
+                        <div class="detail-value">
+                            <ul style="margin-left:20px; margin-top:5px;">
+                                <li>Alta segurança para exportador e importador</li>
+                                <li>Pagamento garantido pelo banco</li>
+                                <li>Muito usada em produtos de alto valor, como aeronaves</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="document-detail">
+                        <div class="detail-label" style="color:#0d47a1; font-size:17px;">• Transferência Bancária (TT):</div>
+                        <div class="detail-value">Rápida, porém com maior risco para o exportador</div>
+                    </div>
+                    
+                    <div class="document-detail">
+                        <div class="detail-label" style="color:#0d47a1; font-size:17px;">• Cobrança Documentária:</div>
+                        <div class="detail-value">Intermediária, libera documentos após pagamento ou aceite</div>
+                    </div>
+                </div>
+                
+                <div class="document-box" style="background-color:#e8f5e8; border-left-color:#4caf50;">
+                    <div class="document-title">Forma Escolhida para esta Operação</div>
+                    <div class="document-detail">
+                        <div class="detail-label" style="color:#2e7d32; font-size:18px;">➡️ Carta de Crédito Irrevogável</div>
+                        <div class="detail-value" style="color:#2e7d32;">Por ser a mais segura para transações milionárias</div>
+                    </div>
+                </div>
+                
+                <p>A Carta de Crédito oferece segurança jurídica e financeira para ambas as partes, com o banco atuando como intermediário e garantidor do pagamento.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 11: Fluxograma -->
+        <div class="slide" id="slide11">
+            <div class="slide-title">
+                <div class="step-number">11</div>
+                <i class="fas fa-project-diagram"></i> Fluxograma do Processo
+            </div>
+            <div class="slide-content">
+                <p>Visualização sequencial de todas as etapas do processo de exportação, desde o contato inicial até a finalização.</p>
+                
+                <div class="flowchart-container">
+                    <div class="flowchart">
+                        <div class="flowchart-node">Início da Operação</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-node">Contato Prévio com Importador</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-node">Emissão da Proforma Invoice</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-node">Negociação e Aceitação</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-node">Verificação Habilitação RADAR</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-node">Registro no SISCOMEX (DU-E)</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-node">Emissão Commercial Invoice</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-node">Emissão Packing List</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-node">Emissão Certificado de Origem</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-node">Reserva do Transporte Aéreo</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-node">Emissão do Air Waybill</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-node">Abertura Carta de Crédito</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-node">Liberação para Embarque</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-node">Transporte até DFW</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-node">Entrega ao Importador</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-node">Finalização da Exportação</div>
+                    </div>
+                </div>
+                
+                <p><strong>Resumo das etapas principais:</strong></p>
+                <ol>
+                    <li>Contato comercial e proposta</li>
+                    <li>Emissão da Proforma Invoice</li>
+                    <li>Contrato e definição de condições</li>
+                    <li>Habilitação SISCOMEX</li>
+                    <li>Emissão da DU-E</li>
+                    <li>Commercial Invoice e Packing List</li>
+                    <li>Certificado de Origem</li>
+                    <li>Reserva de transporte e AWB</li>
+                    <li>Pagamento via Carta de Crédito</li>
+                    <li>Embarque e entrega</li>
+                </ol>
+            </div>
+        </div>
+        
+        <!-- Slide 12: Conclusão -->
+        <div class="slide" id="slide12">
+            <div class="slide-title">
+                <div class="step-number">12</div>
+                <i class="fas fa-flag-checkered"></i> Conclusão
+            </div>
+            <div class="slide-content">
+                <p>O processo de exportação da aeronave EMBRAER E195-E2 para os Estados Unidos demonstra a complexidade e o rigor documental exigido em operações de alto valor.</p>
+                
+                <div class="document-box">
+                    <div class="document-title">Principais Pontos de Destaque</div>
+                    
+                    <div class="document-detail">
+                        <div class="detail-label">1. Documentação Completa:</div>
+                        <div class="detail-value">Cada documento tem função específica no processo</div>
+                    </div>
+                    
+                    <div class="document-detail">
+                        <div class="detail-label">2. Conformidade Legal:</div>
+                        <div class="detail-value">Atendimento a exigências brasileiras e norte-americanas</div>
+                    </div>
+                    
+                    <div class="document-detail">
+                        <div class="detail-label">3. Segurança Financeira:</div>
+                        <div class="detail-value">Uso de Carta de Crédito Irrevogável para transação milionária</div>
+                    </div>
+                    
+                    <div class="document-detail">
+                        <div class="detail-label">4. Logística Especializada:</div>
+                        <div class="detail-value">Transporte aéreo de componentes aeronáuticos de grande porte</div>
+                    </div>
+                    
+                    <div class="document-detail">
+                        <div class="detail-label">5. Expertise da EMBRAER:</div>
+                        <div class="detail-value">Habilitação ilimitada no SISCOMEX e experiência em exportações</div>
+                    </div>
+                </div>
+                
+                <p><strong>Considerações Finais:</strong></p>
+                <ul>
+                    <li>O fluxo apresentado é representativo de operações aeronáuticas de grande escala</li>
+                    <li>A escolha de Incoterm FOB e Carta de Crédito oferece segurança jurídica e financeira</li>
+                    <li>A EMBRAER, por seu porte e experiência, opera com habilitação ilimitada e domínio logístico</li>
+                    <li>A sequência documental obedece a exigências legais de ambos os países</li>
+                </ul>
+                
+                <p style="text-align:center; margin-top:20px; font-weight:bold; color:#0d47a1;">Fim da Apresentação</p>
+            </div>
+        </div>
+        
+        <!-- Navegação -->
+        <div class="nav-buttons">
+            <button class="nav-btn" id="prevBtn" disabled>
+                <i class="fas fa-arrow-left"></i> Anterior
+            </button>
+            
+            <div class="slide-counter">
+                Slide <span id="currentSlide">1</span> de <span id="totalSlides">12</span>
+            </div>
+            
+            <button class="nav-btn" id="nextBtn">
+                Próximo <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="footer">
+        Trabalho de Exportação - EMBRAER E195-E2 para os Estados Unidos | Desenvolvido para fins educacionais
+    </div>
+
+    <script>
+        // Controle dos slides
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        let currentSlide = 0;
+        
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const currentSlideElement = document.getElementById('currentSlide');
+        const totalSlidesElement = document.getElementById('totalSlides');
+        
+        // Inicializar
+        totalSlidesElement.textContent = totalSlides;
+        updateButtons();
+        
+        // Função para mostrar slide específico
+        function showSlide(index) {
+            // Esconder todos os slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Mostrar slide atual
+            slides[index].classList.add('active');
+            currentSlide = index;
+            currentSlideElement.textContent = index + 1;
+            
+            updateButtons();
+            
+            // Rolagem para o topo do slide
+            document.querySelector('.container').scrollTop = 0;
+        }
+        
+        // Atualizar estado dos botões
+        function updateButtons() {
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+            
+            // Mudar texto do último botão
+            if (currentSlide === totalSlides - 1) {
+                nextBtn.innerHTML = 'Concluir <i class="fas fa-check"></i>';
+            } else {
+                nextBtn.innerHTML = 'Próximo <i class="fas fa-arrow-right"></i>';
+            }
+        }
+        
+        // Event listeners
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < totalSlides - 1) {
+                showSlide(currentSlide + 1);
+            } else {
+                // Último slide - poderia adicionar ação de conclusão aqui
+                alert('Apresentação concluída! Obrigado por acompanhar.');
+            }
+        });
+        
+        // Navegação por teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            } else if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) {
+                showSlide(currentSlide + 1);
+            }
+        });
+        
+        // Adicionar indicadores de slide (opcional)
+        function createSlideIndicators() {
+            const indicatorContainer = document.createElement('div');
+            indicatorContainer.style.cssText = `
+                display: flex;
+                justify-content: center;
+                padding: 10px;
+                background-color: #f5f7ff;
+                border-top: 1px solid #e0e0e0;
+            `;
+            
+            for (let i = 0; i < totalSlides; i++) {
+                const indicator = document.createElement('div');
+                indicator.style.cssText = `
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background-color: ${i === 0 ? '#0d47a1' : '#b0bec5'};
+                    margin: 0 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                `;
+                
+                indicator.addEventListener('click', () => {
+                    showSlide(i);
+                });
+                
+                indicatorContainer.appendChild(indicator);
+            }
+            
+            document.querySelector('.nav-buttons').after(indicatorContainer);
+        }
+        
+        // Criar indicadores de slide
+        createSlideIndicators();
+    </script>
+</body>
+</html>
