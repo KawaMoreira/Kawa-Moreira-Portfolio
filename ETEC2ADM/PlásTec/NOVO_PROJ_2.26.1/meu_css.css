@@ -1,0 +1,736 @@
+/* ============================================
+   PLÁSTEC — Folha de Estilos Principal
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+/* ── Variáveis ─────────────────────────────── */
+:root {
+  --azul:       #1a6fb5;
+  --azul-escuro:#0d4a82;
+  --azul-claro: #e8f2fb;
+  --verde:      #2db87a;
+  --branco:     #ffffff;
+  --cinza-claro:#f4f6f9;
+  --cinza-texto:#4a5568;
+  --preto-soft: #1a202c;
+  --sombra:     0 4px 20px rgba(26,111,181,0.12);
+  --radius:     12px;
+  --transicao:  0.3s ease;
+}
+
+/* ── Reset e Base ───────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  color: var(--preto-soft);
+  background-color: var(--cinza-claro);
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--azul);
+  text-decoration: none;
+  transition: color var(--transicao);
+}
+
+a:hover {
+  color: var(--azul-escuro);
+}
+
+/* ── Layout Central ─────────────────────────── */
+.pagina {
+  max-width: 1060px;
+  margin: 0 auto;
+  background-color: var(--branco);
+  box-shadow: 0 0 40px rgba(0,0,0,0.08);
+  min-height: 100vh;
+}
+
+/* ── HEADER ─────────────────────────────────── */
+header {
+  background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul) 100%);
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+}
+
+header a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.Logo_Principale {
+  height: 80px;
+  width: auto;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+  transition: transform var(--transicao);
+}
+
+.Logo_Principale:hover {
+  transform: scale(1.04);
+}
+
+/* ── NAV ─────────────────────────────────────── */
+nav {
+  background-color: var(--branco);
+  border-bottom: 3px solid var(--azul-claro);
+  padding: 0 24px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+  padding: 12px 0;
+}
+
+nav li {
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+nav li a {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--azul-escuro);
+  padding: 8px 22px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  transition: all var(--transicao);
+}
+
+nav li a:hover,
+nav li a.ativo {
+  background-color: var(--azul);
+  color: var(--branco);
+  border-color: var(--azul);
+}
+
+/* ── SEÇÕES / CONTEÚDO ───────────────────────── */
+.conteudo {
+  padding: 40px 40px 20px;
+}
+
+/* ── TÍTULOS DE PÁGINA ──────────────────────── */
+.titulo-pagina {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--azul-escuro);
+  margin-bottom: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+.titulo-pagina::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 60%;
+  background: linear-gradient(90deg, var(--verde), var(--azul));
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  color: var(--cinza-texto);
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+
+/* ── TEXTOS ─────────────────────────────────── */
+.texto {
+  font-family: 'DM Sans', sans-serif;
+  text-align: justify;
+  color: var(--cinza-texto);
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.texto b,
+.texto strong {
+  color: var(--azul-escuro);
+}
+
+/* ── DIVISOR ─────────────────────────────────── */
+.divisor {
+  border: none;
+  border-top: 2px solid var(--azul-claro);
+  margin: 32px 0;
+}
+
+/* ── HERO (Home) ─────────────────────────────── */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul) 60%, #2196c9 100%);
+  padding: 56px 40px 48px;
+  color: var(--branco);
+}
+
+.hero-conteudo {
+  max-width: 560px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero h1 span {
+  color: #7ee8b8;
+}
+
+.hero p {
+  font-size: 1rem;
+  line-height: 1.75;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.hero-deco {
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  z-index: 1;
+}
+
+.hero-deco2 {
+  position: absolute;
+  right: 60px;
+  bottom: -80px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  z-index: 1;
+}
+
+/* ── GALERIA HERO (3 imagens) ──────────────── */
+.galeria-hero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 28px 40px;
+  background-color: var(--cinza-claro);
+}
+
+.galeria-hero img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+.galeria-hero img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(26,111,181,0.2);
+}
+
+/* ── CARDS DE DESTAQUE (Home) ──────────────── */
+.cards-destaque {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.card {
+  background: var(--branco);
+  border: 1px solid var(--azul-claro);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--sombra);
+  transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(26,111,181,0.18);
+}
+
+.card-icone {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 0.92rem;
+  color: var(--cinza-texto);
+  line-height: 1.65;
+}
+
+/* ── EMPRESA: cards de MVV ──────────────────── */
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.mvv-card {
+  background: var(--azul-claro);
+  border-left: 5px solid var(--azul);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  transition: transform var(--transicao);
+}
+
+.mvv-card:hover {
+  transform: translateY(-4px);
+}
+
+.mvv-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--azul-escuro);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+
+.mvv-card p {
+  font-size: 0.9rem;
+  color: var(--cinza-texto);
+  line-height: 1.65;
+}
+
+/* ── EMPRESA: foto institucional ───────────── */
+.foto-institucional {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  margin-top: 32px;
+}
+
+/* ── PRODUTOS: catálogo ──────────────────────── */
+.catalogo-secao {
+  margin-bottom: 40px;
+}
+
+.catalogo-secao h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--azul-claro);
+}
+
+.grade-produtos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.produto-card {
+  background: var(--branco);
+  border: 1px solid var(--azul-claro);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+.produto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(26,111,181,0.2);
+}
+
+.produto-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.produto-card:hover img {
+  transform: scale(1.04);
+}
+
+.produto-info {
+  padding: 14px 16px;
+}
+
+.produto-info h4 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--azul-escuro);
+  margin-bottom: 4px;
+}
+
+.produto-info p {
+  font-size: 0.82rem;
+  color: var(--cinza-texto);
+  line-height: 1.55;
+}
+
+/* ── PROJETOS: galeria de processo ──────────── */
+.galeria-processo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.galeria-processo img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  transition: transform var(--transicao);
+}
+
+.galeria-processo img:hover {
+  transform: scale(1.03);
+}
+
+/* ── PROJETOS: destaque feira ───────────────── */
+.banner-feira {
+  background: linear-gradient(135deg, var(--azul-escuro), var(--verde));
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  color: var(--branco);
+  margin-bottom: 28px;
+}
+
+.banner-feira h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.banner-feira p {
+  font-size: 0.93rem;
+  opacity: 0.9;
+  line-height: 1.65;
+}
+
+/* ── PROJETOS: vídeos ───────────────────────── */
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.video-wrapper {
+  background: var(--preto-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.video-wrapper video {
+  width: 100%;
+  display: block;
+}
+
+.video-legenda {
+  font-size: 0.82rem;
+  color: #aaa;
+  padding: 10px 14px;
+  font-style: italic;
+}
+
+/* ── CONTATO: ícones sociais ────────────────── */
+.sociais-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 28px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--azul-claro);
+  border: 1px solid var(--azul);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--azul-escuro);
+  transition: all var(--transicao);
+}
+
+.social-link:hover {
+  background: var(--azul);
+  color: var(--branco);
+}
+
+.social-link img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* ── CONTATO: mapa ──────────────────────────── */
+.mapa-wrapper {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  margin-bottom: 32px;
+}
+
+.mapa-wrapper iframe {
+  width: 100%;
+  display: block;
+  border: 0;
+}
+
+/* ── CONTATO: formulário ────────────────────── */
+.form-card {
+  background: var(--azul-claro);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--sombra);
+}
+
+.form-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.form-grupo {
+  margin-bottom: 16px;
+}
+
+.form-grupo label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.88rem;
+  color: var(--azul-escuro);
+  margin-bottom: 6px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #c5d8ed;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--preto-soft);
+  background: var(--branco);
+  transition: border-color var(--transicao);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--azul);
+}
+
+.form-textarea {
+  width: 100%;
+  height: 130px;
+  resize: vertical;
+  max-height: 200px;
+  padding: 10px 14px;
+  border: 2px solid #c5d8ed;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--preto-soft);
+  background: var(--branco);
+  transition: border-color var(--transicao);
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--azul);
+}
+
+.form-aviso {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.82rem;
+  color: #7a5c00;
+  margin-bottom: 16px;
+}
+
+.botoes-form {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn {
+  padding: 10px 24px;
+  border-radius: 50px;
+  border: 2px solid var(--azul);
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all var(--transicao);
+}
+
+.btn-primario {
+  background: var(--azul);
+  color: var(--branco);
+}
+
+.btn-primario:hover {
+  background: var(--azul-escuro);
+  border-color: var(--azul-escuro);
+}
+
+.btn-secundario {
+  background: transparent;
+  color: var(--azul);
+}
+
+.btn-secundario:hover {
+  background: var(--azul);
+  color: var(--branco);
+}
+
+/* ── FOOTER ─────────────────────────────────── */
+footer {
+  background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul) 100%);
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  padding: 28px 40px;
+  font-size: 0.85rem;
+  margin-top: 40px;
+}
+
+footer strong {
+  color: var(--branco);
+  font-family: 'Syne', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.footer-linha {
+  margin-bottom: 8px;
+}
+
+/* ── RESPONSIVO ─────────────────────────────── */
+@media (max-width: 768px) {
+  .conteudo {
+    padding: 28px 20px 16px;
+  }
+
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .galeria-hero {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .galeria-hero img {
+    height: 220px;
+  }
+
+  .cards-destaque {
+    grid-template-columns: 1fr;
+  }
+
+  .mvv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grade-produtos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galeria-processo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .videos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li a {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .grade-produtos {
+    grid-template-columns: 1fr;
+  }
+
+  .galeria-processo {
+    grid-template-columns: 1fr;
+  }
+
+  .titulo-pagina {
+    font-size: 1.5rem;
+  }
+}

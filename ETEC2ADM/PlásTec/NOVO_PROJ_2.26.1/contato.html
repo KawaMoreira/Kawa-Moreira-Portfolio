@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PlásTec — Contato</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="meu_css.css">
+    <script src="meu_js.js"></script>
+</head>
+<body>
+<div class="pagina">
+
+    <header>
+        <a href="index.html">
+            <img src="img/Logo_PlasTec.png" alt="Logo PlásTec" title="PlásTec" class="Logo_Principale">
+        </a>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="empresa.html">Empresa</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="contato.html" class="ativo">Contato</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        alert("Olá, sejam bem-vindos ao site da PlásTec! :D")
+    </script>
+
+    <section class="conteudo">
+        <h1 class="titulo-pagina">Contato</h1>
+        <p class="subtitulo">Fale conosco pelas redes sociais ou envie uma mensagem pelo formulário.</p>
+
+        <!-- Redes Sociais -->
+        <h2 class="titulo-pagina" style="font-size:1.2rem; margin-top:8px;">Redes Sociais</h2>
+        <br>
+        <div class="sociais-grid">
+            <a href="contato.html" class="social-link">
+                <img src="img/sociais/instagram.png" alt="Instagram">
+                Instagram
+            </a>
+            <a href="contato.html" class="social-link">
+                <img src="img/sociais/facebook.png" alt="Facebook">
+                Facebook
+            </a>
+            <a href="contato.html" class="social-link">
+                <img src="img/sociais/twitter.png" alt="X / Twitter">
+                X (Twitter)
+            </a>
+            <a href="contato.html" class="social-link">
+                <img src="img/sociais/whatsapp.png" alt="WhatsApp">
+                WhatsApp
+            </a>
+            <a href="contato.html" class="social-link">
+                <img src="img/sociais/icone_e-mail.png" alt="E-mail">
+                E-mail
+            </a>
+        </div>
+
+        <hr class="divisor">
+
+        <!-- Mapa -->
+        <h2 class="titulo-pagina" style="font-size:1.2rem;">📍 Localização</h2>
+        <p class="subtitulo">Etec de Carapicuíba — onde o projeto nasceu.</p>
+
+        <div class="mapa-wrapper">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.4312655312456!2d-46.837672624671264!3d-23.516986278830387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf01f17d5c4025%3A0x19c4eb6b0d710a17!2sEscola%20T%C3%A9cnica%20Estadual%20de%20Carapicu%C3%ADba!5e0!3m2!1spt-BR!2sbr!4v1726756472932!5m2!1spt-BR!2sbr"
+                height="400"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+        </div>
+
+        <hr class="divisor">
+
+        <!-- Formulário de Contato -->
+        <div class="form-card">
+            <h3>📬 Envie uma mensagem</h3>
+
+            <div class="form-aviso">
+                ℹ️ Este formulário é demonstrativo e ainda não está conectado a um servidor de envio.
+            </div>
+
+            <div class="form-grupo">
+                <label for="nome">Nome</label>
+                <input class="form-input" type="text" id="nome" name="nome" placeholder="Seu nome completo">
+            </div>
+
+            <div class="form-grupo">
+                <label for="telefone">Telefone</label>
+                <input class="form-input" type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX">
+            </div>
+
+            <div class="form-grupo">
+                <label for="email">E-mail</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="usuario@email.com">
+            </div>
+
+            <div class="form-grupo">
+                <label for="mensagem">Mensagem</label>
+                <textarea class="form-textarea" id="mensagem" name="mensagem" placeholder="Deixe sua mensagem ou opinião..." maxlength="500"></textarea>
+            </div>
+
+            <div class="botoes-form">
+                <button type="button" class="btn btn-primario">Enviar</button>
+                <button type="reset" class="btn btn-secundario">Limpar</button>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p class="footer-linha"><strong>PlásTec</strong> — Qualidade, Transparência e Responsabilidade</p>
+        <p class="footer-linha">Copyright © 2024 — Todos os direitos reservados.</p>
+    </footer>
+
+</div>
+</body>
+</html>
