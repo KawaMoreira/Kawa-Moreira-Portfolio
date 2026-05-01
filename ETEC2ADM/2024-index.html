@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 - Projetos do 2º Ano ADM | Kawã Fernandes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0f5c5c 0%, #14b8a6 100%);
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .year-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 20px 0 60px;
+        }
+        
+        .section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #14b8a6;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 30px;
+            color: white;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+        
+        .section-title p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+        
+        /* Project Cards */
+        .project-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .project-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-header {
+            padding: 25px 25px 15px;
+            background: white;
+        }
+        
+        .project-header h3 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        
+        .project-header p {
+            color: #64748b;
+            font-size: 1rem;
+        }
+        
+        .project-body {
+            padding: 0 25px 25px;
+            flex-grow: 1;
+        }
+        
+        .project-body p {
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #14b8a6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #0d9488;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(20, 184, 166, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #14b8a6;
+            border: 2px solid #14b8a6;
+        }
+        
+        .btn-outline:hover {
+            background: #14b8a6;
+            color: white;
+        }
+        
+        /* Custom button colors for different sections */
+        .btn-ai {
+            background: #3b82f6;
+        }
+        .btn-ai:hover {
+            background: #2563eb;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+        .btn-pordp {
+            background: #f97316;
+        }
+        .btn-pordp:hover {
+            background: #ea580c;
+            box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
+        }
+        .btn-bio {
+            background: #10b981;
+        }
+        .btn-bio:hover {
+            background: #059669;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        }
+        .btn-quim {
+            background: #8b5cf6;
+        }
+        .btn-quim:hover {
+            background: #7c3aed;
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .project-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .section-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 30px 20px;
+            }
+        }
+        
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-content p {
+            margin-bottom: 15px;
+            color: #cbd5e1;
+        }
+        
+        .github-link {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .github-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="year-badge">2º Ano ADM - 2024</div>
+            <h1>Projetos do Segundo Ano</h1>
+            <p class="subtitle">Trabalhos desenvolvidos durante o segundo ano do curso técnico em Administração na ETEC de Carapicuíba, incluindo Projeto Integrador II (PlásTec), pesquisas, infográficos e relatórios técnicos.</p>
+            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Voltar ao Portfólio Principal
+            </a>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="container main-content">
+        
+        <!-- Projeto Integrador II (PlásTec) -->
+        <section class="section" style="border-left-color: #14b8a6;">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #14b8a6 0%, #2dd4bf 100%);">
+                    <i class="fas fa-recycle"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Projeto Integrador II</h2>
+                    <p>PlásTec - Reutilização de plástico triturado para filamentos de impressão 3D</p>
+                </div>
+            </div>
+            
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>PlásTec: Sustentabilidade e Inovação</h3>
+                        <p>Economia circular e produção de filamentos 3D</p>
+                    </div>
+                    <div class="project-body">
+                        <p>No segundo ano do curso, participei do Projeto Integrador II (PlásTec), que teve como desafio a reutilização de plástico triturado como matéria-prima para a criação de um produto viável e sustentável. O projeto consistiu em transformar resíduos plásticos em filamentos para impressão 3D, buscando uma solução de baixo custo, fácil aplicação e alinhada aos princípios da economia circular. Para isso, o grupo estudou formas de reaproveitamento do material, definiu o processo de produção dos filamentos e analisou sua viabilidade prática e comercial. A experiência possibilitou compreender, na prática, como sustentabilidade, inovação e processos produtivos podem ser integrados, além de desenvolver habilidades de planejamento, trabalho em equipe, resolução de problemas e visão técnica aplicada a projetos interdisciplinares.</p>
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC2ADM/Pl%C3%A1sTec/Final/Vers%C3%A3o%2019_09/NOVO_PROJ_2/index.html" class="btn" target="_blank">
+                                <i class="fas fa-globe"></i> Versão Original (2024)
+                            </a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC2ADM/Pl%C3%A1sTec/NOVO_PROJ_2.26.1/index.html" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-code-branch"></i> Versão Atualizada (2026)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Aplicativos Informatizados (AI) -->
+        <section class="section" style="border-left-color: #3b82f6;">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Aplicativos Informatizados (AI)</h2>
+                    <p>Sustentabilidade e Responsabilidade Social Corporativa</p>
+                </div>
+            </div>
+            
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Responsabilidade Social Corporativa</h3>
+                        <p>Estudo sobre práticas sustentáveis nas empresas</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Trabalho desenvolvido para a disciplina de Aplicativos Informatizados, abordando os conceitos de sustentabilidade e responsabilidade social corporativa. O documento explora a importância da ética empresarial, ações socioambientais e como as organizações podem contribuir para o desenvolvimento sustentável, alinhando lucro e impacto positivo na sociedade.</p>
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC2ADM/Apl/Sustentabilidade%20e%20Responsabilidade%20Social%20Corporativa%20(1).pdf" class="btn btn-ai" target="_blank">
+                                <i class="fas fa-file-pdf"></i> Baixar PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Planejamento e Organização de Rotinas de Departamento Pessoal (PORDP) -->
+        <section class="section" style="border-left-color: #f97316;">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);">
+                    <i class="fas fa-address-card"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Planejamento e Organização de Rotinas de Departamento Pessoal</h2>
+                    <p>Pesquisas sobre férias e gestão de documentos</p>
+                </div>
+            </div>
+            
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Departamento Pessoal</h3>
+                        <p>Temas trabalhistas e documentação</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Pesquisas realizadas para a disciplina de Departamento Pessoal, abordando dois pilares essenciais da rotina de RH: o cálculo e a legislação das férias trabalhistas, e a gestão eficiente de documentos corporativos (armazenamento, classificação, segurança e descarte). Os materiais trazem fundamentos teóricos e aplicações práticas para a administração de pessoas.</p>
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC2ADM/PORDP/Ferias_PORDP_23.10.2024.pdf" class="btn btn-pordp" target="_blank">
+                                <i class="fas fa-umbrella-beach"></i> Pesquisa sobre Férias
+                            </a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC2ADM/PORDP/Gestao_Documentos_16.10.2024.pdf" class="btn btn-outline" style="border-color: #f97316; color: #f97316;" target="_blank">
+                                <i class="fas fa-folder-open"></i> Gestão de Documentos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Biologia -->
+        <section class="section" style="border-left-color: #10b981;">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #10b981 0%, #34d399 100%);">
+                    <i class="fas fa-dna"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Biologia</h2>
+                    <p>Infográficos de Classificação Taxonômica</p>
+                </div>
+            </div>
+            
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Classificação Taxonômica</h3>
+                        <p>Escherichia coli e Eucalyptus</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Infográficos desenvolvidos para a disciplina de Biologia, apresentando a hierarquia taxonômica completa de dois organismos: a bactéria <strong>Escherichia coli</strong> (reino Monera, família Enterobacteriaceae) e a planta <strong>Eucalyptus</strong> (reino Plantae, família Myrtaceae). Os materiais ilustram de forma clara os níveis de classificação: domínio, reino, filo, classe, ordem, família, gênero e espécie.</p>
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC2ADM/Bio/Classifica%C3%A7%C3%A3o%20Taxon%C3%B4mica%20da%20E%20coli.pdf" class="btn btn-bio" target="_blank">
+                                <i class="fas fa-bacteria"></i> E. coli (PDF)
+                            </a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC2ADM/Bio/Classificacao_Eucalipto.png" class="btn btn-outline" style="border-color: #10b981; color: #10b981;" target="_blank">
+                                <i class="fas fa-tree"></i> Eucalipto (PNG)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Química -->
+        <section class="section" style="border-left-color: #8b5cf6;">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Química</h2>
+                    <p>Relatório Técnico sobre Lipídios</p>
+                </div>
+            </div>
+            
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Lipídios: Estrutura e Funções</h3>
+                        <p>Relatório científico</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Relatório técnico-científico desenvolvido para a disciplina de Química, abordando a classe dos lipídios: estrutura química (ácidos graxos, triglicerídeos, fosfolipídios e esteroides), funções biológicas (reserva energética, isolamento térmico, componentes de membrana), classificação e importância na alimentação humana. O trabalho inclui fundamentação teórica, experimentos práticos e análise de resultados.</p>
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC2ADM/Quim/Relat%C3%B3rio%20Lip%C3%ADdios%20(V2.0).pdf" class="btn btn-quim" target="_blank">
+                                <i class="fas fa-file-alt"></i> Relatório Completo (PDF)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>Projetos desenvolvidos por <strong>Kawã Fernandes Moreira</strong> durante o 2º ano do curso técnico em Administração</p>
+            <p>ETEC de Carapicuíba | 2024</p>
+            <p>Repositório: <a href="https://github.com/kawamoreira/Kawa-Moreira-Portfolio" class="github-link" target="_blank">github.com/kawamoreira/Kawa-Moreira-Portfolio</a></p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">© 2025 - Todos os projetos são de caráter educacional</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adiciona animação de entrada para as seções
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            // Adiciona interatividade aos cards
+            const cards = document.querySelectorAll('.project-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.section-icon i');
+                    if (icon) {
+                        icon.style.transform = 'scale(1.1)';
+                        icon.style.transition = 'transform 0.3s ease';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.section-icon i');
+                    if (icon) {
+                        icon.style.transform = 'scale(1)';
+                    }
+                });
+            });
+            
+            console.log("Página 2024 - Projetos do 2º Ano ADM");
+            console.log("Projeto Integrador II: PlásTec");
+            console.log("Disciplinas: AI, PORDP, Biologia, Química");
+        });
+    </script>
+</body>
+</html>
