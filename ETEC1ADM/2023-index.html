@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 - Projetos do 1º Ano ADM | Kawã Fernandes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .year-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 20px 0 60px;
+        }
+        
+        .section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #f59e0b;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 30px;
+            color: white;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+        
+        .section-title p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+        
+        /* Project Cards */
+        .project-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .project-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-header {
+            padding: 25px 25px 15px;
+            background: white;
+        }
+        
+        .project-header h3 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        
+        .project-header p {
+            color: #64748b;
+            font-size: 1rem;
+        }
+        
+        .project-body {
+            padding: 0 25px 25px;
+            flex-grow: 1;
+        }
+        
+        .project-body p {
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f59e0b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #f59e0b;
+            border: 2px solid #f59e0b;
+        }
+        
+        .btn-outline:hover {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        /* Custom button variants for different sections */
+        .btn-instagram {
+            background: #e1306c;
+        }
+        .btn-instagram:hover {
+            background: #c13584;
+        }
+        .btn-youtube {
+            background: #ff0000;
+        }
+        .btn-youtube:hover {
+            background: #cc0000;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .project-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .section-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 30px 20px;
+            }
+        }
+        
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-content p {
+            margin-bottom: 15px;
+            color: #cbd5e1;
+        }
+        
+        .github-link {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .github-link:hover {
+            text-decoration: underline;
+        }
+        
+        .sub-section-title {
+            font-size: 1.2rem;
+            margin: 20px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+            color: #334155;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="year-badge">1º Ano ADM - 2023</div>
+            <h1>Projetos do Primeiro Ano</h1>
+            <p class="subtitle">Trabalhos desenvolvidos durante o primeiro ano do curso técnico em Administração na ETEC de Carapicuíba, incluindo o projeto integrador Fragatta Imports, estudos de marketing, administração, história, geografia e muito mais.</p>
+            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Voltar ao Portfólio Principal
+            </a>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="container main-content">
+        
+        <!-- ==================== PROJETO INTEGRADOR I ==================== -->
+        <section class="section" style="border-left-color: #f59e0b;">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Projeto Integrador I / Multidisciplinar</h2>
+                    <p>Fragatta Imports - Importação de veículos</p>
+                </div>
+            </div>
+            
+            <div class="project-cards">
+                <!-- Websites e mídias sociais -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>🌐 Websites & Redes Sociais</h3>
+                        <p>Presença digital da Fragatta Imports</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Projeto em grupo com foco na importação de carros, utilizado no contexto acadêmico para resolver problemas e desenvolver projetos de negócios. A Fragatta Imports simulou uma empresa de importação de veículos de luxo, aplicando conceitos de administração, marketing, logística e finanças.</p>
+                        <div class="project-links">
+                            <a href="https://fragattaimports.wixsite.com/fragattaimports" class="btn" target="_blank">
+                                <i class="fas fa-globe"></i> Site Wix
+                            </a>
+                            <a href="https://web.archive.org/web/20231030154848/https://www.fragattaimports.website/" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-archive"></i> Wayback Machine
+                            </a>
+                            <a href="https://github.com/KawaMoreira/Kawa-Moreira-Portfolio/blob/main/ETEC1ADM/Fragatta%20Imports/(Principal)/1.P%C3%A1gina%20Inicial/30.10/P%C3%A1gina%20inicial%20_%20Fragatta%20Imports.htm" class="btn btn-outline" target="_blank">
+                                <i class="fab fa-github"></i> Versão GitHub
+                            </a>
+                            <a href="https://www.instagram.com/fragattaimports.adm/" class="btn btn-instagram" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto Integrador - Documentos do grupo -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>📁 Projeto Integrador (PI)</h3>
+                        <p>Divisão de tarefas, problemática e áreas funcionais</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Documentos que estruturam o projeto integrador: divisão de funções no grupo, problemática do negócio, e análises específicas por área (RH, Produção, Marketing, Financeiro, Jurídico, Logística, Networking).</p>
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/PI/Divis%C3%A3o_de_Fun%C3%A7%C3%B5es_no_Projeto_Fragatta.pdf" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-users"></i> Divisão de Funções
+                            </a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/PI/(P)Projeto_Interdisciplinar_Adm_1.pdf" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-question-circle"></i> Problemática
+                            </a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/PI/(P1)Administração_e_Recursos_humanos(6).pdf" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-chalkboard-user"></i> Adm & RH
+                            </a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/PI/(P2)Produção_e_Qualidade..pdf" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-industry"></i> Produção
+                            </a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/PI/(P3)Marketing_e_Vendas.Divisão.pdf" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-chart-line"></i> Marketing
+                            </a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/PI/(P4)Questões_Financeiras_e_Jurídicas.Divisão.pdf" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-gavel"></i> Financeiro & Jurídico
+                            </a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/PI/(P5)Logística_e_Compras_(1).pdf" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-truck"></i> Logística
+                            </a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/PI/Networking.pdf" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-share-alt"></i> Networking
+                            </a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/PI/tabela_de_pre%C3%A7os.pdf" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-table"></i> Tabela de Preços
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desenvolvimento das Ações de Marketing e dos Processos Comerciais -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>📈 DAMPC - Marketing & Processos Comerciais</h3>
+                        <p>Conceitos fundamentais aplicados à Fragatta</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Materiais sobre os 4Ps do Marketing, 5 Forças de Porter, Análise SWOT, Ciclo de Vida do Produto, Segmentação de Mercado, Necessidades/Desejos/Demandas, entre outros, desenvolvidos para embasar as decisões de marketing e vendas da empresa fictícia.</p>
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/DAMPC/Revisao_1_Semestre_1.pdf" class="btn btn-outline" target="_blank">Revisão 1º Semestre</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/DAMPC/4_Ps_do_Marketing.pdf" class="btn btn-outline" target="_blank">4Ps do Marketing</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/DAMPC/5_For%C3%A7as_de_Porter.pdf" class="btn btn-outline" target="_blank">5 Forças de Porter</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/DAMPC/An%C3%A1lise_SWOT.pdf" class="btn btn-outline" target="_blank">Análise SWOT</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/DAMPC/Ciclo_de_Vida_de_um_Produto_(2).pdf" class="btn btn-outline" target="_blank">Ciclo de Vida</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/DAMPC/Necessidades_Desejos_Demandas_16.08.2023.pdf" class="btn btn-outline" target="_blank">Necessidades/Desejos</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/DAMPC/Segmenta%C3%A7%C3%A3o_de_Mercado_na_Fragatta.pdf" class="btn btn-outline" target="_blank">Segmentação</a>
+                        </div>
+                    </div>
+                </div>
+				<!-- NOVO CARD - LOGOTIPOS -->
+				<div class="project-card">
+					<div class="project-header">
+						<h3>🎨 Logotipos da Fragatta Imports</h3>
+						<p>Identidade visual do projeto</p>
+					</div>
+					<div class="project-body">
+						<p>Desenvolvimento da marca: versão protótipo e versão final do logotipo utilizado no site, redes sociais e materiais do projeto integrador.</p>
+						<div class="project-links">
+							<a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/Logo_old.avif" class="btn btn-outline" target="_blank">
+								<i class="fas fa-image"></i> Ver protótipo (AVIF)
+							</a>
+							<a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Fragatta%20Imports/Logo.jpg" class="btn" target="_blank">
+								<i class="fas fa-image"></i> Ver logo final (JPG)
+							</a>
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+        
+        <!-- ==================== LEGISLAÇÃO EMPRESARIAL ==================== -->
+        <section class="section" style="border-left-color: #3b82f6;">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);">
+                    <i class="fas fa-file-signature"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Legislação Empresarial</h2>
+                    <p>Contrato Social de empresa fictícia</p>
+                </div>
+            </div>
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Kawã F.S. Moreira Churrascaria Ltda</h3>
+                        <p>Elaboração de contrato social</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Atividade prática da disciplina de Legislação Empresarial onde foi desenvolvido um contrato social completo para uma empresa fictícia no ramo de churrascaria, contemplando cláusulas sobre capital social, administração, responsabilidades dos sócios, distribuição de lucros, duração da empresa e foro.</p>
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/LE/Atividade_LE.pdf" class="btn" target="_blank">
+                                <i class="fas fa-file-contract"></i> Contrato Social (PDF)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==================== PLANEJAMENTO E ORGANIZAÇÃO DE ROTINAS ADMINISTRATIVAS ==================== -->
+        <section class="section" style="border-left-color: #8b5cf6;">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);">
+                    <i class="fas fa-chalkboard-user"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Planejamento e Organização de Rotinas Administrativas</h2>
+                    <p>Teorias da administração, organogramas e apresentação teatral</p>
+                </div>
+            </div>
+            
+            <div class="project-cards">
+                <!-- Pesquisas teóricas -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>📚 Administração Clássica e Estruturas</h3>
+                        <p>Teorias, organogramas e departamentalização</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Pesquisas aprofundadas sobre a Administração Clássica (Taylor, Fayol, Ford), tipos de organograma, estruturas organizacionais (funcional, linear, divisional) e formas de departamentalização. Materiais teóricos essenciais para a compreensão da organização empresarial.</p>
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/PORA/Administracao_Classica_Completo.pdf" class="btn btn-outline" target="_blank">Adm. Clássica Completo</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/PORA/ATIVIDADE_ORGANOGRAMA_2.pdf" class="btn btn-outline" target="_blank">Tipos de Organograma</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/PORA/Estruturas_Organizacionais_PORA_04.10.2023.pdf" class="btn btn-outline" target="_blank">Estruturas Organizacionais</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/PORA/ORGANIZACAO_Tipos_de_estrutura_funcional.pdf" class="btn btn-outline" target="_blank">Departamentalização</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Apresentação Teatral -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>🎭 "Duas Faces no Ambiente Profissional"</h3>
+                        <p>Peça teatral sobre comportamentos no trabalho</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Apresentação teatral desenvolvida para a disciplina, abordando a dualidade de comportamentos no ambiente profissional (ética x antiética, cooperação x competição destrutiva). A peça buscou conscientizar sobre a importância da postura profissional e do respeito nas relações de trabalho.</p>
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/PORA/Apresentacao_Teatral/T%C3%ADtulo%20Duas%20Faces%20no%20Ambiente%20Profissional%20...pdf" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-scroll"></i> Roteiro
+                            </a>
+                            <a href="https://youtu.be/tDp0aSwmj6A?feature=shared" class="btn btn-youtube" target="_blank">
+                                <i class="fab fa-youtube"></i> Vídeo (YouTube)
+                            </a>
+                            <a href="https://youtu.be/eE5Rafi_KbI" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-video"></i> Backup
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==================== GEOGRAFIA ==================== -->
+        <section class="section" style="border-left-color: #10b981;">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #10b981 0%, #34d399 100%);">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Geografia</h2>
+                    <p>Mapas conceituais e mentais</p>
+                </div>
+            </div>
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Globalização e Espaço</h3>
+                        <p>Mapa conceitual interativo</p>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Geo/Mapa_Conceitual_Globalizacao_Espaco.png" class="btn btn-outline" target="_blank">Fundo branco (PNG)</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Geo/Mapa_Conceitual_Azul_Globalizacao_Espaco.png" class="btn btn-outline" target="_blank">Fundo azul (PNG)</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Geo/Mapa_Conceitual_noBG_Globalizacao_Espaco.png" class="btn btn-outline" target="_blank">Sem fundo (PNG)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Categorias da Geografia</h3>
+                        <p>Mapa mental</p>
+                    </div>
+                    <div class="project-body">
+                        <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Geo/Mapa_Mental_Categorias_Geografia.png" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-brain"></i> Visualizar
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Migração</h3>
+                        <p>Mapa mental</p>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Geo/Mapa_Mental_Micracao.jpg" class="btn btn-outline" target="_blank">JPG</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Geo/Mapa_Mental_Micracao.png" class="btn btn-outline" target="_blank">PNG (sem fundo)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==================== HISTÓRIA ==================== -->
+        <section class="section" style="border-left-color: #ec4899;">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <div class="section-title">
+                    <h2>História</h2>
+                    <p>Pesquisas, resumos e projeto Vikings</p>
+                </div>
+            </div>
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>📜 Resumos e Mapas Mentais</h3>
+                        <p>Grécia, Roma, Capitania de Pernambuco, Renascentismo</p>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Hist/Resumo_Grecia_Roma.pdf" class="btn btn-outline" target="_blank">Resumo Grécia e Roma</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Hist/Capitania_Pernambuco.pdf" class="btn btn-outline" target="_blank">Capitania de Pernambuco</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Hist/Mapa_Mental_Renascentismo.jpeg" class="btn btn-outline" target="_blank">Mapa Mental - Renascentismo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>⚔️ Projeto Vikings</h3>
+                        <p>Slides e roteiro de pesquisa</p>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Hist/Vikings_Atualizado.pdf" class="btn btn-outline" target="_blank">Slides Vikings</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Hist/Roteiro_Pesquisa_Vikings.pdf" class="btn btn-outline" target="_blank">Roteiro da Pesquisa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==================== EDUCAÇÃO FÍSICA ==================== -->
+        <section class="section" style="border-left-color: #14b8a6;">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #14b8a6 0%, #2dd4bf 100%);">
+                    <i class="fas fa-hand-ball"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Educação Física</h2>
+                    <p>Regras do Handebol Indoor</p>
+                </div>
+            </div>
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Explorando as Regras do Handebol</h3>
+                        <p>Regras 1, 2 e Anexo 2</p>
+                    </div>
+                    <div class="project-body">
+                        <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/EF/Explorando_as_Regras_do_Handebol.pdf" class="btn" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Baixar PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==================== LÍNGUA PORTUGUESA ==================== -->
+        <section class="section" style="border-left-color: #f97316;">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Língua Portuguesa</h2>
+                    <p>Relatórios de leitura e projeto sobre mídias sociais</p>
+                </div>
+            </div>
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>📖 Relatórios de Leitura</h3>
+                        <p>Livros técnicos: Sistemas Operacionais e Química 1</p>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/LP/Relatorio_Livro[1].pdf" class="btn btn-outline" target="_blank">Sistemas Operacionais</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/LP/Relat%C3%B3rio_Livro_QUIM.1-SEM.pdf" class="btn btn-outline" target="_blank">Química 1 (Anglo)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>📱 Impactos da Mídia Social na Oralidade</h3>
+                        <p>Guia prático e pesquisa</p>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/LP/(Guia)Impactos_da_midia_social_na_oralidade_20230929_153320_0000.pdf" class="btn btn-outline" target="_blank">Guia Prático</a>
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/LP/(Pesquisa)Impacto%20das%20M%C3%ADdias%20Sociais%20na%20Comunica%C3%A7%C3%A3o%20Oral.pdf" class="btn btn-outline" target="_blank">Pesquisa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==================== BIOLOGIA ==================== -->
+        <section class="section" style="border-left-color: #16a34a;">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #16a34a 0%, #4ade80 100%);">
+                    <i class="fas fa-microscope"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Biologia</h2>
+                    <p>Célula Animal</p>
+                </div>
+            </div>
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Estrutura da Célula Animal</h3>
+                        <p>Pesquisa ilustrada</p>
+                    </div>
+                    <div class="project-body">
+                        <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Bio/Celula_Animal.pdf" class="btn" target="_blank">
+                            <i class="fas fa-download"></i> Baixar PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==================== QUÍMICA ==================== -->
+        <section class="section" style="border-left-color: #8b5cf6;">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Química</h2>
+                    <p>Conceitos básicos e Tensoativos</p>
+                </div>
+            </div>
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Revisão de Química Básica</h3>
+                        <p>Conceitos fundamentais</p>
+                    </div>
+                    <div class="project-body">
+                        <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Quim/Revis%C3%A3o.pdf" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-atom"></i> Revisão (PDF)
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Tensoativos</h3>
+                        <p>Estudo sobre surfactantes</p>
+                    </div>
+                    <div class="project-body">
+                        <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Quim/Tensoativos.pdf" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-soap"></i> Tensoativos (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==================== ARTE ==================== -->
+        <section class="section" style="border-left-color: #ef4444;">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Arte</h2>
+                    <p>Desenho Pop Art</p>
+                </div>
+            </div>
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Pop Art</h3>
+                        <p>Produção artística inspirada no movimento pop</p>
+                    </div>
+                    <div class="project-body">
+                        <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC1ADM/Art/Pop_Art.jpg" class="btn" target="_blank">
+                            <i class="fas fa-image"></i> Visualizar imagem
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>Projetos desenvolvidos por <strong>Kawã Fernandes Moreira</strong> durante o 1º ano do curso técnico em Administração</p>
+            <p>ETEC de Carapicuíba | 2023</p>
+            <p>Repositório: <a href="https://github.com/kawamoreira/Kawa-Moreira-Portfolio" class="github-link" target="_blank">github.com/kawamoreira/Kawa-Moreira-Portfolio</a></p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">© 2025 - Todos os projetos são de caráter educacional</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animações de entrada
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            // Efeito hover nos cards
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.section-icon i');
+                    if (icon) {
+                        icon.style.transform = 'scale(1.1)';
+                        icon.style.transition = 'transform 0.3s ease';
+                    }
+                });
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.section-icon i');
+                    if (icon) icon.style.transform = 'scale(1)';
+                });
+            });
+            
+            console.log("Página 2023 - Projetos do 1º Ano ADM");
+            console.log("Projeto Integrador: Fragatta Imports");
+        });
+    </script>
+</body>
+</html>
