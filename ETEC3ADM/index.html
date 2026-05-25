@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 - Projetos do 3º Ano ADM | Kawã Fernandes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .year-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 20px 0 60px;
+        }
+        
+        .section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #3b82f6;
+        }
+        
+        .section-tcc {
+            border-left-color: #10b981;
+        }
+        
+        .section-aps {
+            border-left-color: #f59e0b;
+        }
+        
+        .section-socio {
+            border-left-color: #8b5cf6;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 30px;
+            color: white;
+        }
+        
+        .icon-tcc {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+        }
+        
+        .icon-aps {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        }
+        
+        .icon-socio {
+            background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+        
+        .section-title p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+        
+        /* Project Cards */
+        .project-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .project-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-header {
+            padding: 25px 25px 15px;
+            background: white;
+        }
+        
+        .project-header h3 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        
+        .project-header p {
+            color: #64748b;
+            font-size: 1rem;
+        }
+        
+        .project-body {
+            padding: 0 25px 25px;
+            flex-grow: 1;
+        }
+        
+        .project-body p {
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+        
+        .btn-outline:hover {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .btn-tcc {
+            background: #10b981;
+        }
+        
+        .btn-tcc:hover {
+            background: #0da271;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        .btn-aps {
+            background: #f59e0b;
+        }
+        
+        .btn-aps:hover {
+            background: #d97706;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        .btn-socio {
+            background: #8b5cf6;
+        }
+        
+        .btn-socio:hover {
+            background: #7c3aed;
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+        }
+        
+        /* Designs Section */
+        .designs-section {
+            margin-top: 40px;
+        }
+        
+        .designs-section h3 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .design-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .design-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #f59e0b;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .design-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .design-item h4 {
+            font-size: 1.2rem;
+            color: #1e293b;
+        }
+        
+        .design-date {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .design-item p {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+        
+        /* Logo Section */
+        .logo-section {
+            margin-top: 40px;
+            background: #f0f9ff;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px dashed #bae6fd;
+        }
+        
+        .logo-section h3 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+        
+        .logo-preview {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .logo-img {
+            width: 150px;
+            height: 150px;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+        
+        .logo-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .logo-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-content p {
+            margin-bottom: 15px;
+            color: #cbd5e1;
+        }
+        
+        .github-link {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .github-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .project-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .section-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 30px 20px;
+            }
+            
+            .logo-preview {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="year-badge">3º Ano ADM - 2025</div>
+            <h1>Projetos do Terceiro Ano</h1>
+            <p class="subtitle">Trabalhos desenvolvidos durante o último ano do curso técnico em Administração na ETEC de Carapicuíba, incluindo TCC, APS e projetos interdisciplinares.</p>
+            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Voltar ao Portfólio Principal
+            </a>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="container main-content">
+        
+        <!-- TCC Section -->
+        <section class="section section-tcc">
+            <div class="section-header">
+                <div class="section-icon icon-tcc">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Trabalho de Conclusão de Curso (TCC)</h2>
+                    <p>GrainShield Brasil - Soluções em Proteção de Grãos Ltda.</p>
+                </div>
+            </div>
+            
+            <div class="project-cards">
+                <div class="project-card">
+					<div class="project-header">
+						<h3>Website do TCC</h3>
+						<p>Apresentação completa da empresa fictícia – duas versões</p>
+					</div>
+					<div class="project-body">
+						<p>Website desenvolvido para apresentar o projeto de TCC "GrainShield Brasil", uma empresa especializada em soluções para proteção e armazenamento de grãos. O site inclui todas as seções necessárias para demonstrar o plano de negócios completo.</p>
+						<div class="project-links">
+							<a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/GrainShield/Final/TCC_Website.html" class="btn btn-tcc">
+								<i class="fas fa-external-link-alt"></i> Versão Original (2025)
+							</a>
+							<a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/GrainShield/" class="btn btn-outline" style="border-color: #10b981; color: #10b981;">
+								<i class="fas fa-code-branch"></i> Versão Atualizada (2026)
+							</a>
+						</div>
+					</div>
+				</div>
+            <div class="project-card">
+				<div class="project-header">
+					<h3>TCC Completo (PDF)</h3>
+					<p>Trabalho em grupo aprovado com menção MB</p>
+				</div>
+				<div class="project-body">
+					<p>Documento completo do Trabalho de Conclusão de Curso <strong>"ENSINO MÉDIO COM HABILITAÇÃO TÉCNICA PROFISSIONAL EM ADMINISTRAÇÃO"</strong> apresentado e aprovado em 2025 com menção final <strong>MB (Muito Bom)</strong>. O arquivo contém toda a pesquisa, plano de negócios, análises e conclusões desenvolvidas em grupo.</p>
+					<div class="project-links">
+						<a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/GrainShield/TCC_ADM.pdf" class="btn btn-tcc" target="_blank">
+							<i class="fas fa-file-pdf"></i> Abrir PDF do TCC
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			            <div class="project-card">
+                <div class="project-header">
+                    <h3>Slides do TCC</h3>
+                    <p>Apresentação em PDF do plano de negócios</p>
+                </div>
+                <div class="project-body">
+                    <p>Slides utilizados na defesa do Trabalho de Conclusão de Curso, contendo os principais pontos da pesquisa, análise de mercado, estratégias e projeções financeiras da GrainShield Brasil.</p>
+                    <div class="project-links">
+                        <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/GrainShield/Slides_TCC.pdf" class="btn btn-tcc" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Baixar Slides (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+			
+        </section>
+        
+        <!-- APS Section -->
+        <section class="section section-aps">
+            <div class="section-header">
+                <div class="section-icon icon-aps">
+                    <i class="fas fa-ice-cream"></i>
+                </div>
+                <div class="section-title">
+					<h2>Projeto Multidisciplinar</h2>
+					<p>Neve Encantada Gelatto - Sorveteria Artesanal</p>
+                </div>
+            </div>
+            
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Website Principal</h3>
+                        <p>Design e desenvolvimento do site da sorveteria</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Site desenvolvido para a sorveteria artesanal "Neve Encantada Gelatto", contendo informações sobre produtos, localização, história da marca e atraindo clientes com design atrativo e funcional. O projeto também serviu como atividade integradora para a disciplina de <strong>Tecnologia da Informação em Administração (TIA)</strong>.</p>
+                        
+                        <div class="designs-section">
+                            <h3>Evolução do Design</h3>
+                            <div class="design-timeline">
+                                <div class="design-item">
+                                    <div class="design-item-header">
+                                        <h4>Design 1 (Beta)</h4>
+                                        <span class="design-date">11/09/2025</span>
+                                    </div>
+                                    <p>Primeira versão do website com layout básico e estrutura inicial.</p>
+                                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Website/Beta/Neve%20Encantada%20(Beta1).html" class="btn btn-aps">
+                                        <i class="fas fa-eye"></i> Visualizar Design 1
+                                    </a>
+                                </div>
+                                
+                                <div class="design-item">
+                                    <div class="design-item-header">
+                                        <h4>Design 2 (Beta)</h4>
+                                        <span class="design-date">17/11/2025</span>
+                                    </div>
+                                    <p>Segunda versão com melhorias no design e adição de mais conteúdo.</p>
+                                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Website/Beta/Neve%20Encantada%20(Beta2).html" class="btn btn-aps">
+                                        <i class="fas fa-eye"></i> Visualizar Design 2
+                                    </a>
+                                </div>
+                                
+                                <div class="design-item">
+                                    <div class="design-item-header">
+                                        <h4>Design Final</h4>
+                                        <span class="design-date">Versão Final</span>
+                                    </div>
+                                    <p>Versão final do website com design completo e funcionalidades implementadas.</p>
+                                    <div class="project-links">
+                                        <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Website/Full/Home.htm" class="btn btn-aps">
+                                            <i class="fas fa-external-link-alt"></i> Website Final
+                                        </a>
+                                        <a href="https://vestuarioaxel.my.canva.site/neve-encantada/" class="btn btn-outline" style="border-color: #f59e0b; color: #f59e0b;">
+                                            <i class="fas fa-palette"></i> Versão Canva
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Apresentação e Identidade Visual</h3>
+                        <p>Materiais de apoio e branding</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Materiais desenvolvidos para a disciplina <strong>Administração da Produção e Serviços (APS)</strong>, mas utilizados em todo o projeto multidisciplinar. Inclui a identidade visual da marca (logo) e a apresentação institucional do negócio.</p>
+                        
+                        <div class="project-links" style="margin-top: 20px;">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Apresentação/Final/Neve_Encantada_Negocios.html" class="btn btn-aps">
+                                <i class="fas fa-presentation"></i> Apresentação do Negócio
+                            </a>
+                        </div>
+                        
+                        <div class="logo-section">
+                            <h3>Logo da Marca</h3>
+                            <div class="logo-preview">
+                                <div class="logo-img">
+                                    <!-- Logo placeholder - na prática, você pode carregar a imagem -->
+                                    <i class="fas fa-ice-cream" style="font-size: 4rem; color: #3b82f6;"></i>
+                                </div>
+                                <div class="logo-links">
+                                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Documentos/White%20and%20Blue%20Illustrative%20Playfull%20Ice%20Cream%20Logo%20(2).png" class="btn btn-outline" style="border-color: #f59e0b; color: #f59e0b;">
+                                        <i class="fas fa-file-image"></i> Logo (PNG)
+                                    </a>
+                                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Documentos/White%20and%20Blue%20Illustrative%20Playfull%20Ice%20Cream%20Logo%20(1).pdf" class="btn btn-outline" style="border-color: #f59e0b; color: #f59e0b;">
+                                        <i class="fas fa-file-pdf"></i> Logo (PDF)
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+						
+						
+
+                <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #1e293b;">Peças Gráficas</h3>
+                <div class="project-links">
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Documentos/Instagram%20Story%20Dia%20do%20Sorvete%20Delicado%20Rosa%20e%20Amarelo.pdf" class="btn btn-outline" style="border-color: #f59e0b; color: #f59e0b;" target="_blank">
+                        <i class="fas fa-rectangle-ad"></i> Panfleto Institucional
+                    </a>
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Documentos/C%C3%B3pia%20de%20Banner%2060x90.pdf_20260425_095315_0000.pdf" class="btn btn-outline" style="border-color: #f59e0b; color: #f59e0b;" target="_blank">
+                        <i class="fas fa-image"></i> Banner 60x90cm
+                    </a>
+                    </div>
+                </div>
+            </div>
+			        <div class="project-card">
+            <div class="project-header">
+                <h3>Plano de Negócios</h3>
+                <p>Documentos organizados por disciplina</p>
+            </div>
+            <div class="project-body">
+                <p>O plano de negócios da Neve Encantada foi construído de forma integrada entre diferentes componentes curriculares:</p>
+                
+                <h4 style="margin: 15px 0 5px 0; color: #f59e0b;">📊 Administração da Produção e Serviços</h4>
+                <div class="project-links" style="margin-bottom: 15px;">
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Documentos/Pesquisa%20de%20Campo%20Neve%20Encantada_compressed.pdf" class="btn btn-outline" style="border-color: #f59e0b; color: #f59e0b;" target="_blank">
+                        <i class="fas fa-square-poll-vertical"></i> Pesquisa de Campo
+                    </a>
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Documentos/Entradas.png" class="btn btn-outline" style="border-color: #f59e0b; color: #f59e0b;" target="_blank">
+                        <i class="fas fa-diagram-project"></i> Fluxograma de Processos
+                    </a>
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Documentos/Administra%C3%A7%C3%A3o%20da%20Produ%C3%A7%C3%A3o%20e%20Servi%C3%A7os.pdf" class="btn btn-outline" style="border-color: #f59e0b; color: #f59e0b;" target="_blank">
+                        <i class="fas fa-people-group"></i> Relatório do Grupo (APS)
+                    </a>
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Apresenta%C3%A7%C3%A3o/Slides_Final_APS.pdf" class="btn btn-aps" target="_blank">
+                        <i class="fas fa-chalkboard-user"></i> Slides Finais (PDF)
+                    </a>
+                </div>
+
+                <h4 style="margin: 15px 0 5px 0; color: #ec4899;">👥 Administração de Recursos Humanos</h4>
+                <div class="project-links" style="margin-bottom: 15px;">
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Documentos/Manual_Integra%C3%A7%C3%A3o_Neve_Encantada.pdf" class="btn btn-outline" style="border-color: #ec4899; color: #ec4899;" target="_blank">
+                        <i class="fas fa-book"></i> Manual de Integração
+                    </a>
+                </div>
+
+                <h4 style="margin: 15px 0 5px 0; color: #3b82f6;">💡 Desenvolvimento de Modelos de Negócios</h4>
+                <div class="project-links" style="margin-bottom: 15px;">
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Documentos/Slides_Plano_de_Negocios.html" class="btn btn-outline" style="border-color: #3b82f6; color: #3b82f6;" target="_blank">
+                        <i class="fas fa-chalkboard-user"></i> Apresentação do Negócio (Slides)
+                    </a>
+                </div>
+
+                <h4 style="margin: 15px 0 5px 0; color: #10b981;">📑 Documentos Gerais (PNBox)</h4>
+                <div class="project-links">
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Neve%20Encantada/Documentos/Relat%C3%B3rio%20Geral%20Plano%20Neg%C3%B3cio_compressed.pdf.pdf" class="btn btn-outline" style="border-color: #10b981; color: #10b981;" target="_blank">
+                        <i class="fas fa-file-lines"></i> Relatório Geral
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+        </section>
+		
+		<!-- ARH Section -->
+<section class="section" style="border-left-color: #ec4899;">
+    <div class="section-header">
+        <div class="section-icon" style="background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);">
+            <i class="fas fa-users"></i>
+        </div>
+        <div class="section-title">
+            <h2>Administração de Recursos Humanos (ARH)</h2>
+            <p>Campanhas de conscientização e desenvolvimento de competências</p>
+        </div>
+    </div>
+    
+    <div class="project-cards">
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Outubro Rosa</h3>
+                <p>Banner institucional - conscientização sobre o câncer de mama</p>
+            </div>
+            <div class="project-body">
+                <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/ARH/[QR%20Code]%20C%C3%B3pia%20de%20Banner%2060x90.pdf_20250911_141911_0000.pdf%20(1).pdf" class="btn" style="background: #ec4899;" target="_blank">
+                    <i class="fas fa-file-pdf"></i> Baixar Banner (PDF)
+                </a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Novembro Azul</h3>
+                <p>Duas versões de banner sobre saúde do homem</p>
+            </div>
+            <div class="project-body">
+                <div class="project-links">
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/ARH/Prototipo_Novembro_Azul.pdf" class="btn btn-outline" style="border-color: #ec4899; color: #ec4899;" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Versão 1 (PDF)
+                    </a>
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/ARH/Banner%20Novembro%20Azul%2060x90.pdf.pdf" class="btn btn-outline" style="border-color: #ec4899; color: #ec4899;" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Versão 2 (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Hard Skills</h3>
+                <p>Competências técnicas – documento completo</p>
+            </div>
+            <div class="project-body">
+                <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/ARH/HARD%20SKILLS%20COMPLETO.pdf" class="btn" style="background: #ec4899;" target="_blank">
+                    <i class="fas fa-file-pdf"></i> Hard Skills (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+		<!-- ECO Section -->
+<section class="section" style="border-left-color: #16a34a;">
+    <div class="section-header">
+        <div class="section-icon" style="background: linear-gradient(135deg, #16a34a 0%, #4ade80 100%);">
+            <i class="fas fa-scale-balanced"></i>
+        </div>
+        <div class="section-title">
+            <h2>Ética e Cidadania Organizacional (ECO)</h2>
+            <p>Infográfico: COP30 x Carta da Terra</p>
+        </div>
+    </div>
+    
+    <div class="project-cards">
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Infográfico comparativo</h3>
+                <p>Relação entre a COP30 e os princípios da Carta da Terra</p>
+            </div>
+            <div class="project-body">
+                <div class="project-links">
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/ECO/Infogr%C3%A1fico.pdf" class="btn" style="background: #16a34a;" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Versão PDF
+                    </a>
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/ECO/Infogr%C3%A1fico.png" class="btn btn-outline" style="border-color: #16a34a; color: #16a34a;" target="_blank">
+                        <i class="fas fa-image"></i> Versão PNG
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+		<!-- EEMCI Section -->
+<section class="section" style="border-left-color: #0ea5e9;">
+    <div class="section-header">
+        <div class="section-icon" style="background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);">
+            <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="section-title">
+            <h2>Estudos da Economia, Mercado e Comércio Internacional</h2>
+            <p>Teoria econômica, exportação e estudo de caso Embraer</p>
+        </div>
+    </div>
+    
+    <div class="project-cards">
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Resenha Crítica</h3>
+                <p>Bresser-Pereira – "Crescimento, distribuição, progresso técnico e as fases do capitalismo"</p>
+            </div>
+            <div class="project-body">
+                <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/EEMCI/Resenha%20Artigo%20Completo.pdf" class="btn" style="background: #0ea5e9;" target="_blank">
+                    <i class="fas fa-file-pdf"></i> Resenha Completa (PDF)
+                </a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Processo de Exportação</h3>
+                <p>Estudo de caso: aeronave EMBRAER E195-E2</p>
+            </div>
+            <div class="project-body">
+                <div class="project-links">
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/EEMCI/Estrutura%20do%20Trabalho%20em%20Equipe_exporta%C3%A7%C3%A3o_25%20e%2026-11-2025.pdf" class="btn btn-outline" style="border-color: #0ea5e9; color: #0ea5e9;" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Estrutura do Trabalho (PDF)
+                    </a>
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/EEMCI/embraer.html" class="btn" style="background: #0ea5e9;" target="_blank">
+                        <i class="fas fa-chalkboard-user"></i> Apresentação em Slides
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+		<!-- PLE Section -->
+<section class="section" style="border-left-color: #f97316;">
+    <div class="section-header">
+        <div class="section-icon" style="background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);">
+            <i class="fas fa-truck"></i>
+        </div>
+        <div class="section-title">
+            <h2>Processos Logísticos Empresariais</h2>
+            <p>Curva ABC, modais de transporte, armazenagem e logística reversa</p>
+        </div>
+    </div>
+    
+    <div class="project-cards">
+        <!-- Curva ABC -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3>📊 Curva ABC no Excel</h3>
+                <p>Vídeo tutorial (4min51s)</p>
+            </div>
+            <div class="project-body">
+                <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/PLE/Curva_ABC/WhatsApp%20Video%202025-06-24%20at%2001.16.30.mp4" class="btn" style="background: #f97316;" target="_blank">
+                    <i class="fas fa-video"></i> Assistir ao vídeo
+                </a>
+            </div>
+        </div>
+        
+        <!-- Modais de transporte -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3>🚚 Modais de Transporte</h3>
+                <p>First-Mile, Middle-Mile e Last-Mile</p>
+            </div>
+            <div class="project-body">
+                <div class="project-links">
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/PLE/Modais/SCM.png" class="btn btn-outline" style="border-color: #f97316; color: #f97316;" target="_blank">
+                        <i class="fas fa-diagram-project"></i> Fluxograma (PNG)
+                    </a>
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/PLE/Modais/resumo_modais.pdf" class="btn btn-outline" style="border-color: #f97316; color: #f97316;" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Resumo (PDF)
+                    </a>
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/PLE/Modais/VISUALIZA%C3%87%C3%83O-IMPR.pdf_compressed.pdf" class="btn btn-outline" style="border-color: #f97316; color: #f97316;" target="_blank">
+                        <i class="fas fa-book-open"></i> HQ – Do Petróleo ao Motor
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Armazenagem -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3>📦 Armazenagem – Situação-Problema</h3>
+                <p>Empresa fictícia "Moda & Cia."</p>
+            </div>
+            <div class="project-body">
+                <div class="project-links">
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/PLE/Armazenagem/situacao_problema_armazenagem.pdf" class="btn btn-outline" style="border-color: #f97316; color: #f97316;" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Instruções da atividade
+                    </a>
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/PLE/Armazenagem/Moda%20%26%20Cia.html" class="btn" style="background: #f97316;" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Website do projeto
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Logística Reversa -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3>🔄 Logística Reversa</h3>
+                <p>Roteiro, pesquisa e fluxograma</p>
+            </div>
+            <div class="project-body">
+                <div class="project-links">
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/PLE/Logistica_Reversa/Roteiro%20da%20Atividade_%20Estrutura%20da%20atividade_25-11-2025_Carapicu%C3%ADba.pdf" class="btn btn-outline" style="border-color: #f97316; color: #f97316;" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Roteiro da atividade
+                    </a>
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/PLE/Logistica_Reversa/Log%C3%ADstica%204%C2%BA%20Bimestre.pdf" class="btn btn-outline" style="border-color: #f97316; color: #f97316;" target="_blank">
+                        <i class="fas fa-users"></i> Pesquisa em grupo
+                    </a>
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/PLE/Logistica_Reversa/Fluxograma.png" class="btn btn-outline" style="border-color: #f97316; color: #f97316;" target="_blank">
+                        <i class="fas fa-image"></i> Fluxograma (PNG)
+                    </a>
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/PLE/Logistica_Reversa/Fluxograma.pdf" class="btn btn-outline" style="border-color: #f97316; color: #f97316;" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Fluxograma (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+		<!-- Língua Portuguesa Section -->
+<section class="section" style="border-left-color: #f43f5e;">
+    <div class="section-header">
+        <div class="section-icon" style="background: linear-gradient(135deg, #f43f5e 0%, #fb7185 100%);">
+            <i class="fas fa-book-open"></i>
+        </div>
+        <div class="section-title">
+            <h2>Língua Portuguesa</h2>
+            <p>Fichamento literário e adaptação de conto</p>
+        </div>
+    </div>
+    
+    <div class="project-cards">
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Fichamento</h3>
+                <p>Escolas literárias da língua portuguesa</p>
+            </div>
+            <div class="project-body">
+                <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/LP/kawafernandesdasilvamoreira.fichamento.pdf" class="btn" style="background: #f43f5e;" target="_blank">
+                    <i class="fas fa-file-pdf"></i> Fichamento completo (PDF)
+                </a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Adaptação de conto</h3>
+                <p>"A Máscara da Morte Vermelha" – Edgar Allan Poe</p>
+            </div>
+            <div class="project-body">
+                <div class="project-links">
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/LP/Adapta%C3%A7%C3%A3o_A%20M%C3%A1scara%20da%20Morte%20Amarela.pdf" class="btn btn-outline" style="border-color: #f43f5e; color: #f43f5e;" target="_blank">
+                        <i class="fas fa-file-pdf"></i> História adaptada (PDF)
+                    </a>
+                    <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/LP/Romanticism%20Visual%20Art%20Presentation%20Brown%20and%20Cream%20Educational%20Style_compressed.pdf" class="btn btn-outline" style="border-color: #f43f5e; color: #f43f5e;" target="_blank">
+                        <i class="fas fa-chalkboard"></i> Slides da apresentação
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        <!-- Sociologia Section -->
+        <section class="section section-socio">
+            <div class="section-header">
+                <div class="section-icon icon-socio">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Projeto de Sociologia</h2>
+                    <p>Consciência Negra - Website Educativo</p>
+                </div>
+            </div>
+            
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Website Consciência Negra</h3>
+                        <p>Projeto interdisciplinar sobre diversidade e história</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Website educativo desenvolvido para a disciplina de Sociologia, abordando a importância da Consciência Negra, história da cultura afro-brasileira, personalidades importantes e a luta contra o racismo.</p>
+                        <p>O projeto visa promover reflexão e conscientização sobre a diversidade étnico-racial e sua importância na formação da sociedade brasileira.</p>
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/Consci%C3%AAncia%20Negra/Consciencia_Negra_website.html" class="btn btn-socio">
+                                <i class="fas fa-external-link-alt"></i> Acessar Website
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>Projetos desenvolvidos por <strong>Kawã Fernandes Moreira</strong> durante o 3º ano do curso técnico em Administração</p>
+            <p>ETEC de Carapicuíba | 2025</p>
+            <p>Repositório: <a href="https://github.com/kawamoreira/Kawa-Moreira-Portfolio" class="github-link" target="_blank">github.com/kawamoreira/Kawa-Moreira-Portfolio</a></p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">© 2025 - Todos os projetos são de caráter educacional</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adiciona animação de entrada para as seções
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            // Adiciona interatividade aos cards
+            const cards = document.querySelectorAll('.project-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.section-icon i');
+                    if (icon) {
+                        icon.style.transform = 'scale(1.1)';
+                        icon.style.transition = 'transform 0.3s ease';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.section-icon i');
+                    if (icon) {
+                        icon.style.transform = 'scale(1)';
+                    }
+                });
+            });
+            
+            console.log("Página 2025 - Projetos do 3º Ano ADM");
+            console.log("TCC: GrainShield Brasil");
+            console.log("APS: Neve Encantada Gelatto");
+            console.log("Sociologia: Consciência Negra");
+        });
+    </script>
+</body>
+</html>
