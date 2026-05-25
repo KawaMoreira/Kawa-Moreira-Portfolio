@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatec - Projetos do 1º Semestre Gestão Comercial | Kawã Fernandes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #065f46 0%, #10b981 100%);
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .year-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 20px 0 60px;
+        }
+        
+        .section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #10b981;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 30px;
+            color: white;
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+        
+        .section-title p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+        
+        /* Project Cards */
+        .project-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .project-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-header {
+            padding: 25px 25px 15px;
+            background: white;
+        }
+        
+        .project-header h3 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        
+        .project-header p {
+            color: #64748b;
+            font-size: 1rem;
+        }
+        
+        .project-body {
+            padding: 0 25px 25px;
+            flex-grow: 1;
+        }
+        
+        .project-body p {
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #10b981;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #10b981;
+            border: 2px solid #10b981;
+        }
+        
+        .btn-outline:hover {
+            background: #10b981;
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-content p {
+            margin-bottom: 15px;
+            color: #cbd5e1;
+        }
+        
+        .github-link {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .github-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .project-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .section-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="year-badge">1º Semestre Gestão Comercial - Fatec</div>
+            <h1>Projetos do Primeiro Semestre</h1>
+            <p class="subtitle">Trabalhos desenvolvidos durante o primeiro semestre do curso superior de Gestão Comercial na Fatec, incluindo pesquisas, apresentações e projetos interdisciplinares.</p>
+            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Voltar ao Portfólio Principal
+            </a>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="container main-content">
+        
+        <!-- Responsabilidade Socioambiental Section -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Responsabilidade Socioambiental</h2>
+                    <p>Pesquisa e apresentação sobre sustentabilidade e ética ambiental</p>
+                </div>
+            </div>
+            
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Projeto Socioambiental</h3>
+                        <p>Documento completo da pesquisa</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Trabalho desenvolvido para a disciplina de Responsabilidade Socioambiental, abordando os conceitos de sustentabilidade, ética ambiental e responsabilidade social corporativa. O documento explora a importância das práticas sustentáveis e o papel das organizações na construção de um futuro mais equilibrado.</p>
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/FATEC1GCOM/Socioambiental/Projeto_SOCIOAMBIENTAL.pdf" class="btn" target="_blank">
+                                <i class="fas fa-file-pdf"></i> Documento da Pesquisa (PDF)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Slides da Apresentação</h3>
+                        <p>Materiais de apoio utilizados na defesa do trabalho</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Apresentação em slides utilizada durante a defesa do projeto de Responsabilidade Socioambiental, contendo os principais pontos da pesquisa, argumentos e conclusões. Material desenvolvido para auxiliar na comunicação dos conceitos estudados.</p>
+                        <div class="project-links">
+                            <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/FATEC1GCOM/Socioambiental/SLIDES.pdf" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-file-pdf"></i> Slides da Apresentação (PDF)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>Projetos desenvolvidos por <strong>Kawã Fernandes Moreira</strong> durante o 1º semestre do curso superior de Gestão Comercial</p>
+            <p>Fatec | 2026</p>
+            <p>Repositório: <a href="https://github.com/kawamoreira/Kawa-Moreira-Portfolio" class="github-link" target="_blank">github.com/kawamoreira/Kawa-Moreira-Portfolio</a></p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">© 2026 - Todos os projetos são de caráter educacional</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adiciona animação de entrada para as seções
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            // Adiciona interatividade aos cards
+            const cards = document.querySelectorAll('.project-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.section-icon i');
+                    if (icon) {
+                        icon.style.transform = 'scale(1.1)';
+                        icon.style.transition = 'transform 0.3s ease';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.section-icon i');
+                    if (icon) {
+                        icon.style.transform = 'scale(1)';
+                    }
+                });
+            });
+            
+            console.log("Página Fatec - Projetos do 1º Semestre Gestão Comercial");
+            console.log("Disciplina: Responsabilidade Socioambiental");
+        });
+    </script>
+</body>
+</html>
