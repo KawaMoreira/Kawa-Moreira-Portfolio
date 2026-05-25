@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/GrainShield/sitemap.xml
+
+# Permitir acesso a arquivos importantes
+Allow: /*.html
+Allow: *.css
+Allow: *.js
+Allow: *.pdf
+
+# Bloquear pastas desnecessárias (se houver)
+Disallow: /temp/
+Disallow: /backup/
+Disallow: /.git/

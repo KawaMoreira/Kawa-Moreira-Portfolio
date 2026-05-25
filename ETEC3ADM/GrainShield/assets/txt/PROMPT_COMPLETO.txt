@@ -1,0 +1,44 @@
+Eu tenho um website que realizei num projeto em 2025.
+ Ele é de um projeto chamado "GrainShield Brasil - Soluções em Proteção de Grãos LTDA", que foi elaborado ao longo do Trabalho de Conclusão de Curso (TCC), cujo documento está anexado a esta conversa. O projeto pesquisou problemas logísticos no transporte rodoviário de grãos de soja, analisando situações e buscando soluções. O código do website do projeto está a seguir no arquivo .zip, por favor analise-o inicialmente, me diga sua estrutura e como funciona.
+ Após isso, me diga um plano para melhoria do website. Se tiver alguma dúvida (por exemplo lacunas a preencher) é só me perguntar que eu respondo. Apenas depois de tudo esclarecido darei instruções para partirmos à próxima fase.
+
+
+Agora, as instruções, mas quero que sejam elaboradas em etapas. Por enquanto, realize a etapa 1 e 2.
+
+Etapa 1:
+    Reescreva o código dos arquivos (html+css+js) para que tenham um overhaul usando o conteúdo novo (imagens), alterando no visual onde for necessário, e me envie.
+        Se não puder me mandar os arquivos (seja individualmente ou como .zip), me envie o código que devo copiar e colar numa aba do bloco de notas ou Notepad++ (me diga qual o mais indicado para cada situação, se precisar) para salvar como arquivos (html, css e js) de cada um.
+        Se não houver necessidade de mexer nos arquivo .js, deixaremos eles como estão.
+    Me diga qual é a estrutura de arquivos que usaremos.     
+        HTML + CSS + JS e as imagens (pastas que devem estar cada um, mas de preferência mantenha as imagens na mesma pasta que estavam, devendo ser lidas pelos arquivos)
+
+Etapa 2:
+Quanto a mais algumas alterações:
+Geral:
+- Estilo: deve ser mais elegante, incluindo fontes e tamanho de textos, gestão de imagens e paletas de cores associadas ao projeto, sendo mais gráfico (apenas alterando levemente o style.css).
+- Usar todas as imagens das pastas "/assets/img/" para as páginas html, correspondendo cada uma com seu nome do arquivo (indica do que se trata) para determinar a função em cada uma das páginas (também não há problema em repetir imagens, se necessário). Caso haja imagem que se encaixem em partes que não possuem referência anterior, adicione-a. Permitir que as imagens sejam clicáveis para abrí-las inteiras (individualmente e/ou em galeria).
+- Header: utilize a logo da GrainShield ao invés do texto "GrainShield"
+- Footer: eliminar emojis, adicionar ícones na pasta "/assets/img/icones/", ajustadas o tamanho para caber no footer de forma elegante e ideal (pequena).
+- Unifique as seções "sobre.html" e "equipe.html", para um novo "sobre.html" mais completo
+- Unifique as seções "banca.html" e "feira.html", para um novo "eventos.html" mais completo
+
+Etapa 3:
+- Início
+Associar dados a imagens relacionadas aos dados (a não ser que falte imagem)
+Destaques a dados estatísticos
+- Sobre
+Usar imagem "Logo_ETEC_FATEC_Instituicao.jpg" entre as informações da instituição
+- Equipe
+Também usar a imagem "Foto_Instituicao.jpg" para representar a instituição
+- Problema
+Enriquecer a página com dados dos textos (baseados no trabalho "TCC_ADM.pdf") e das imagens ("assets/img/projeto/").
+Associar dados estatísticos a imagens relacionadas aos dados (a não ser que falte imagem)
+Na seção "Gráficos & Visualizações", reformular o texto para explicar que se trata de uma pesquisa de campo documental, e os dados foram obtidos por Gabriel Caldeira Cardoso, estudante da Universidade Federal de Uberlândia (UFU), buscando quantificar e analisar as perdas de grãos durante o transporte rodoviário, considerando variáveis como tipo de rodovia, estado de conservação dos veículos e distâncias percorridas - de modo elegante, mas corporativo.
+Remover porcentagens em "Dificuldades Técnicas Identificadas"
+
+Etapa 4:
+Empresa
+- Usar imagens de caminhões, onde aplicável, incluindo imagens com contexto da produção do nosso produto (se possível, também resultados esperados).
+Feira:
+- maior destaque para a imagem "caminhao.jpeg", que usa um caminhão de brinquedo como placeholder demonstrativo para a solução de vedação
+- corresponder as imagens da galeria de fotos com as fotos (isso é, clicar numa foto levará à sua correspondente)

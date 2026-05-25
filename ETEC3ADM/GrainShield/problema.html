@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Problema e Análise de Dados - GrainShield: Perdas de Grãos no Transporte Rodoviário">
+  <title>Problema e Dados | GrainShield - Análise Completa</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%232B6F3D'>G</text></svg>">
+</head>
+<body>
+  <!-- HEADER & NAVEGAÇÃO -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">
+          <img src="assets/img/projeto/Logo.png" alt="GrainShield - Soluções em Proteção de Grãos" class="logo-img">
+        </a>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="problema.html" class="active">Problema</a></li>
+          <li><a href="empresa.html">Empresa</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text slide-up">
+            <h1>O Problema das Perdas de Grãos</h1>
+            <p>Análise aprofundada dos desafios logísticos no transporte rodoviário de soja e milho na BR-163, com dados estatísticos e visualizações de pesquisa acadêmica.</p>
+          </div>
+          <div class="hero-image fade-in">
+            <img src="assets/img/projeto/Caminhao_estrada_com_despejos_de_soja.png" alt="Caminhão com desperdício de soja" loading="lazy" style="width: 100%; max-width: 400px; height: auto; border-radius: 12px;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BR-163: ROTA DA SOJA -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>BR-163: A Rota da Soja</h2>
+          <p>Análise da importância estratégica e desafios logísticos</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+          <div class="fade-in">
+            <h3 style="color: #2B6F3D; margin-bottom: 1.5rem;">Importância Estratégica</h3>
+            <p>A BR-163 é responsável pelo escoamento de aproximadamente <strong>50 milhões de toneladas</strong> de grãos anualmente, sendo a principal via de transporte da soja produzida no Centro-Oeste brasileiro.</p>
+            
+            <p style="margin-top: 1.5rem;">Esta rodovia conecta as principais regiões produtoras de soja e milho ao Porto de Santos, sendo vital para a exportação de commodities agrícolas brasileiras no mercado global.</p>
+
+            <div style="background: linear-gradient(135deg, #E8F3ED 0%, rgba(43, 111, 61, 0.05) 100%); padding: 1.5rem; border-radius: 10px; margin-top: 1.5rem; border-left: 4px solid #2B6F3D;">
+              <p style="margin: 0; font-weight: 600; color: #2B6F3D;">Toneladas escoadas anualmente: <span style="font-size: 1.3em;">50 milhões</span></p>
+            </div>
+          </div>
+
+          <div class="slide-up">
+            <img src="assets/img/projeto/Rota_da_Soja_BR163.jpg" alt="Mapa da Rota da Soja BR-163" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer;" onclick="openLightbox('assets/img/projeto/Rota_da_Soja_BR163.jpg', 'Mapa da Rota da Soja BR-163')">
+            <p style="text-align: center; color: var(--txt-secundario); font-size: 0.9rem; margin-top: 0.5rem;">Clique para ampliar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTEXTO LOGÍSTICO -->
+    <section class="alternado">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contexto Logístico</h2>
+          <p>Dados sobre perdas no transporte rodoviário brasileiro</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+          <div class="card slide-up">
+            <h3 style="color: #2B6F3D; margin-bottom: 1rem;">91% Rodoviário</h3>
+            <p>91% do transporte alimentício e de produtos agrícolas no Brasil é feito por rodovias, tornando a eficiência do transporte crítica para a economia.</p>
+            <img src="assets/img/projeto/91%_do_transporte_alimenticio_e_rodoviario.png" alt="Gráfico - 91% Transporte Rodoviário" class="card-image" loading="lazy" style="margin-top: 1rem; cursor: pointer;" onclick="openLightbox('assets/img/projeto/91%_do_transporte_alimenticio_e_rodoviario.png', '91% do Transporte Alimentício é Rodoviário')">
+          </div>
+
+          <div class="card slide-up">
+            <h3 style="color: #185FA5; margin-bottom: 1rem;">Custo Logístico: 18,4% do PIB</h3>
+            <p>O custo logístico representa aproximadamente 18,4% do PIB brasileiro, destacando o impacto econômico das ineficiências na cadeia de suprimento.</p>
+            <img src="assets/img/projeto/Custo_logistico_ate_18,4%_do_PIB.png" alt="Custo Logístico 18,4% PIB" class="card-image" loading="lazy" style="margin-top: 1rem; cursor: pointer;" onclick="openLightbox('assets/img/projeto/Custo_logistico_ate_18,4%_do_PIB.png', 'Custo Logístico até 18,4% do PIB')">
+          </div>
+
+          <div class="card slide-up">
+            <h3 style="color: #F2A623; margin-bottom: 1rem;">30% Mais Caro no Brasil</h3>
+            <p>O transporte no Brasil é 30% mais caro comparado aos EUA, impactando a competitividade das exportações agrícolas brasileiras.</p>
+            <img src="assets/img/projeto/Custo_Logistico_Comparacao_Agro_Brasil_x_AR_x_EUA.avif" alt="Comparação de Custos Logísticos" class="card-image" loading="lazy" style="margin-top: 1rem; cursor: pointer;" onclick="openLightbox('assets/img/projeto/Custo_Logistico_Comparacao_Agro_Brasil_x_AR_x_EUA.avif', 'Comparação de Custos - Brasil vs EUA')">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERDAS DE GRÃOS -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Perdas de Grãos no Transporte</h2>
+          <p>Quantificação e distribuição das perdas logísticas</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+          <div class="slide-up">
+            <img src="assets/img/projeto/Dado_2,5%_de_50_milhoes_toneladas.jpeg" alt="Dados de Perdas: 2,5% de 50 milhões" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer;" onclick="openLightbox('assets/img/projeto/Dado_2,5%_de_50_milhoes_toneladas.jpeg', 'Perdas: 2,5% de 50 Milhões de Toneladas')">
+            <p style="text-align: center; color: var(--txt-secundario); font-size: 0.9rem; margin-top: 0.5rem;">Clique para ampliar</p>
+          </div>
+
+          <div class="fade-in">
+            <h3 style="color: #2B6F3D; margin-bottom: 1.5rem;">2,5% de Perdas</h3>
+            <p>De 50 milhões de toneladas escoadas pela BR-163, <strong>1,25 milhão de toneladas são perdidas</strong> no transporte, equivalente a perdas de 2,5% por safra.</p>
+            
+            <p style="margin-top: 1.5rem; font-weight: 600; color: #2B6F3D;">Impacto Econômico:</p>
+            <p>Essa perda representa um prejuízo estimado de <strong>mais de R$ 3 bilhões anuais</strong> para a economia brasileira, afetando produtores, transportadoras e a competitividade do país no mercado global.</p>
+
+            <div style="background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(242, 166, 35, 0.05) 100%); padding: 1.5rem; border-radius: 10px; margin-top: 1.5rem; border-left: 4px solid #E74C3C;">
+              <p style="margin: 0; color: var(--txt-secundario);"><span style="font-weight: 700; color: #E74C3C;">1,25 milhão de toneladas</span> perdidas anualmente na BR-163</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISTRIBUIÇÃO GEOGRÁFICA -->
+    <section class="alternado">
+      <div class="container">
+        <div class="section-header">
+          <h2>Distribuição Geográfica das Perdas</h2>
+          <p>Estados com maiores perdas de grãos no transporte</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+          <div class="fade-in">
+            <h3 style="color: #2B6F3D; margin-bottom: 1.5rem;">Mapa de Perdas por Estado</h3>
+            <p>O Mato Grosso é o estado com maiores registros de perdas de grãos no transporte rodoviário, seguido por Goiás e São Paulo. Esses estados concentram as principais rotas de escoamento da produção agrícola.</p>
+            
+            <p style="margin-top: 1.5rem;">As perdas variam conforme a condição das estradas, conservação dos veículos e adequação dos sistemas de vedação das carrocerias.</p>
+
+            <ul style="margin-left: 1.5rem; margin-top: 1.5rem; color: var(--txt-secundario); line-height: 1.8;">
+              <li><strong style="color: #2B6F3D;">Mato Grosso</strong> - Principal produtor de soja</li>
+              <li><strong style="color: #2B6F3D;">Goiás</strong> - Região produtora e de passagem</li>
+              <li><strong style="color: #2B6F3D;">São Paulo</strong> - Última etapa até Porto de Santos</li>
+            </ul>
+          </div>
+
+          <div class="slide-up">
+            <img src="assets/img/projeto/Brasil_estados_maior_perda_graos.jpg" alt="Mapa Brasil - Estados com maior perda de grãos" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer;" onclick="openLightbox('assets/img/projeto/Brasil_estados_maior_perda_graos.jpg', 'Mapa - Estados com Maior Perda de Grãos')">
+            <p style="text-align: center; color: var(--txt-secundario); font-size: 0.9rem; margin-top: 0.5rem;">Clique para ampliar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FATORES PRINCIPAIS -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Fatores Principais de Perda</h2>
+          <p>Análise dos problemas identificados no transporte</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+          <div class="card slide-up">
+            <div class="card-icon">🚛</div>
+            <h3>Vedação Inadequada</h3>
+            <p>A falta de sistemas de vedação nas carrocerias é o fator principal, responsável por grandes volumes de desperdício acumulado durante toda a jornada.</p>
+            <img src="assets/img/projeto/Caminhao_estrada_com_despejos_de_soja.png" alt="Caminhão com desperdício" class="card-image" loading="lazy" style="cursor: pointer;" onclick="openLightbox('assets/img/projeto/Caminhao_estrada_com_despejos_de_soja.png', 'Caminhão sem vedação adequada')">
+          </div>
+
+          <div class="card slide-up">
+            <div class="card-icon">🛣️</div>
+            <h3>Infraestrutura Precária</h3>
+            <p>Estradas em más condições, trechos não pavimentados e falta de manutenção agravam o problema ao longo de toda a jornada.</p>
+            <img src="assets/img/projeto/sustentabilidade-logistica-caminhoes.jpg" alt="Infraestrutura de estradas" class="card-image" loading="lazy" style="cursor: pointer;" onclick="openLightbox('assets/img/projeto/sustentabilidade-logistica-caminhoes.jpg', 'Condição das Estradas')">
+          </div>
+
+          <div class="card slide-up">
+            <div class="card-icon">🔧</div>
+            <h3>Estado dos Veículos</h3>
+            <p>Caminhões com manutenção inadequada e desgaste das estruturas contribuem significativamente para as perdas durante o trajeto.</p>
+            <img src="assets/img/projeto/Caminhao_Padrao.jpg" alt="Caminhão padrão" class="card-image" loading="lazy" style="cursor: pointer;" onclick="openLightbox('assets/img/projeto/Caminhao_Padrao.jpg', 'Caminhão Padrão de Transporte')">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRÁFICOS E VISUALIZAÇÕES -->
+    <section class="alternado">
+      <div class="container">
+        <div class="section-header">
+          <h2>Gráficos & Visualizações</h2>
+          <p>Dados quantitativos de pesquisa de campo documental</p>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #E8F3ED 0%, rgba(43, 111, 61, 0.05) 100%); padding: 2rem; border-radius: 12px; margin-bottom: 3rem; border-left: 4px solid #2B6F3D;">
+          <p style="margin: 0; color: var(--txt-secundario); line-height: 1.6;">
+            <strong style="color: #2B6F3D;">Metodologia:</strong> Os dados apresentados foram obtidos através de uma pesquisa de campo documental conduzida por Gabriel Caldeira Cardoso, estudante da Universidade Federal de Uberlândia (UFU), buscando quantificar e analisar as perdas de grãos durante o transporte rodoviário, considerando variáveis como tipo de rodovia, estado de conservação dos veículos e distâncias percorridas. A análise é fundamentada em levantamento bibliográfico extenso e análise documental de dados secundários de qualidade.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <div style="text-align: center;">
+            <img src="assets/img/projeto/Grafico1.png" alt="Gráfico 1 - Análise de Perdas" loading="lazy" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer;" onclick="openLightbox('assets/img/projeto/Grafico1.png', 'Gráfico 1 - Análise de Perdas')">
+            <p style="color: var(--txt-secundario); font-size: 0.9rem; margin-top: 0.5rem;">Clique para ampliar</p>
+          </div>
+
+          <div style="text-align: center;">
+            <img src="assets/img/projeto/Grafico2.png" alt="Gráfico 2 - Comparativo" loading="lazy" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer;" onclick="openLightbox('assets/img/projeto/Grafico2.png', 'Gráfico 2 - Comparativo')">
+            <p style="color: var(--txt-secundario); font-size: 0.9rem; margin-top: 0.5rem;">Clique para ampliar</p>
+          </div>
+
+          <div style="text-align: center;">
+            <img src="assets/img/projeto/Grafico3.png" alt="Gráfico 3 - Distribuição" loading="lazy" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer;" onclick="openLightbox('assets/img/projeto/Grafico3.png', 'Gráfico 3 - Distribuição')">
+            <p style="color: var(--txt-secundario); font-size: 0.9rem; margin-top: 0.5rem;">Clique para ampliar</p>
+          </div>
+
+          <div style="text-align: center;">
+            <img src="assets/img/projeto/Grafico4.png" alt="Gráfico 4 - Tendências" loading="lazy" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer;" onclick="openLightbox('assets/img/projeto/Grafico4.png', 'Gráfico 4 - Tendências')">
+            <p style="color: var(--txt-secundario); font-size: 0.9rem; margin-top: 0.5rem;">Clique para ampliar</p>
+          </div>
+
+          <div style="text-align: center;">
+            <img src="assets/img/projeto/Grafico5.png" alt="Gráfico 5 - Análise" loading="lazy" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer;" onclick="openLightbox('assets/img/projeto/Grafico5.png', 'Gráfico 5 - Análise')">
+            <p style="color: var(--txt-secundario); font-size: 0.9rem; margin-top: 0.5rem;">Clique para ampliar</p>
+          </div>
+
+          <div style="text-align: center;">
+            <img src="assets/img/projeto/Grafico6.png" alt="Gráfico 6 - Conclusões" loading="lazy" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer;" onclick="openLightbox('assets/img/projeto/Grafico6.png', 'Gráfico 6 - Conclusões')">
+            <p style="color: var(--txt-secundario); font-size: 0.9rem; margin-top: 0.5rem;">Clique para ampliar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFICULDADES TÉCNICAS -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Dificuldades Técnicas Identificadas</h2>
+          <p>Principais obstáculos na logística de transporte</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+          <div style="background: linear-gradient(135deg, #E8F3ED 0%, rgba(43, 111, 61, 0.05) 100%); padding: 2rem; border-radius: 12px; border-top: 4px solid #2B6F3D; text-align: center;">
+            <h4 style="color: #2B6F3D; margin-bottom: 0.5rem;">Vedação Inadequada</h4>
+            <p style="color: var(--txt-secundario); margin: 0;">Caminhões sem sistemas de vedação eficientes</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, rgba(24, 95, 165, 0.1) 0%, rgba(242, 166, 35, 0.05) 100%); padding: 2rem; border-radius: 12px; border-top: 4px solid #185FA5; text-align: center;">
+            <h4 style="color: #185FA5; margin-bottom: 0.5rem;">Infraestrutura Deficiente</h4>
+            <p style="color: var(--txt-secundario); margin: 0;">Estradas mal conservadas e buracos</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, rgba(242, 166, 35, 0.1) 0%, rgba(231, 76, 60, 0.05) 100%); padding: 2rem; border-radius: 12px; border-top: 4px solid #F2A623; text-align: center;">
+            <h4 style="color: #F2A623; margin-bottom: 0.5rem;">Manutenção de Veículos</h4>
+            <p style="color: var(--txt-secundario); margin: 0;">Frota com manutenção inadequada</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, rgba(39, 174, 96, 0.1) 0%, rgba(242, 166, 35, 0.05) 100%); padding: 2rem; border-radius: 12px; border-top: 4px solid #27AE60; text-align: center;">
+            <h4 style="color: #27AE60; margin-bottom: 0.5rem;">Distância Percorrida</h4>
+            <p style="color: var(--txt-secundario); margin: 0;">Longas distâncias aumentam perdas</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(242, 166, 35, 0.05) 100%); padding: 2rem; border-radius: 12px; border-top: 4px solid #3498DB; text-align: center;">
+            <h4 style="color: #3498DB; margin-bottom: 0.5rem;">Gestão Logística</h4>
+            <p style="color: var(--txt-secundario); margin: 0;">Falta de controle e rastreamento</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, rgba(155, 89, 182, 0.1) 0%, rgba(242, 166, 35, 0.05) 100%); padding: 2rem; border-radius: 12px; border-top: 4px solid #9B59B6; text-align: center;">
+            <h4 style="color: #9B59B6; margin-bottom: 0.5rem;">Climático</h4>
+            <p style="color: var(--txt-secundario); margin: 0;">Chuvas e umidade afetam os grãos</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUÇÃO VIÁVEL -->
+    <section class="alternado">
+      <div class="container">
+        <div class="section-header">
+          <h2>A Solução: Vedação Adequada</h2>
+          <p>Como reduzir perdas de forma prática e econômica</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+          <div class="fade-in">
+            <h3 style="color: #2B6F3D; margin-bottom: 1.5rem;">Redução de 77% com Vedação</h3>
+            <p>Sistemas de vedação adequada reduzem perdas em até <strong>77%</strong>, sendo uma solução simples, eficaz e economicamente viável para o setor de transporte de grãos.</p>
+            
+            <p style="margin-top: 1.5rem;">A implementação de vedação:
+            </p>
+            <ul style="margin-left: 1.5rem; margin-top: 1rem; color: var(--txt-secundario); line-height: 1.8;">
+              <li>✓ Reduz perdas significativamente</li>
+              <li>✓ É economicamente viável</li>
+              <li>✓ Melhora a sustentabilidade</li>
+              <li>✓ Aumenta a competitividade</li>
+              <li>✓ Protege a carga durante o trajeto</li>
+            </ul>
+          </div>
+
+          <div class="slide-up">
+            <img src="assets/img/projeto/Reducao_Perdas_77%_apos_vedacao_adequada.png" alt="Redução de 77% com vedação adequada" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer;" onclick="openLightbox('assets/img/projeto/Reducao_Perdas_77%_apos_vedacao_adequada.png', 'Redução de 77% com Vedação Adequada')">
+            <p style="text-align: center; color: var(--txt-secundario); font-size: 0.9rem;">Clique para ampliar</p>
+            
+            <img src="assets/img/projeto/Tabela_antes_depois_implementacao_adequada.png" alt="Tabela antes e depois" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer; margin-top: 1.5rem;" onclick="openLightbox('assets/img/projeto/Tabela_antes_depois_implementacao_adequada.png', 'Tabela - Antes e Depois da Vedação')">
+            <p style="text-align: center; color: var(--txt-secundario); font-size: 0.9rem;">Clique para ampliar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARAÇÃO E TABELAS -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2>Análise Comparativa de Perdas</h2>
+          <p>Distribuição e cenários de perdas logísticas</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+          <div style="text-align: center;">
+            <img src="assets/img/projeto/Tabela_Distribuicao_Perdas_Logisticas.png" alt="Tabela Distribuição de Perdas" loading="lazy" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer;" onclick="openLightbox('assets/img/projeto/Tabela_Distribuicao_Perdas_Logisticas.png', 'Tabela - Distribuição de Perdas Logísticas')">
+            <p style="color: var(--txt-secundario); font-size: 0.9rem; margin-top: 0.5rem;">Clique para ampliar</p>
+          </div>
+
+          <div style="text-align: center;">
+            <img src="assets/img/projeto/Mapa_Logistica_Soja_e_Milho.png" alt="Mapa Logística Soja e Milho" loading="lazy" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer;" onclick="openLightbox('assets/img/projeto/Mapa_Logistica_Soja_e_Milho.png', 'Mapa de Logística - Soja e Milho')">
+            <p style="color: var(--txt-secundario); font-size: 0.9rem; margin-top: 0.5rem;">Clique para ampliar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section>
+      <div class="container">
+        <div style="text-align: center; padding: 3rem; background: linear-gradient(135deg, #2B6F3D 0%, #1a4028 100%); border-radius: 12px; color: white;">
+          <h2 style="color: white; margin-bottom: 1rem;">Pronto para a Solução?</h2>
+          <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 2rem;">Conheça como a GrainShield pode transformar a logística do agronegócio brasileiro</p>
+          
+          <div class="btn-group" style="justify-content: center;">
+            <a href="empresa.html" class="btn btn-primary btn-lg">Conhecer a GrainShield</a>
+            <a href="sobre.html" class="btn" style="background: white; color: #2B6F3D; font-weight: 600; padding: 1rem 2rem; border-radius: 8px; display: inline-block;">Ver Projeto Completo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>GrainShield</h4>
+          <p>Soluções inovadoras para reduzir perdas no transporte de grãos e fortalecer o agronegócio brasileiro.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre o Projeto</a></li>
+            <li><a href="problema.html">Dados e Análises</a></li>
+            <li><a href="empresa.html">Solução GrainShield</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Documentos</h4>
+          <ul>
+            <li><a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/GrainShield/TCC_ADM.pdf" target="_blank">TCC Completo</a></li>
+            <li><a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/ETEC3ADM/GrainShield/Slides_TCC.pdf" target="_blank">Slides da Apresentação</a></li>
+            <li><a href="sobre.html">Conheça a Equipe</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contato</h4>
+          <p>ETEC de Carapicuíba<br>Curso: Técnico em Administração<br>Ano: 2025</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-text">
+          <p>Copyright 2025 GrainShield Brasil. Projeto de TCC - ETEC Carapicuíba. Desenvolvido por Kawã, Kaynã, Nathan, Pedro e Samuel.</p>
+        </div>
+        <div class="footer-socials">
+          <a href="https://github.com" class="social-link" title="GitHub">
+            <img src="assets/img/icones/github.png" alt="GitHub" class="social-icon">
+          </a>
+          <a href="https://linkedin.com" class="social-link" title="LinkedIn">
+            <img src="assets/img/icones/linkedin.png" alt="LinkedIn" class="social-icon">
+          </a>
+          <a href="mailto:contact@grainshield.com" class="social-link" title="Email">
+            <img src="assets/img/icones/email.png" alt="Email" class="social-icon">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script>
+  function openLightbox(imageSrc, imageAlt) {
+    // Função global definida no gallery.js
+    if (typeof abrirImagem === 'function') {
+      abrirImagem(imageSrc, imageAlt);
+    } else {
+      console.error('Lightbox não carregado. Aguarde um instante e tente novamente.');
+    }
+  }
+</script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gallery.js"></script>
+  <script>
+  document.querySelectorAll('img:not(.logo-img):not(.social-icon)').forEach(img => {
+    if (img.width >= 40 && img.height >= 40 && !img.hasAttribute('onclick')) {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => {
+        if (typeof abrirImagem === 'function') abrirImagem(img.src, img.alt);
+      });
+    }
+  });
+</script>
+</body>
+</html>
