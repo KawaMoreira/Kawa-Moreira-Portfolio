@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Projeto Integrador | Perda de Óleos Essenciais - Logística e Controle de Estoque</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f9f4;
+            color: #1a2e1f;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* cores naturais / essências */
+        :root {
+            --primary: #2b6e3c;
+            --primary-dark: #1f522d;
+            --secondary: #e7b42c;
+            --accent: #d9e6b3;
+            --gray-light: #f8faf6;
+            --gray-border: #dde6d5;
+            --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
+            --card-radius: 1.2rem;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        /* header / hero */
+        .hero {
+            background: linear-gradient(135deg, #eef6e9 0%, #cde0c2 100%);
+            border-radius: 2rem;
+            padding: 2rem 2rem 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #cbdcc0;
+        }
+
+        .title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.25;
+            margin-bottom: 0.75rem;
+        }
+
+        .sub {
+            font-size: 1rem;
+            color: #2c4a2e;
+            border-left: 4px solid var(--secondary);
+            padding-left: 1rem;
+            margin: 0.8rem 0;
+        }
+
+        .authors {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2e5c32;
+        }
+
+        .badge {
+            background: white;
+            border-radius: 40px;
+            padding: 0.2rem 1rem;
+            font-weight: 500;
+            font-size: 0.75rem;
+            color: var(--primary);
+            display: inline-block;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        /* seções */
+        section {
+            background: white;
+            border-radius: var(--card-radius);
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-border);
+            transition: all 0.2s;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.3px;
+            border-left: 5px solid var(--secondary);
+            padding-left: 1rem;
+            color: #1d3b21;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.8rem 0;
+            color: #2b6e3c;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .card-info {
+            background: var(--gray-light);
+            border-radius: 1rem;
+            padding: 1.2rem 1.5rem;
+            border-left: 4px solid var(--secondary);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        th {
+            background-color: #e2edd9;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 0.65rem 1rem;
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .total-row {
+            background-color: #f1f7ec;
+            font-weight: 700;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .kpi-card {
+            background: #fefef7;
+            border-radius: 1rem;
+            padding: 1rem 1.2rem;
+            border: 1px solid #e0ebd6;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .kpi-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 0.6rem;
+        }
+
+        .kpi-formula {
+            font-family: monospace;
+            background: #f3f8ef;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .img-container {
+            text-align: center;
+            margin: 1.5rem 0;
+            background: #fafdf7;
+            padding: 1rem;
+            border-radius: 1.2rem;
+        }
+
+        .clickable-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border: 1px solid #dde6d5;
+        }
+
+        .clickable-img:hover {
+            transform: scale(1.01);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+
+        .pop-list {
+            background: #f8fcf4;
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            margin: 0.8rem 0;
+        }
+
+        .pop-list li {
+            margin: 0.5rem 0;
+            margin-left: 1.2rem;
+        }
+
+        /* modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 1rem;
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-modal:hover {
+            color: var(--secondary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.8rem;
+            color: #5f7852;
+            border-top: 1px solid var(--gray-border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 1rem;
+            }
+            .title {
+                font-size: 1.6rem;
+            }
+            section {
+                padding: 1.3rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Hero header -->
+    <div class="hero">
+        <div class="badge" style="margin-bottom: 12px;">Projeto Integrador Multidisciplinar | Gestão Comercial</div>
+        <div class="title">🌿 Estudo sobre perda de óleos essenciais por vencimento no processo de armazenagem de uma empresa logística</div>
+        <div class="sub">Uma análise logística aplicada: redução de perdas através de PEPS / PVPS, gestão de estoque e indicadores de performance</div>
+        <div class="authors">
+            <span>Ana Clara Santos de Souza</span> • <span>Kawã Fernandes da Silva Moreira</span> • <span>Lucas de Oliveira Sines</span>
+            <span>Nicolas de Araújo Silva</span> • <span>Patrícia Souza Santos Borges</span>
+        </div>
+        <div style="margin-top: 1rem; font-size: 0.85rem; color: #2f5c33;">FATEC Santana de Parnaíba | Centro Paula Souza — 2026</div>
+    </div>
+
+    <!-- Sumário conceitos / termos -->
+    <section>
+        <h2>📌 Principais termos pesquisados</h2>
+        <div class="grid-2">
+            <div class="card-info"><strong>Logística Estratégica</strong><br>Planejamento, armazenagem, distribuição física e redução de custos.</div>
+            <div class="card-info"><strong>PEPS (FIFO)</strong><br>Primeiro que entra, primeiro que sai — organização cronológica.</div>
+            <div class="card-info"><strong>PVPS (FEFO)</strong><br>Primeiro que vence, primeiro que sai — ideal para perecíveis.</div>
+            <div class="card-info"><strong>Perdas & Vencimento</strong><br>Desperdício por falta de controle de validade e layout inadequado.</div>
+            <div class="card-info"><strong>WMS / ERP</strong><br>Sistemas de gestão de armazém e planejamento de recursos.</div>
+            <div class="card-info"><strong>KPIs & POPs</strong><br>Indicadores de desempenho e procedimentos operacionais padrão.</div>
+        </div>
+    </section>
+
+    <!-- Empresa + Produto -->
+    <section>
+        <h2>🏢 Empresa & Produto</h2>
+        <div class="grid-2">
+            <div>
+                <h3>Perfil da empresa</h3>
+                <p>Multinacional logística, atuação em B2B (Business-to-Business), foco em armazenagem e transporte no estado de São Paulo. Clientes são empresas que armazenam produtos no centro de distribuição. Estrutura hierárquica com supervisores, analistas, assistentes e conferentes, setor de inventário dedicado a cada cliente.</p>
+                <p><strong>Core business:</strong> prestação de serviços logísticos — armazenagem e distribuição física.</p>
+            </div>
+            <div>
+                <h3>Óleos Essenciais (produto foco)</h3>
+                <p>Extratos naturais (lavanda, hortelã-pimenta, eucalipto, cítricos etc). A marca trabalha com padrão de pureza. Valores médios de mercado: R$199,06 (5mL) e R$239,79 (15mL). Produtos de alta perecibilidade e elevado valor agregado.</p>
+                <p>Cada palete contém ~25 caixas; perda média por palete: 6 a 8 caixas. Principais usos: aromaterapia e bem-estar.</p>
+            </div>
+        </div>
+        <div style="background: #eef2ea; border-radius: 1rem; padding: 1rem; margin-top: 0.8rem;">
+            <p>⚠️ <strong>Problema identificado:</strong> vencimento de óleos essenciais por ausência de método PVPS (FEFO), causando perdas financeiras expressivas e produtos vencidos estocados indevidamente (datas desde 2004).</p>
+        </div>
+    </section>
+
+    <!-- Dados de perda e tabelas financeiras -->
+    <section>
+        <h2>📊 Perdas financeiras (1º trimestre 2026)</h2>
+        <p>Com base nas planilhas coletadas, o valor total das perdas estimadas chegou a <strong>R$ 487.085,00</strong>, comprometendo a eficiência operacional e gerando custo de falta de estoque (Ballou, 2012).</p>
+        
+        <div style="overflow-x: auto;">
+            <table>
+                <thead><tr><th>Lote</th><th>Quantidade de produtos</th><th>Valor Unitário Total (estimado)</th><th>Valor Total da Perda</th></tr></thead>
+                <tbody>
+                    <tr><td>LOTE 1</td><td>1.857</td><td>R$ 4.280,00</td><td>R$ 248.810,00</td></tr>
+                    <tr><td>LOTE 2</td><td>1.893</td><td>R$ 3.470,00</td><td>R$ 238.275,00</td></tr>
+                    <tr class="total-row"><td><strong>TOTAL</strong></td><td><strong>3.750</strong></td><td><strong>R$ 7.750,00</strong></td><td><strong>R$ 487.085,00</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p><small>Fonte: Dados primários coletados na empresa (planilhas de paletes vencidos, maio/2026). Valores baseados em preço de mercado.</small></p>
+        <div class="card-info" style="margin-top: 1rem;">
+            📆 Exemplos de vencimentos críticos: paletes com validade 31/05/2023, 31/10/2022, produtos de 2025 já vencidos. Evidência de ausência de política de giro e descarte.
+        </div>
+    </section>
+
+    <!-- Diagrama de Ishikawa (causa raiz) -->
+    <section>
+        <h2>🔍 Análise de causas raiz — Diagrama de Ishikawa</h2>
+        <p>Utilizamos o método espinha de peixe com os 6M para mapear as causas do problema de vencimento e perdas.</p>
+        <div class="img-container">
+            <img src="Diag_Ishikawa.jpg" alt="Diagrama de Ishikawa - Causas e efeitos perda óleos essenciais" class="clickable-img" id="img-ishikawa" style="max-width:100%; border-radius:1rem;">
+            <p style="font-size:0.8rem; margin-top:8px;">📌 Clique na imagem para ampliar — Diagrama de Ishikawa (Espinha de Peixe)</p>
+        </div>
+        <div class="grid-2" style="margin-top:0.5rem;">
+            <div><strong>⚙️ Método:</strong> Ausência de PVPS/FEFO, processos desorganizados, falha na priorização de validade.</div>
+            <div><strong>🖥️ Máquina:</strong> Falta de automação, planilhas manuais, sistemas não integrados e sem alertas.</div>
+            <div><strong>📏 Medida:</strong> Falta de indicadores de perdas, dados desatualizados, ausência de monitoramento de giro.</div>
+            <div><strong>👥 Mão de obra:</strong> Erros na separação, treinamento insuficiente, baixa conscientização sobre validade.</div>
+            <div><strong>🌿 Meio ambiente:</strong> Layout inadequado, paletes desorganizados, difícil acesso aos lotes antigos.</div>
+            <div><strong>📦 Material:</strong> Baixa rotatividade, estoque parado, grandes lotes com mesma validade.</div>
+        </div>
+        <p><strong>Efeitos principais:</strong> perdas financeiras elevadas, desperdício de produtos, acúmulo de estoque parado, prejuízo operacional e risco de perda de clientes/contratos.</p>
+    </section>
+
+    <!-- Proposta de solução: PEPS / PVPS e estratégias -->
+    <section>
+        <h2>💡 Proposta de solução: Implantação do método PEPS com foco em PVPS (FEFO)</h2>
+        <p>Baseado em Gonçalves (2019) e nas boas práticas de armazenagem, propomos a adoção do método <strong>Primeiro que Vence, Primeiro que Sai (PVPS)</strong> para itens perecíveis, combinado ao PEPS para controle geral. A solução envolve: controle de validade por lote com alertas, ERP integrado, WMS otimizado, inventários periódicos, treinamento de colaboradores e KPIs de gestão.</p>
+        <div class="pop-list">
+            <h3>📋 Procedimentos Operacionais Padrão (POPs) - Entrada e Saída</h3>
+            <p><strong>✅ POP de ENTRADA (recebimento):</strong></p>
+            <ul>
+                <li>1. Recebimento do produto vindo da empresa de óleos essenciais.</li>
+                <li>2. Emissão de nota fiscal com dados do lote, validade e data de fabricação.</li>
+                <li>3. Conferência quantitativa e qualitativa.</li>
+                <li>4. Alocação estratégica: produtos com validade mais curta na frente (acessibilidade).</li>
+                <li>5. Cruzamento de dados no sistema ERP (lançamento de lote, localização e alerta de vencimento).</li>
+                <li>6. Verificação se informações batem; se divergente, isolar e reportar à supervisão.</li>
+            </ul>
+            <p><strong>📤 POP de SAÍDA (expedição / separação):</strong></p>
+            <ul>
+                <li>1. Verificar no ERP quais lotes possuem vencimento mais próximo (ordem FEFO).</li>
+                <li>2. Realizar separação física (picking) priorizando produtos críticos (≤18 meses).</li>
+                <li>3. Conferência: validade real vs sistema; se erro, isolar e atualizar.</li>
+                <li>4. Emissão da nota fiscal de saída.</li>
+                <li>5. Conferência final dos dados.</li>
+                <li>6. Enviar ao cliente/loja com rastreabilidade e relatório de validade.</li>
+            </ul>
+            <p><strong>📢 Políticas de alerta:</strong> Vencimento ≤ 18 meses → alerta crítico (acionar equipe comercial). Vencimento ≤ 12 meses → contato com cliente para liquidação ou descarte planejado.</p>
+        </div>
+    </section>
+
+    <!-- KPIs desenvolvidos -->
+    <section>
+        <h2>📈 Indicadores de Performance (KPIs) para controle do método PVPS</h2>
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-title">🎯 Margem de erros no ERP</div>
+                <p>Mede divergências entre estoque físico e sistema. Quanto menor, melhor aderência ao PEPS/PVPS.</p>
+                <div class="kpi-formula">(Nº de divergências / total de operações) × 100</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">⏱️ Tempo Médio de Permanência (TMP)</div>
+                <p>Dias médios que os lotes ficam estocados até saída.</p>
+                <div class="kpi-formula">Total de dias em saída dos lotes / Total de lotes saídos</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">🔄 Giro de Estoque</div>
+                <p>Rotatividade do inventário: frequência com que o estoque é renovado.</p>
+                <div class="kpi-formula">Total unidades vendidas ÷ Estoque médio (EI+EF/2)</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">⚠️ Indicador curto prazo (≤2 anos)</div>
+                <p>Percentual de produtos com validade ≤ 2 anos — risco de vencimento.</p>
+                <div class="kpi-formula">(Produtos com validade ≤ 2 anos / Total produtos) × 100</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">🚨 Estado de alerta (≤ 18 meses)</div>
+                <p>Monitoramento de produtos em vencimento urgente, exigindo ações rápidas.</p>
+                <div class="kpi-formula">(Produtos validade ≤ 18 meses / Total produtos) × 100</div>
+            </div>
+        </div>
+        <p>Estes KPIs serão alimentados mensalmente via sistema ERP e dashboards, garantindo tomada de decisão proativa e redução das perdas.</p>
+    </section>
+
+    <!-- 5W2H + imagem -->
+    <section>
+        <h2>📌 Plano de ação 5W2H</h2>
+        <div class="img-container">
+            <img src="5W2H.png" alt="Plano 5W2H - redução de perdas óleos essenciais" class="clickable-img" id="img-5w2h" style="max-width:100%; border-radius:1rem;">
+            <p style="font-size:0.8rem;">Clique para expandir - Estrutura 5W2H do projeto de implementação PVPS</p>
+        </div>
+        <div class="grid-2">
+            <div><strong>What (O quê?)</strong><br>Redução de perda por vencimento via método PEPS/PVPS.</div>
+            <div><strong>Why (Por quê?)</strong><br>Minimizar desperdício financeiro de R$487 mil/trimestre e otimizar armazenagem.</div>
+            <div><strong>Who (Quem?)</strong><br>Equipe de inventário, supervisores, analistas e conferentes da empresa logística.</div>
+            <div><strong>Where (Onde?)</strong><br>Setor de armazenagem / centro de distribuição (CD).</div>
+            <div><strong>When (Quando?)</strong><br>Implantação iniciada em 2026, com período de teste de 6 meses e ajustes contínuos.</div>
+            <div><strong>How (Como?)</strong><br>Implantando POPs, treinamento, sistema ERP com alertas, reorganização de layout e KPIs.</div>
+            <div><strong>How Much (Quanto?)</strong><br>Valor recuperável estimado de até R$ 487 mil evitado por trimestre. Investimento em treinamento e sistema absorvido via eficiência operacional.</div>
+        </div>
+    </section>
+
+    <!-- Resultados esperados e discussão -->
+    <section>
+        <h2>🎯 Resultados esperados & Contribuição</h2>
+        <ul style="margin-left: 1.5rem; line-height: 1.6;">
+            <li>Redução de perdas por vencimento em pelo menos 70% nos primeiros 6 meses.</li>
+            <li>Melhoria da acuracidade do estoque e rastreabilidade via ERP/WMS.</li>
+            <li>Redução de custos logísticos e aumento do giro de estoque, elevando competitividade.</li>
+            <li>Cultura de controle de validade e uso sistemático do método FEFO/PVPS.</li>
+            <li>Minimização de impacto financeiro evitando prejuízo anual estimado em mais de R$ 1,9 milhão (projeção).</li>
+        </ul>
+        <div class="card-info" style="margin-top: 1rem;">
+            <strong>Limitação do estudo:</strong> dados com estimativas de mercado e acesso restrito a um integrante. Contudo, as soluções propostas são baseadas em referencial sólido (Ballou, Gonçalves, Moura, Slack) e aplicáveis ao contexto logístico de produtos perecíveis.
+        </div>
+    </section>
+
+    <!-- Conclusão e referências -->
+    <section>
+        <h2>✅ Considerações finais</h2>
+        <p>A pesquisa demonstrou que a ausência de controle de validade por meio de PVPS (FEFO) é a causa central das perdas de óleos essenciais na empresa estudada. A partir da análise qualiquantitativa, diagrama de Ishikawa e desenvolvimento de POPs + KPIs, foi possível estruturar uma solução prática e viável. A implementação do método PEPS com foco em vencimento, aliado a tecnologias de gestão (ERP, WMS) e treinamento da equipe, poderá reduzir drasticamente os desperdícios, melhorar a rentabilidade e fortalecer a imagem da empresa perante seus clientes B2B. O trabalho entrega um plano replicável para qualquer operação com produtos perecíveis na cadeia logística.</p>
+        <p style="margin-top: 1rem;"><strong>Palavras-chave:</strong> Logística, armazenagem, PEPS, PVPS, FEFO, perdas, óleos essenciais, estoque, gestão de validade, KPIs.</p>
+    </section>
+
+    <section>
+        <h2>📚 Referências bibliográficas</h2>
+        <ul style="margin-left: 1.2rem; font-size: 0.85rem; columns: 2; column-gap: 2rem;">
+            <li>BALLOU, R. H. Logística Empresarial. São Paulo: Atlas, 2012, 2015.</li>
+            <li>GONÇALVES, P. S. Gestão de Estoques na Cadeia de Suprimentos. Elsevier, 2019.</li>
+            <li>MOURA, R. A. Equipamentos de movimentação e armazenagem. IMAN, 2000.</li>
+            <li>NOGUEIRA, A. S. Logística Empresarial. Atlas, 2012.</li>
+            <li>SLACK, N. et al. Administração da Produção. Atlas, 2009.</li>
+            <li>VIANA, J. J. Administração de Materiais. Atlas, 2012.</li>
+            <li>SANTOS, G. A.; ROSADO, C. A. G. Gestão logística e supply chain para redução de perdas. RECIMA21, 2025.</li>
+            <li>ARNOLD, J. R. T. Administração de materiais. Atlas, 1999.</li>
+            <li>DIAS, M. A. P. Administração de materiais: abordagem logística. Atlas, 2010.</li>
+        </ul>
+    </section>
+
+    <footer>
+        FATEC Santana de Parnaíba - Gestão Comercial | Projeto Integrador Multidisciplinar em Tecnologia I - Orientação Prof. Me. José Ricardo Duarte D’Oliveira
+        <br>© 2026 - Estudo aplicado sobre redução de perdas logísticas em óleos essenciais.
+    </footer>
+</div>
+
+<!-- Modal para zoom nas imagens -->
+<div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImage" alt="ampliação">
+</div>
+
+<script>
+    // modal interativo para as imagens de Ishikawa e 5W2H
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeModalSpan = document.querySelector('.close-modal');
+
+    function openModal(imgSrc) {
+        modal.style.display = "flex";
+        modalImg.src = imgSrc;
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+        modalImg.src = "";
+    }
+
+    // eventos para ambas imagens
+    const imgIshikawa = document.getElementById('img-ishikawa');
+    const img5w2h = document.getElementById('img-5w2h');
+
+    if (imgIshikawa) {
+        imgIshikawa.addEventListener('click', () => openModal(imgIshikawa.src));
+    }
+    if (img5w2h) {
+        img5w2h.addEventListener('click', () => openModal(img5w2h.src));
+    }
+
+    closeModalSpan.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // também suporte a tecla ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            closeModal();
+        }
+    });
+</script>
+</body>
+</html>
