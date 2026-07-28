@@ -50,6 +50,12 @@
             color: #3498db;
             font-size: 60px;
         }
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
         
         h1 {
             font-size: 2.8rem;
@@ -193,6 +199,42 @@
         .btn i {
             margin-right: 8px;
         }
+
+        .btn-small {
+            padding: 6px 16px;
+            font-size: 0.9rem;
+        }
+
+        .extracurricular-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .extracurricular-link:hover {
+            text-decoration: underline;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .course-item {
+            background: #f8f9fa;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            font-size: 0.95rem;
+        }
+        .course-item strong {
+            display: block;
+            color: #2c3e50;
+        }
+        .course-item span {
+            font-size: 0.85rem;
+            color: #666;
+        }
         
         footer {
             text-align: center;
@@ -210,6 +252,10 @@
         
         .github-link:hover {
             text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
         }
         
         @media (max-width: 768px) {
@@ -231,11 +277,11 @@
 <body>
     <header>
         <div class="container">
-			<div class="profile-img">
-				<img src="3x4.jpeg" alt="Foto de Kawã Moreira">
-			</div>
+            <div class="profile-img">
+                <img src="3x4.jpeg" alt="Foto de Kawã Moreira">
+            </div>
             <h1>Kawã Fernandes da Silva Moreira</h1>
-            <p class="subtitle">Técnico em Administração | CST em gestão Comercial | Buscando primeira oportunidade no mercado</p>
+            <p class="subtitle">Técnico em Administração | CST em Gestão Comercial | Buscando primeira oportunidade no mercado</p>
             
             <div class="contact-info">
                 <div class="contact-item">
@@ -259,15 +305,17 @@
     </header>
     
     <div class="container">
+        <!-- Objetivo -->
         <section class="section">
             <h2><i class="fas fa-bullseye"></i> Objetivo Profissional</h2>
             <p>Busco minha primeira oportunidade no mercado de trabalho na área administrativa, onde possa aplicar meus conhecimentos técnicos em administração e contribuir com dedicação, organização e trabalho em equipe para o crescimento da empresa.</p>
         </section>
         
+        <!-- Formação -->
         <section class="section">
             <h2><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h2>
             <div class="skill-item">
-                <h3>Ensino Médio com Habilitação Técnica Profisisonal em Administração</h3>
+                <h3>Ensino Médio com Habilitação Técnica Profissional em Administração</h3>
                 <p><strong>ETEC de Carapicuíba</strong> | 2023-2025</p>
             </div>
             <div class="skill-item">
@@ -275,7 +323,22 @@
                 <p><strong>FATEC Santana de Parnaíba</strong> | 2026-Presente</p>
             </div>
         </section>
+
+        <!-- Experiência Profissional -->
+        <section class="section">
+            <h2><i class="fas fa-briefcase"></i> Experiência Profissional</h2>
+            <div class="skill-item">
+                <h3>Aprendiz Administrativo – Almoxarifado</h3>
+                <p><strong>Auto Viação Urubupungá</strong> | Santana de Parnaíba – SP</p>
+                <p style="margin-top:6px; font-size:0.95rem; color:#444;">
+                    Atuação na organização física de depósitos, conciliação de inventário e gestão de planilhas. 
+                    Administração de recursos e materiais para a organização interna da empresa, controle de planilhas 
+                    e conferência de produtos, visando obter experiência profissional nas operações da empresa.
+                </p>
+            </div>
+        </section>
         
+        <!-- Habilidades -->
         <section class="section">
             <h2><i class="fas fa-tools"></i> Habilidades</h2>
             <div class="skills-container">
@@ -284,7 +347,7 @@
                     <div class="skill-item">Pacote Office (Word, Excel, PowerPoint – nível básico)</div>
                     <div class="skill-item">Conhecimentos em Administração</div>
                     <div class="skill-item">Noções de informática</div>
-                    <div class="skill-item">Inglês - nível intermediário</div>
+                    <div class="skill-item">Inglês – nível intermediário</div>
                 </div>
                 
                 <div class="skills-category">
@@ -298,6 +361,7 @@
             </div>
         </section>
         
+        <!-- Projetos ETEC -->
         <section class="section projects">
             <h2><i class="fas fa-folder-open"></i> Projetos ETEC</h2>
             <p>Projetos desenvolvidos durante o curso técnico em Administração:</p>
@@ -305,140 +369,142 @@
             <div class="projects-container">
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>ETEC 1º ADM</h3>
-                        <p>Projetos</p>
+                        <h3>Projetos (2023)</h3>
+                        <p>1º ano – ADM</p>
                     </div>
                     <div class="project-body">
                         <p>Projetos desenvolvidos no primeiro ano do curso técnico em Administração.</p>
                         <a href="ETEC1ADM/index.html" class="btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Projetos
+                            <i class="fas fa-external-link-alt"></i> Acessar
                         </a>
                     </div>
                 </div>
                 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>ETEC 2º ADM</h3>
-                        <p>Projetos</p>
+                        <h3>Projetos (2024)</h3>
+                        <p>2º ano – ADM</p>
                     </div>
                     <div class="project-body">
                         <p>Projetos desenvolvidos no segundo ano do curso técnico em Administração.</p>
                         <a href="ETEC2ADM/index.html" class="btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Projetos
+                            <i class="fas fa-external-link-alt"></i> Acessar
                         </a>
                     </div>
                 </div>
                 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>ETEC 3º ADM</h3>
-                        <p>Projetos</p>
+                        <h3>Projetos (2025)</h3>
+                        <p>3º ano – ADM</p>
                     </div>
                     <div class="project-body">
                         <p>Projetos desenvolvidos no terceiro ano do curso técnico em Administração.</p>
                         <a href="ETEC3ADM/index.html" class="btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Projetos
+                            <i class="fas fa-external-link-alt"></i> Acessar
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Seção Projetos FATEC -->
+
+        <!-- Projetos FATEC -->
         <section class="section projects">
             <h2><i class="fas fa-university"></i> Projetos FATEC</h2>
             <p>Projetos desenvolvidos durante o curso superior de Gestão Comercial:</p>
             
-         <div class="projects-container">
-             <div class="project-card">
-                 <div class="project-header">
-                     <h3>1º Semestre</h3>
-                     <p>2026 | Em andamento</p>
-                 </div>
-                 <div class="project-body">
-                     <p>Trabalhos, pesquisas e atividades realizadas no primeiro semestre do curso.</p>
-                     <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/FATEC1GCOM/" class="btn" target="_blank">
-                         <i class="fas fa-external-link-alt"></i> Acessar projetos do 1º semestre
-                     </a>
-                 </div>
-             </div>
-        </div>
-        </section>
-        <section class="section">
-            <h2><i class="fas fa-certificate"></i> Cursos Complementares</h2>
-            <div class="skills-container">
-                <div class="skill-item">
-                    <h3>Informática</h3>
-                    <p>Aeronet</p>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>1º Semestre</h3>
+                        <p>2026 | Concluído</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Trabalhos, pesquisas e atividades realizadas no primeiro semestre do curso.</p>
+                        <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/FATEC1GCOM/" class="btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Acessar projetos do 1º semestre
+                        </a>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <h3>Inglês</h3>
-                    <p>Aeronet</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Gestão de Finanças Pessoais</h3>
-                    <p>ENAP (online)</p>
-                </div>
-                <div class="skill-item">
-                    <h3> Princípios de Economia: Macroeconomia</h3>
-                    <p>ENAP (online)</p>
-                </div>
+                <!-- Espaço para futuros semestres -->
             </div>
         </section>
+
+        <!-- Cursos Complementares -->
+        <section class="section">
+            <h2><i class="fas fa-certificate"></i> Cursos Complementares</h2>
+            <div class="course-grid">
+                <div class="course-item"><strong>Habilitação Profissional de Técnico em Administração</strong><span>CPS – Centro Paula Souza | jan/2026</span></div>
+                <div class="course-item"><strong>Microsoft Excel 2016 – Básico</strong><span>Fundação Bradesco | abr/2025</span></div>
+                <div class="course-item"><strong>Microsoft PowerPoint 2016 – Básico</strong><span>Fundação Bradesco | mai/2026</span></div>
+                <div class="course-item"><strong>Microsoft Word 2016 – Básico</strong><span>Fundação Bradesco | abr/2026</span></div>
+                <div class="course-item"><strong>Produzindo podcast para utilização em sala de aula</strong><span>UFSCar | abr/2026</span></div>
+                <div class="course-item"><strong>Gestão de Finanças Pessoais</strong><span>Enap | abr/2025</span></div>
+                <div class="course-item"><strong>Princípios de Economia: Macroeconomia</strong><span>Enap | jun/2025</span></div>
+                <div class="course-item"><strong>ENGLISH – Nível Intermediário</strong><span>Aeronet Cursos | abr/2022 (208h)</span></div>
+                <div class="course-item"><strong>INFORMÁTICA PRIME 2.0</strong><span>Aeronet Cursos | dez/2020 (158h)</span></div>
+                <div class="course-item"><strong>DESENVOLVENDO PROFISSIONAIS</strong><span>Aeronet Cursos | jun/2018</span></div>
+                <div class="course-item"><strong>SIPAT 2026 – Semana Interna de Prevenção de Acidentes</strong><span>Even3 | mai/2026</span></div>
+                <div class="course-item"><strong>1º, 2º e 3º dia – Mostra Acadêmica Fatec Santana de Parnaíba</strong><span>Even3 | jun/2026</span></div>
+            </div>
+            <p style="margin-top: 15px; font-size:0.9rem; color:#666;">
+                <i class="fas fa-info-circle"></i> Certificados disponíveis em breve na pasta <strong>Certificados</strong>.
+            </p>
+        </section>
         
+        <!-- Atividades Extracurriculares -->
         <section class="section">
             <h2><i class="fas fa-chess-board"></i> Atividades Extracurriculares</h2>
             <div class="skill-item">
-                <h3>Clube de Xadrez da ETEC de Carapicuíba</h3>
-                <p>2024-2025 | Desenvolve raciocínio lógico e estratégia</p>
+                <h3>
+                    <a href="./Xadrez/" class="extracurricular-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Clube de Xadrez da ETEC de Carapicuíba
+                    </a>
+                </h3>
+                <p>2024-2025 | Líder de projeto (2025) e participante (2024) – organização de encontros, recrutamento, participação no Intercurso, Feira do Clube e estudos com o professor Robson.</p>
+                <p style="font-size:0.9rem; color:#555; margin-top:4px;">
+                    <i class="fas fa-chess-queen"></i> Aprofundamento em aberturas, finais, análise de partidas com Lichess e Chess.com.
+                </p>
             </div>
             <div class="skill-item">
-                <h3>Clube de Vôlei da ETEC de Carapicuíba</h3>
+                <h3>Participação em grupos de vôlei na ETEC de Carapicuíba</h3>
                 <p>2023-2025 | Desenvolve raciocínio rápido e trabalho em equipe</p>
             </div>
         </section>
         
-        <section class="section">
+        <!-- Informações Adicionais (oculto) -->
+        <!--
+        <section class="section hidden">
             <h2><i class="fas fa-info-circle"></i> Informações Adicionais</h2>
             <div class="skills-container">
                 <div class="skill-item">Disponível para estágio ou período de aprendizagem</div>
                 <div class="skill-item">Horário flexível (compatível com estudos)</div>
             </div>
         </section>
+        -->
     </div>
     
     <footer>
         <div class="container">
             <p>Portfólio desenvolvido para GitHub | Kawã Fernandes da Silva Moreira</p>
             <p>Repositório: <a href="https://github.com/KavaBlox/Kawa-Moreira-Portfolio" class="github-link" target="_blank">https://github.com/KavaBlox/Kawa-Moreira-Portfolio</a></p>
-            <p>Atualizado em Junho de 2024</p>
+            <p>Atualizado em Julho de 2026</p>
         </div>
     </footer>
 
     <script>
-        // Adicionar interatividade aos botões
         document.addEventListener('DOMContentLoaded', function() {
+            // Interatividade para botões que ainda não têm link
             const buttons = document.querySelectorAll('.btn');
-            
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
-                    if (this.getAttribute('href') === '#') {
+                    // Se o href for vazio ou '#', mostra aviso
+                    if (this.getAttribute('href') === '#' || !this.getAttribute('href')) {
                         e.preventDefault();
                         alert('Esta página está em desenvolvimento. Em breve estará disponível!');
                     }
                 });
             });
-            
-            // Simular estrutura de pastas (para demonstração)
-            console.log("Estrutura de pastas do portfólio:");
-            console.log("|-- index.html (esta página)");
-            console.log("    |-- ETEC1ADM-Fragatta%20Imports/");
-            console.log("        |-- 2023-index.html");
-            console.log("    |-- ETEC2ADM-PlásTec/");
-            console.log("        |-- 2024-index.html");
-            console.log("    |-- ETEC3ADM/");
-            console.log("        |-- 2025-index.html");
-            console.log("    |-- FATEC1GCOM/");
-            console.log("        |-- index.html");
         });
     </script>
 </body>
