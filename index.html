@@ -35,11 +35,10 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
-        /* --- Foto de perfil agora QUADRADA (proporção 1:1) --- */
         .profile-img {
             width: 180px;
             height: 180px;
-            border-radius: 12px; /* apenas um toque moderno, mas mantém o formato quadrado */
+            border-radius: 12px;
             border: 5px solid white;
             margin: 0 auto 20px;
             overflow: hidden;
@@ -85,6 +84,13 @@
         .contact-item:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-3px);
+        }
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
         }
         
         .section {
@@ -210,7 +216,6 @@
             text-decoration: underline;
         }
 
-        /* Grades para cursos e reconhecimentos */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -249,6 +254,32 @@
         .grid-item a:hover {
             text-decoration: underline;
         }
+        .cert-link {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 0.85rem;
+            background: #eaf4fb;
+            padding: 4px 12px;
+            border-radius: 20px;
+            transition: background 0.2s;
+        }
+        .cert-link i {
+            margin-right: 4px;
+        }
+        .cert-link:hover {
+            background: #d4e6f5;
+        }
+        .link-list {
+            margin-top: 6px;
+        }
+        .link-list a {
+            display: inline-block;
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+        .link-list i {
+            margin-right: 4px;
+        }
         
         footer {
             text-align: center;
@@ -276,12 +307,10 @@
             h1 {
                 font-size: 2.2rem;
             }
-            
             .contact-info {
                 flex-direction: column;
                 align-items: center;
             }
-            
             .projects-container {
                 grid-template-columns: 1fr;
             }
@@ -292,8 +321,7 @@
     <header>
         <div class="container">
             <div class="profile-img">
-                <!-- Foto quadrada (proporção 400x400) -->
-                <img src="3x4.jpg" alt="Foto de Kawã Moreira">
+                <img src="3x4.jpeg" alt="Foto de Kawã Moreira">
             </div>
             <h1>Kawã Fernandes da Silva Moreira</h1>
             <p class="subtitle">Técnico em Administração | CST em Gestão Comercial | Buscando primeira oportunidade no mercado</p>
@@ -315,6 +343,10 @@
                     <i class="fas fa-birthday-cake"></i>
                     <span>23/05/2008</span>
                 </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/kaw%C3%A3-fernandes-da-silva-moreira-534987369/" target="_blank">LinkedIn</a>
+                </div>
             </div>
         </div>
     </header>
@@ -332,6 +364,7 @@
             <div class="skill-item">
                 <h3>Ensino Médio com Habilitação Técnica Profissional em Administração</h3>
                 <p><strong>ETEC de Carapicuíba</strong> | 2023-2025</p>
+                <a href="Certificados/ETEC/Doc_Conclusao_ETEC.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
             </div>
             <div class="skill-item">
                 <h3>Curso Superior de Tecnologia em Gestão Comercial</h3>
@@ -441,7 +474,6 @@
                         </a>
                     </div>
                 </div>
-                <!-- Espaço para futuros semestres -->
             </div>
         </section>
 
@@ -449,25 +481,109 @@
         <section class="section">
             <h2><i class="fas fa-certificate"></i> Cursos Complementares</h2>
             <div class="grid-container">
-                <div class="grid-item"><strong>Habilitação Profissional de Técnico em Administração</strong><span>CPS – Centro Paula Souza | jan/2026</span></div>
-                <div class="grid-item"><strong>Microsoft Excel 2016 – Básico</strong><span>Fundação Bradesco | abr/2025</span></div>
-                <div class="grid-item"><strong>Microsoft PowerPoint 2016 – Básico</strong><span>Fundação Bradesco | mai/2026</span></div>
-                <div class="grid-item"><strong>Microsoft Word 2016 – Básico</strong><span>Fundação Bradesco | abr/2026</span></div>
-                <div class="grid-item"><strong>Produzindo podcast para utilização em sala de aula</strong><span>UFSCar | abr/2026</span></div>
-                <div class="grid-item"><strong>Gestão de Finanças Pessoais</strong><span>Enap | abr/2025</span></div>
-                <div class="grid-item"><strong>Princípios de Economia: Macroeconomia</strong><span>Enap | jun/2025</span></div>
-                <div class="grid-item"><strong>ENGLISH – Nível Intermediário</strong><span>Aeronet Cursos | abr/2022 (208h)</span></div>
-                <div class="grid-item"><strong>INFORMÁTICA PRIME 2.0</strong><span>Aeronet Cursos | dez/2020 (158h)</span></div>
-                <div class="grid-item"><strong>DESENVOLVENDO PROFISSIONAIS</strong><span>Aeronet Cursos | jun/2018</span></div>
-                <div class="grid-item"><strong>SIPAT 2026 – Semana Interna de Prevenção de Acidentes</strong><span>Even3 | mai/2026</span></div>
-                <div class="grid-item"><strong>1º, 2º e 3º dia – Mostra Acadêmica Fatec Santana de Parnaíba</strong><span>Even3 | jun/2026</span></div>
+                <div class="grid-item">
+                    <strong>Habilitação Profissional de Técnico em Administração</strong>
+                    <span>CPS – Centro Paula Souza | jan/2026</span>
+                    <a href="Certificados/ETEC/Doc_Conclusao_ETEC.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+                </div>
+                <div class="grid-item">
+                    <strong>Microsoft Excel 2016 – Básico</strong>
+                    <span>Fundação Bradesco | abr/2025</span>
+                    <a href="Certificados/Bradesco/Certificado_(MICROSOFT_EXCEL_2016-BASICO).pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+                </div>
+                <div class="grid-item">
+                    <strong>Microsoft PowerPoint 2016 – Básico</strong>
+                    <span>Fundação Bradesco | mai/2026</span>
+                    <a href="Certificados/Bradesco/Certificado_(MICROSOFT_POWERPOINT_2016-BASICO).pdf.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+                </div>
+                <div class="grid-item">
+                    <strong>Microsoft Word 2016 – Básico</strong>
+                    <span>Fundação Bradesco | abr/2026</span>
+                    <a href="Certificados/Bradesco/Certificado_(MICROSOFT_WORD_2016-BASICO).pdf.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+                </div>
+                <div class="grid-item">
+                    <strong>Produzindo podcast para utilização em sala de aula</strong>
+                    <span>UFSCar | abr/2026</span>
+                    <a href="Certificados/UFSCAR/Produzindo_podcast_para_utilizacao_em_sala_de_aula-Certificado_320120.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+                </div>
+                <div class="grid-item">
+                    <strong>Gestão de Finanças Pessoais</strong>
+                    <span>Enap | abr/2025</span>
+                    <a href="Certificados/ENAP/gestao_de_financas_pessoais_turma_mar2025_certificado.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+                </div>
+                <div class="grid-item">
+                    <strong>Princípios de Economia: Macroeconomia</strong>
+                    <span>Enap | jun/2025</span>
+                    <a href="Certificados/ENAP/principios_de_economia_macroeconomia_turma_mai2025_certificado.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+                </div>
+                <div class="grid-item">
+                    <strong>ENGLISH – Nível Intermediário</strong>
+                    <span>Aeronet Cursos | abr/2022 (208h)</span>
+                    <a href="Certificados/Aeronet/INGLES.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+                </div>
+                <div class="grid-item">
+                    <strong>INFORMÁTICA PRIME 2.0</strong>
+                    <span>Aeronet Cursos | dez/2020 (158h)</span>
+                    <a href="Certificados/Aeronet/INFORMATICA.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+                </div>
+                <div class="grid-item">
+                    <strong>DESENVOLVENDO PROFISSIONAIS</strong>
+                    <span>Aeronet Cursos | jun/2018</span>
+                    <a href="Certificados/Aeronet/DESENVOLVENDO_PROFISSIONAIS.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+                </div>
+                <div class="grid-item">
+                    <strong>SIPAT 2026 – Semana Interna de Prevenção de Acidentes</strong>
+                    <span>Even3 | mai/2026</span>
+                    <span class="cert-link" style="background:#eee; color:#999;"><i class="fas fa-clock"></i> Em breve</span>
+                </div>
             </div>
-            <p style="margin-top: 15px; font-size:0.9rem; color:#666;">
-                <i class="fas fa-info-circle"></i> Certificados disponíveis em breve na pasta <strong>Certificados</strong>.
-            </p>
         </section>
 
-        <!-- NOVA SEÇÃO: Reconhecimentos e Prêmios -->
+        <!-- NOVA SEÇÃO: Participação em Eventos -->
+        <section class="section">
+            <h2><i class="fas fa-calendar-check"></i> Participação em Eventos</h2>
+            <div class="grid-container">
+                <!-- 1º dia -->
+                <div class="grid-item">
+                    <strong>1º dia – 2ª Mostra Acadêmica Fatec Santana de Parnaíba</strong>
+                    <span>Even3 | jun/2026</span>
+                    <p>Participação no primeiro dia do evento acadêmico.</p>
+                    <div class="link-list">
+                        <a href="Certificados/even3/Fatec-2-Mostra-Academica-Dia_1-document.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+                        <a href="https://fatecsdp.cps.sp.gov.br/mostra-academica-fatec-santana-de-parnaiba-1o-semestre-de-2026/" target="_blank" style="display:inline-block; margin-top:4px;"><i class="fas fa-globe"></i> Site do evento</a>
+                    </div>
+                </div>
+                <!-- 2º dia -->
+                <div class="grid-item">
+                    <strong>2º dia – 2ª Mostra Acadêmica Fatec Santana de Parnaíba</strong>
+                    <span>Even3 | jun/2026</span>
+                    <p>Participação no segundo dia do evento acadêmico.</p>
+                    <div class="link-list">
+                        <a href="Certificados/even3/Fatec-2-Mostra-Academica-Dia_2-document.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+                        <a href="https://fatecsdp.cps.sp.gov.br/mostra-academica-fatec-santana-de-parnaiba-1o-semestre-de-2026/" target="_blank" style="display:inline-block; margin-top:4px;"><i class="fas fa-globe"></i> Site do evento</a>
+                    </div>
+                </div>
+                <!-- 3º dia (com links extras) -->
+                <div class="grid-item">
+                    <strong>3º dia – 2ª Mostra Acadêmica Fatec Santana de Parnaíba</strong>
+                    <span>Even3 | jun/2026</span>
+                    <p>Apresentação dos projetos do 1º semestre de Gestão Comercial. O portfólio do grupo e o website do projeto integrador estão disponíveis abaixo.</p>
+                    <div class="link-list">
+                        <a href="Certificados/even3/Fatec-2-Mostra-Academica-Dia_3-document.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+                        <br>
+                        <a href="https://fatecsdp.cps.sp.gov.br/mostra-academica-fatec-santana-de-parnaiba-1o-semestre-de-2026/" target="_blank"><i class="fas fa-globe"></i> Site do evento</a>
+                        <br>
+                        <a href="https://web.archive.org/web/20260605151951/https://fatecsdp.cps.sp.gov.br/mostra-academica-fatec-santana-de-parnaiba-1o-semestre-de-2026/" target="_blank"><i class="fas fa-archive"></i> Versão arquivada (05 jun. 2026)</a>
+                        <br>
+                        <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/FATEC1GCOM/" target="_blank"><i class="fas fa-folder-open"></i> Portfólio do grupo (FATEC1GCOM)</a>
+                        <br>
+                        <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/FATEC1GCOM/Projeto-Integrador-1/index.html" target="_blank"><i class="fas fa-code"></i> Website do Projeto Integrador I</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reconhecimentos e Prêmios -->
         <section class="section">
             <h2><i class="fas fa-trophy"></i> Reconhecimentos e Prêmios</h2>
             <div class="grid-container">
@@ -476,22 +592,22 @@
                     <span>IMPA – Instituto de Matemática Pura e Aplicada | jan/2026</span>
                     <p>Reconhecimento nacional concedido a estudantes com desempenho de destaque na Olimpíada Brasileira de Matemática das Escolas Públicas. Classificado entre os participantes em nível estadual.</p>
                     <p><i class="fas fa-link"></i> <a href="https://premiacao.obmep.org.br/20obmep/verRelatorioPremiadosGeral-SP.3.do.htm" target="_blank">Lista oficial de premiados – SP</a></p>
+                    <a href="Certificados/IMPA/image(7).png" target="_blank" class="cert-link"><i class="fas fa-image"></i> Comprovante</a>
                 </div>
                 <div class="grid-item">
                     <strong>Menção Honrosa – CUCO 2024</strong>
                     <span>USP – Universidade de São Paulo | ago/2024</span>
                     <p>Destaque em desempenho em conhecimentos gerais e raciocínio interdisciplinar na Competição USP de Conhecimentos e Oportunidades.</p>
                     <p><i class="fas fa-key"></i> Código de Autenticidade: <strong>EA087-49F8F-974F3-FBBC0</strong></p>
+                    <a href="Certificados/USP/certificado-cuco-2023-EA087-49F8F-974F3-FBBC0.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
                 </div>
                 <div class="grid-item">
                     <strong>Participação – Roda de Conversa "Se liga na Emoção"</strong>
                     <span>E.E. Basílio Bosniac | jul/2023</span>
                     <p>Participação especial no programa de Eletiva de Psicologia, discutindo temas como stress, ansiedade, depressão e áreas da psicologia com os alunos da escola.</p>
+                    <a href="Certificados/E_E_Basilio_Bosniac/Eletiva_Psicologia.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
                 </div>
             </div>
-            <p style="margin-top: 15px; font-size:0.9rem; color:#666;">
-                <i class="fas fa-info-circle"></i> Certificados e comprovantes disponíveis em breve na pasta <strong>Certificados</strong>.
-            </p>
         </section>
         
         <!-- Atividades Extracurriculares -->
@@ -536,7 +652,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Interatividade para botões que ainda não têm link
             const buttons = document.querySelectorAll('.btn');
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
