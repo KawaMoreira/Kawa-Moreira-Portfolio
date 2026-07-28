@@ -35,26 +35,22 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
+        /* --- Foto de perfil agora QUADRADA (proporção 1:1) --- */
         .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            border-radius: 12px; /* apenas um toque moderno, mas mantém o formato quadrado */
             border: 5px solid white;
-            margin-bottom: 20px;
-            object-fit: cover;
-            background-color: #ecf0f1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             margin: 0 auto 20px;
-            color: #3498db;
-            font-size: 60px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            background-color: #ecf0f1;
         }
         .profile-img img {
             width: 100%;
             height: 100%;
-            border-radius: 50%;
             object-fit: cover;
+            display: block;
         }
         
         h1 {
@@ -214,26 +210,44 @@
             text-decoration: underline;
         }
 
-        .course-grid {
+        /* Grades para cursos e reconhecimentos */
+        .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 15px;
             margin-top: 15px;
         }
-        .course-item {
+        .grid-item {
             background: #f8f9fa;
-            padding: 12px 16px;
+            padding: 14px 18px;
             border-radius: 8px;
             border-left: 4px solid #3498db;
             font-size: 0.95rem;
+            transition: background 0.2s;
         }
-        .course-item strong {
+        .grid-item:hover {
+            background: #edf7ff;
+        }
+        .grid-item strong {
             display: block;
             color: #2c3e50;
         }
-        .course-item span {
+        .grid-item span {
             font-size: 0.85rem;
             color: #666;
+        }
+        .grid-item p {
+            margin-top: 6px;
+            font-size: 0.92rem;
+            color: #444;
+        }
+        .grid-item a {
+            color: #3498db;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .grid-item a:hover {
+            text-decoration: underline;
         }
         
         footer {
@@ -278,7 +292,8 @@
     <header>
         <div class="container">
             <div class="profile-img">
-                <img src="3x4.jpeg" alt="Foto de Kawã Moreira">
+                <!-- Foto quadrada (proporção 400x400) -->
+                <img src="3x4.jpg" alt="Foto de Kawã Moreira">
             </div>
             <h1>Kawã Fernandes da Silva Moreira</h1>
             <p class="subtitle">Técnico em Administração | CST em Gestão Comercial | Buscando primeira oportunidade no mercado</p>
@@ -433,22 +448,49 @@
         <!-- Cursos Complementares -->
         <section class="section">
             <h2><i class="fas fa-certificate"></i> Cursos Complementares</h2>
-            <div class="course-grid">
-                <div class="course-item"><strong>Habilitação Profissional de Técnico em Administração</strong><span>CPS – Centro Paula Souza | jan/2026</span></div>
-                <div class="course-item"><strong>Microsoft Excel 2016 – Básico</strong><span>Fundação Bradesco | abr/2025</span></div>
-                <div class="course-item"><strong>Microsoft PowerPoint 2016 – Básico</strong><span>Fundação Bradesco | mai/2026</span></div>
-                <div class="course-item"><strong>Microsoft Word 2016 – Básico</strong><span>Fundação Bradesco | abr/2026</span></div>
-                <div class="course-item"><strong>Produzindo podcast para utilização em sala de aula</strong><span>UFSCar | abr/2026</span></div>
-                <div class="course-item"><strong>Gestão de Finanças Pessoais</strong><span>Enap | abr/2025</span></div>
-                <div class="course-item"><strong>Princípios de Economia: Macroeconomia</strong><span>Enap | jun/2025</span></div>
-                <div class="course-item"><strong>ENGLISH – Nível Intermediário</strong><span>Aeronet Cursos | abr/2022 (208h)</span></div>
-                <div class="course-item"><strong>INFORMÁTICA PRIME 2.0</strong><span>Aeronet Cursos | dez/2020 (158h)</span></div>
-                <div class="course-item"><strong>DESENVOLVENDO PROFISSIONAIS</strong><span>Aeronet Cursos | jun/2018</span></div>
-                <div class="course-item"><strong>SIPAT 2026 – Semana Interna de Prevenção de Acidentes</strong><span>Even3 | mai/2026</span></div>
-                <div class="course-item"><strong>1º, 2º e 3º dia – Mostra Acadêmica Fatec Santana de Parnaíba</strong><span>Even3 | jun/2026</span></div>
+            <div class="grid-container">
+                <div class="grid-item"><strong>Habilitação Profissional de Técnico em Administração</strong><span>CPS – Centro Paula Souza | jan/2026</span></div>
+                <div class="grid-item"><strong>Microsoft Excel 2016 – Básico</strong><span>Fundação Bradesco | abr/2025</span></div>
+                <div class="grid-item"><strong>Microsoft PowerPoint 2016 – Básico</strong><span>Fundação Bradesco | mai/2026</span></div>
+                <div class="grid-item"><strong>Microsoft Word 2016 – Básico</strong><span>Fundação Bradesco | abr/2026</span></div>
+                <div class="grid-item"><strong>Produzindo podcast para utilização em sala de aula</strong><span>UFSCar | abr/2026</span></div>
+                <div class="grid-item"><strong>Gestão de Finanças Pessoais</strong><span>Enap | abr/2025</span></div>
+                <div class="grid-item"><strong>Princípios de Economia: Macroeconomia</strong><span>Enap | jun/2025</span></div>
+                <div class="grid-item"><strong>ENGLISH – Nível Intermediário</strong><span>Aeronet Cursos | abr/2022 (208h)</span></div>
+                <div class="grid-item"><strong>INFORMÁTICA PRIME 2.0</strong><span>Aeronet Cursos | dez/2020 (158h)</span></div>
+                <div class="grid-item"><strong>DESENVOLVENDO PROFISSIONAIS</strong><span>Aeronet Cursos | jun/2018</span></div>
+                <div class="grid-item"><strong>SIPAT 2026 – Semana Interna de Prevenção de Acidentes</strong><span>Even3 | mai/2026</span></div>
+                <div class="grid-item"><strong>1º, 2º e 3º dia – Mostra Acadêmica Fatec Santana de Parnaíba</strong><span>Even3 | jun/2026</span></div>
             </div>
             <p style="margin-top: 15px; font-size:0.9rem; color:#666;">
                 <i class="fas fa-info-circle"></i> Certificados disponíveis em breve na pasta <strong>Certificados</strong>.
+            </p>
+        </section>
+
+        <!-- NOVA SEÇÃO: Reconhecimentos e Prêmios -->
+        <section class="section">
+            <h2><i class="fas fa-trophy"></i> Reconhecimentos e Prêmios</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <strong>Menção Honrosa – 20ª OBMEP 2025</strong>
+                    <span>IMPA – Instituto de Matemática Pura e Aplicada | jan/2026</span>
+                    <p>Reconhecimento nacional concedido a estudantes com desempenho de destaque na Olimpíada Brasileira de Matemática das Escolas Públicas. Classificado entre os participantes em nível estadual.</p>
+                    <p><i class="fas fa-link"></i> <a href="https://premiacao.obmep.org.br/20obmep/verRelatorioPremiadosGeral-SP.3.do.htm" target="_blank">Lista oficial de premiados – SP</a></p>
+                </div>
+                <div class="grid-item">
+                    <strong>Menção Honrosa – CUCO 2024</strong>
+                    <span>USP – Universidade de São Paulo | ago/2024</span>
+                    <p>Destaque em desempenho em conhecimentos gerais e raciocínio interdisciplinar na Competição USP de Conhecimentos e Oportunidades.</p>
+                    <p><i class="fas fa-key"></i> Código de Autenticidade: <strong>EA087-49F8F-974F3-FBBC0</strong></p>
+                </div>
+                <div class="grid-item">
+                    <strong>Participação – Roda de Conversa "Se liga na Emoção"</strong>
+                    <span>E.E. Basílio Bosniac | jul/2023</span>
+                    <p>Participação especial no programa de Eletiva de Psicologia, discutindo temas como stress, ansiedade, depressão e áreas da psicologia com os alunos da escola.</p>
+                </div>
+            </div>
+            <p style="margin-top: 15px; font-size:0.9rem; color:#666;">
+                <i class="fas fa-info-circle"></i> Certificados e comprovantes disponíveis em breve na pasta <strong>Certificados</strong>.
             </p>
         </section>
         
@@ -498,7 +540,6 @@
             const buttons = document.querySelectorAll('.btn');
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
-                    // Se o href for vazio ou '#', mostra aviso
                     if (this.getAttribute('href') === '#' || !this.getAttribute('href')) {
                         e.preventDefault();
                         alert('Esta página está em desenvolvimento. Em breve estará disponível!');
