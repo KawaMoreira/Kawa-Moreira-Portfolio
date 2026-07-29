@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gambito da Etec – Clube de Xadrez</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e2a3a 0%, #2c3e50 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        header h1 i {
+            color: #f1c40f;
+        }
+
+        header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        header .date {
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #f1c40f;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Seções */
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f1c40f;
+            display: inline-block;
+        }
+
+        .description p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .description ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 15px 0;
+        }
+
+        .description ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .description ul li i {
+            color: #f1c40f;
+            margin-top: 4px;
+            width: 20px;
+        }
+
+        /* Galeria */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 3px solid #f1c40f;
+            cursor: zoom-in;
+            transition: filter 0.2s;
+        }
+
+        .gallery-item img:hover {
+            filter: brightness(0.95);
+        }
+
+        .gallery-item .caption {
+            padding: 14px 16px;
+            font-size: 0.95rem;
+            color: #444;
+            background: white;
+        }
+
+        .gallery-item .caption strong {
+            display: block;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .gallery-item .caption span {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* ===== MODAL / LIGHTBOX ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.92);
+            cursor: zoom-out;
+            padding: 40px 20px;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 95%;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+            cursor: default;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 48px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.2s ease;
+            line-height: 1;
+            z-index: 10000;
+        }
+
+        .modal-close:hover {
+            color: #f1c40f;
+            transform: scale(1.1);
+        }
+
+        /* Responsividade do modal */
+        @media (max-width: 700px) {
+            .modal-content {
+                max-width: 100%;
+                max-height: 80vh;
+            }
+            .modal-close {
+                top: 12px;
+                right: 20px;
+                font-size: 38px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 20px;
+            color: #7f8c8d;
+            border-top: 1px solid #ddd;
+        }
+
+        footer a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+            .gallery-item img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-chess-king"></i> Gambito da Etec</h1>
+            <p class="subtitle">Clube de Xadrez – ETEC de Carapicuíba</p>
+            <p class="date">2024 – 2025 | Líder de Projeto (2025) | Participante (2024)</p>
+            <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar ao Portfólio</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Descrição do Projeto -->
+        <section class="section description">
+            <h2><i class="fas fa-chess-board"></i> Sobre o Clube</h2>
+            <p>
+                Em 2024, ingressei como membro do clube de xadrez "Gambito da Etec" e, em 2025, assumi a liderança ao lado do meu colega Pedro Dias. Nossa missão foi fortalecer a cultura do xadrez na escola, promovendo o raciocínio lógico, a estratégia e a integração entre os alunos.
+            </p>
+            <ul>
+                <li><i class="fas fa-chess"></i> Organização de encontros semanais de prática e estudo de xadrez;</li>
+                <li><i class="fas fa-users"></i> Recrutamento e integração de novos membros, especialmente alunos ingressantes;</li>
+                <li><i class="fas fa-trophy"></i> Organização da participação do clube no “Intercurso” da Etec, competição esportiva entre cursos;</li>
+                <li><i class="fas fa-calendar-day"></i> Realização da Feira do Clube, com divulgação, exposição de tabuleiros, peças artesanais e desafios de xadrez com recompensas;</li>
+                <li><i class="fas fa-handshake"></i> Promoção de partidas amistosas e atividades colaborativas entre integrantes;</li>
+                <li><i class="fas fa-chalkboard-teacher"></i> Apoio às aulas e estudos conduzidos pelo professor Robson, envolvendo estratégias de jogo, análise de posições, aberturas e finais.</li>
+            </ul>
+            <p>
+                Sob a mentoria do Professor Robson, aprofundei meus conhecimentos em princípios do xadrez, estudando conceitos como Abertura do Centro, Abertura Escocesa, Abertura Italiana (Giuoco Piano), Defesa dos Dois Cavalos, estruturas de jogo, diagramas de xeque-mate, ganho de material e finais elementares, utilizando ferramentas digitais como Lichess e Chess.com para análise de partidas e treinamento.
+            </p>
+            <p>
+                <strong>Esta experiência foi fundamental para desenvolver minha capacidade de liderança, organização de projetos, trabalho em equipe e pensamento estratégico, competências que levo comigo para toda a vida.</strong>
+            </p>
+        </section>
+
+        <!-- Galeria de Imagens -->
+        <section class="section">
+            <h2><i class="fas fa-images"></i> Galeria</h2>
+            <div class="gallery">
+                <!-- Mapeamento imagem → descrição conforme fornecido -->
+                <div class="gallery-item">
+                    <img src="Panfleto_Original.jpeg" alt="Panfleto original do Clube de Xadrez">
+                    <div class="caption">
+                        <strong>Panfleto do Clube de Xadrez</strong>
+                        <span>Panfleto utilizado para a divulgação do clube.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="Panfleto1.jpeg" alt="Panfleto de divulgação versão 1">
+                    <div class="caption">
+                        <strong>Panfleto de Divulgação (versão 1)</strong>
+                        <span>Material de divulgação do projeto "Gambito da Etec".</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="Panfleto_2.jpeg" alt="Panfleto de divulgação versão 2">
+                    <div class="caption">
+                        <strong>Panfleto de Divulgação (versão 2)</strong>
+                        <span>Outro modelo de panfleto para a Feira do Clube em 2025.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="panfleto_impresso.jpeg" alt="Panfleto impresso">
+                    <div class="caption">
+                        <strong>Panfleto impresso</strong>
+                        <span>Panfleto distribuído para os alunos ingressantes e dependências da Etec.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="Analise_Lichess.jpeg" alt="Análise de partida no Lichess">
+                    <div class="caption">
+                        <strong>Análise de partida por computador</strong>
+                        <span>Utilização do website Lichess para análise de partidas de xadrez.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="Diagramas_Xadrez.png" alt="Diagramas de xadrez">
+                    <div class="caption">
+                        <strong>Diagramas de Xadrez</strong>
+                        <span>Diagramas realizados para estruturação dos tabuleiros na Feira do Clube, retratando xeque-mate em alguns lances, indicados pela notação.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="diagrama1.jpeg" alt="Diagrama - Mate em 2">
+                    <div class="caption">
+                        <strong>Diagrama - Mate em 2</strong>
+                        <span>Exemplo criado para resolução em eventos. Solução: 1. Dxh7+, Dxh7 2. Cf7++</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="Tabuleiro_Fisico.jpeg" alt="Disposição do tabuleiro">
+                    <div class="caption">
+                        <strong>Disposição do Tabuleiro - Feira do Clube</strong>
+                        <span>Organização do tabuleiro com as peças posicionadas para uma partida.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira_cartaz.jpeg" alt="Cartaz na Feira">
+                    <div class="caption">
+                        <strong>Cartaz na Feira - GAMBITO DA ETEC</strong>
+                        <span>Cartaz disposto no mural para o evento Feira dos Clubes (Xadrez).</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira_cartaz (2).jpeg" alt="Cartaz da Feira versão 2">
+                    <div class="caption">
+                        <strong>Cartaz da Feira (versão 2)</strong>
+                        <span>Outra versão do cartaz de divulgação.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira_confecção_peões.jpeg" alt="Confecção dos peões decorativos">
+                    <div class="caption">
+                        <strong>Confecção dos Peões decorativos</strong>
+                        <span>Processo de confecção dos peões para a Feira do Clube de Xadrez em 2025.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira_peão.jpeg" alt="Peão decorativo">
+                    <div class="caption">
+                        <strong>Peão decorativo</strong>
+                        <span>Peão decorativo realizado para a Feira do Clube de Xadrez.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira_mesa1.jpeg" alt="Mesa da Feira (1)">
+                    <div class="caption">
+                        <strong>Mesa da Feira (1) | GAMBITO DA ETEC</strong>
+                        <span>Mesa com as peças decorativas confeccionadas.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira_mesa2.jpeg" alt="Mesa da Feira (2)">
+                    <div class="caption">
+                        <strong>Mesa da Feira (2) | GAMBITO DA ETEC</strong>
+                        <span>Mesa com todas as decorações e peças temáticas do jogo.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira_amistoso.jpeg" alt="Partida amistosa">
+                    <div class="caption">
+                        <strong>Partida amistosa</strong>
+                        <span>Momento de uma partida amistosa durante a Feira do Clube.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira1.jpeg" alt="Feira do Clube (1)">
+                    <div class="caption">
+                        <strong>FEIRA DO CLUBE DE XADREZ (1)</strong>
+                        <span>Disposição da mesa para apresentação em público. Fotografia 17/08/2025.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira2.jpeg" alt="Feira do Clube (2)">
+                    <div class="caption">
+                        <strong>FEIRA DO CLUBE DE XADREZ (2)</strong>
+                        <span>Outro ângulo da mesa exposta. Fotografia 17/08/2025.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira3.jpeg" alt="Feira do Clube (3)">
+                    <div class="caption">
+                        <strong>FEIRA DO CLUBE DE XADREZ (3)</strong>
+                        <span>Detalhe da organização. Fotografia 17/08/2025.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira4.jpeg" alt="Feira do Clube (4)">
+                    <div class="caption">
+                        <strong>FEIRA DO CLUBE DE XADREZ (4)</strong>
+                        <span>Vista geral da mesa e interação com o público. Fotografia 17/08/2025.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ===== MODAL (LIGHTBOX) ===== -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close" onclick="event.stopPropagation(); closeModal();">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Projeto <strong>Gambito da Etec</strong> – Clube de Xadrez da ETEC de Carapicuíba</p>
+            <p><a href="../index.html"><i class="fas fa-arrow-left"></i> Voltar ao Portfólio Principal</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById('imageModal');
+            var modalImg = document.getElementById('modalImage');
+            var images = document.querySelectorAll('.gallery-item img');
+
+            // Abrir modal ao clicar em qualquer imagem
+            images.forEach(function(img) {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    modal.style.display = 'flex';
+                    modalImg.src = this.src;
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Fechar modal (função global chamada pelo onclick do modal e do botão)
+            window.closeModal = function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            };
+
+            // Fechar com tecla ESC
+            window.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+
+            // Impedir que o clique na imagem feche o modal (propagação)
+            modalImg.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
+</body>
+</html>
