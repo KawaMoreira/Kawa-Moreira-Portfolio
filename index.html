@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kawã Fernandes da Silva Moreira - Portfólio</title>
+    <title>Gambito da Etec – Clube de Xadrez</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -12,87 +12,66 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
-            background-color: #f5f7fa;
+            background-color: #f0f2f5;
             color: #333;
             line-height: 1.6;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
+
+        /* Header */
         header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            background: linear-gradient(135deg, #1e2a3a 0%, #2c3e50 100%);
             color: white;
-            padding: 60px 20px;
+            padding: 50px 20px;
             text-align: center;
             border-radius: 0 0 20px 20px;
             margin-bottom: 40px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 12px;
-            border: 5px solid white;
-            margin: 0 auto 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            background-color: #ecf0f1;
-        }
-        .profile-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        
-        h1 {
-            font-size: 2.8rem;
+
+        header h1 {
+            font-size: 3rem;
             margin-bottom: 10px;
+            letter-spacing: 1px;
         }
-        
-        .subtitle {
+
+        header h1 i {
+            color: #f1c40f;
+        }
+
+        header .subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
-            margin-bottom: 25px;
+            margin-bottom: 10px;
         }
-        
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+
+        header .date {
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        .back-link {
+            display: inline-block;
             margin-top: 20px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px 20px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-        }
-        .contact-item a {
-            color: white;
+            color: #f1c40f;
             text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
         }
-        .contact-item a:hover {
+
+        .back-link:hover {
+            color: #fff;
             text-decoration: underline;
         }
-        
+
+        /* Seções */
         .section {
             background: white;
             padding: 30px;
@@ -100,218 +79,185 @@
             margin-bottom: 30px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         h2 {
             color: #2c3e50;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 3px solid #3498db;
+            border-bottom: 3px solid #f1c40f;
             display: inline-block;
         }
-        
-        .skills-container {
+
+        .description p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .description ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 15px 0;
+        }
+
+        .description ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .skills-category {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .skill-item {
-            background: #f8f9fa;
-            padding: 12px 20px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-            transition: transform 0.2s;
-        }
-        
-        .skill-item:hover {
-            transform: translateX(5px);
-            background: #edf7ff;
-        }
-        
-        .projects {
-            text-align: center;
-        }
-        
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .project-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 1px solid #eaeaea;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-header {
-            background: #3498db;
-            color: white;
-            padding: 20px;
-        }
-        
-        .project-header h3 {
-            font-size: 1.5rem;
-        }
-        
-        .project-body {
-            padding: 20px;
-        }
-        
-        .project-body p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #3498db;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            background: #2980b9;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-        }
-        
-        .btn i {
-            margin-right: 8px;
+            align-items: flex-start;
+            gap: 10px;
         }
 
-        .btn-small {
-            padding: 6px 16px;
-            font-size: 0.9rem;
+        .description ul li i {
+            color: #f1c40f;
+            margin-top: 4px;
+            width: 20px;
         }
 
-        .extracurricular-link {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .extracurricular-link:hover {
-            text-decoration: underline;
-        }
-
-        .grid-container {
+        /* Galeria */
+        .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+            gap: 25px;
+            margin-top: 20px;
         }
-        .grid-item {
+
+        .gallery-item {
             background: #f8f9fa;
-            padding: 14px 18px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 3px solid #f1c40f;
+            cursor: zoom-in;
+            transition: filter 0.2s;
+        }
+
+        .gallery-item img:hover {
+            filter: brightness(0.95);
+        }
+
+        .gallery-item .caption {
+            padding: 14px 16px;
             font-size: 0.95rem;
-            transition: background 0.2s;
+            color: #444;
+            background: white;
         }
-        .grid-item:hover {
-            background: #edf7ff;
-        }
-        .grid-item strong {
+
+        .gallery-item .caption strong {
             display: block;
             color: #2c3e50;
+            margin-bottom: 4px;
         }
-        .grid-item span {
+
+        .gallery-item .caption span {
             font-size: 0.85rem;
-            color: #666;
+            color: #777;
         }
-        .grid-item p {
-            margin-top: 6px;
-            font-size: 0.92rem;
-            color: #444;
+
+        /* ===== MODAL / LIGHTBOX ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.92);
+            cursor: zoom-out;
+            padding: 40px 20px;
         }
-        .grid-item a {
-            color: #3498db;
-            text-decoration: none;
-            word-break: break-all;
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 95%;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+            cursor: default;
         }
-        .grid-item a:hover {
-            text-decoration: underline;
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 48px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.2s ease;
+            line-height: 1;
+            z-index: 10000;
         }
-        .cert-link {
-            display: inline-block;
-            margin-top: 6px;
-            font-size: 0.85rem;
-            background: #eaf4fb;
-            padding: 4px 12px;
-            border-radius: 20px;
-            transition: background 0.2s;
+
+        .modal-close:hover {
+            color: #f1c40f;
+            transform: scale(1.1);
         }
-        .cert-link i {
-            margin-right: 4px;
+
+        /* Responsividade do modal */
+        @media (max-width: 700px) {
+            .modal-content {
+                max-width: 100%;
+                max-height: 80vh;
+            }
+            .modal-close {
+                top: 12px;
+                right: 20px;
+                font-size: 38px;
+            }
         }
-        .cert-link:hover {
-            background: #d4e6f5;
-        }
-        .link-list {
-            margin-top: 6px;
-        }
-        .link-list a {
-            display: inline-block;
-            margin-right: 12px;
-            font-size: 0.9rem;
-        }
-        .link-list i {
-            margin-right: 4px;
-        }
-        
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 30px 0;
-            margin-top: 40px;
+            margin-top: 20px;
             color: #7f8c8d;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #ddd;
         }
-        
-        .github-link {
-            color: #3498db;
+
+        footer a {
+            color: #2c3e50;
             text-decoration: none;
             font-weight: 600;
         }
-        
-        .github-link:hover {
+
+        footer a:hover {
             text-decoration: underline;
         }
 
-        .hidden {
-            display: none;
-        }
-        
         @media (max-width: 768px) {
-            h1 {
+            header h1 {
                 font-size: 2.2rem;
             }
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             }
-            .projects-container {
+            .gallery-item img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
                 grid-template-columns: 1fr;
             }
         }
@@ -320,346 +266,241 @@
 <body>
     <header>
         <div class="container">
-            <div class="profile-img">
-                <img src="3x4.jpg" alt="Foto de Kawã Moreira">
-            </div>
-            <h1>Kawã Fernandes da Silva Moreira</h1>
-            <p class="subtitle">Técnico em Administração | CST em Gestão Comercial | Buscando primeira oportunidade no mercado</p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Cajamar, São Paulo</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>kawafernandesmoreira@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>+55 11 91925-2200</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-birthday-cake"></i>
-                    <span>23/05/2008</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/kaw%C3%A3-fernandes-da-silva-moreira-534987369/" target="_blank">LinkedIn</a>
-                </div>
-            </div>
+            <h1><i class="fas fa-chess-king"></i> Gambito da Etec</h1>
+            <p class="subtitle">Clube de Xadrez – ETEC de Carapicuíba</p>
+            <p class="date">2024 – 2025 | Líder de Projeto (2025) | Participante (2024)</p>
+            <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar ao Portfólio</a>
         </div>
     </header>
-    
+
     <div class="container">
-        <!-- Objetivo -->
-        <section class="section">
-            <h2><i class="fas fa-bullseye"></i> Objetivo Profissional</h2>
-            <p>Busco minha primeira oportunidade no mercado de trabalho na área administrativa, onde possa aplicar meus conhecimentos técnicos em administração e contribuir com dedicação, organização e trabalho em equipe para o crescimento da empresa.</p>
-        </section>
-        
-        <!-- Formação -->
-        <section class="section">
-            <h2><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h2>
-            <div class="skill-item">
-                <h3>Ensino Médio com Habilitação Técnica Profissional em Administração</h3>
-                <p><strong>ETEC de Carapicuíba</strong> | 2023-2025</p>
-                <a href="Certificados/ETEC/Doc_Conclusao_ETEC.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
-            </div>
-            <div class="skill-item">
-                <h3>Curso Superior de Tecnologia em Gestão Comercial</h3>
-                <p><strong>FATEC Santana de Parnaíba</strong> | 2026-Presente</p>
-            </div>
-        </section>
-
-        <!-- Experiência Profissional -->
-        <section class="section">
-            <h2><i class="fas fa-briefcase"></i> Experiência Profissional</h2>
-            <div class="skill-item">
-                <h3>Aprendiz Administrativo – Almoxarifado</h3>
-                <p><strong>Auto Viação Urubupungá</strong> | Santana de Parnaíba – SP</p>
-                <p style="margin-top:6px; font-size:0.95rem; color:#444;">
-                    Atuação na organização física de depósitos, conciliação de inventário e gestão de planilhas. 
-                    Administração de recursos e materiais para a organização interna da empresa, controle de planilhas 
-                    e conferência de produtos, visando obter experiência profissional nas operações da empresa.
-                </p>
-            </div>
-        </section>
-        
-        <!-- Habilidades -->
-        <section class="section">
-            <h2><i class="fas fa-tools"></i> Habilidades</h2>
-            <div class="skills-container">
-                <div class="skills-category">
-                    <h3>Técnicas (Hard Skills)</h3>
-                    <div class="skill-item">Pacote Office (Word, Excel, PowerPoint – nível básico)</div>
-                    <div class="skill-item">Conhecimentos em Administração</div>
-                    <div class="skill-item">Noções de informática</div>
-                    <div class="skill-item">Inglês – nível intermediário</div>
-                </div>
-                
-                <div class="skills-category">
-                    <h3>Comportamentais (Soft Skills)</h3>
-                    <div class="skill-item">Dedicação e esforço contínuo</div>
-                    <div class="skill-item">Boa comunicação</div>
-                    <div class="skill-item">Trabalho em equipe</div>
-                    <div class="skill-item">Organização</div>
-                    <div class="skill-item">Capacidade de aprendizado rápido</div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Projetos ETEC -->
-        <section class="section projects">
-            <h2><i class="fas fa-folder-open"></i> Projetos ETEC</h2>
-            <p>Projetos desenvolvidos durante o curso técnico em Administração:</p>
-            
-            <div class="projects-container">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Projetos (2023)</h3>
-                        <p>1º ano – ADM</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Projetos desenvolvidos no primeiro ano do curso técnico em Administração.</p>
-                        <a href="ETEC1ADM/index.html" class="btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Projetos (2024)</h3>
-                        <p>2º ano – ADM</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Projetos desenvolvidos no segundo ano do curso técnico em Administração.</p>
-                        <a href="ETEC2ADM/index.html" class="btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Projetos (2025)</h3>
-                        <p>3º ano – ADM</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Projetos desenvolvidos no terceiro ano do curso técnico em Administração.</p>
-                        <a href="ETEC3ADM/index.html" class="btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <!-- Descrição do Projeto -->
+        <section class="section description">
+            <h2><i class="fas fa-chess-board"></i> Sobre o Clube</h2>
+            <p>
+                Em 2024, ingressei como membro do clube de xadrez "Gambito da Etec" e, em 2025, assumi a liderança ao lado do meu colega Pedro Dias. Nossa missão foi fortalecer a cultura do xadrez na escola, promovendo o raciocínio lógico, a estratégia e a integração entre os alunos.
+            </p>
+            <ul>
+                <li><i class="fas fa-chess"></i> Organização de encontros semanais de prática e estudo de xadrez;</li>
+                <li><i class="fas fa-users"></i> Recrutamento e integração de novos membros, especialmente alunos ingressantes;</li>
+                <li><i class="fas fa-trophy"></i> Organização da participação do clube no “Intercurso” da Etec, competição esportiva entre cursos;</li>
+                <li><i class="fas fa-calendar-day"></i> Realização da Feira do Clube, com divulgação, exposição de tabuleiros, peças artesanais e desafios de xadrez com recompensas;</li>
+                <li><i class="fas fa-handshake"></i> Promoção de partidas amistosas e atividades colaborativas entre integrantes;</li>
+                <li><i class="fas fa-chalkboard-teacher"></i> Apoio às aulas e estudos conduzidos pelo professor Robson, envolvendo estratégias de jogo, análise de posições, aberturas e finais.</li>
+            </ul>
+            <p>
+                Sob a mentoria do Professor Robson, aprofundei meus conhecimentos em princípios do xadrez, estudando conceitos como Abertura do Centro, Abertura Escocesa, Abertura Italiana (Giuoco Piano), Defesa dos Dois Cavalos, estruturas de jogo, diagramas de xeque-mate, ganho de material e finais elementares, utilizando ferramentas digitais como Lichess e Chess.com para análise de partidas e treinamento.
+            </p>
+            <p>
+                <strong>Esta experiência foi fundamental para desenvolver minha capacidade de liderança, organização de projetos, trabalho em equipe e pensamento estratégico, competências que levo comigo para toda a vida.</strong>
+            </p>
         </section>
 
-        <!-- Projetos FATEC -->
-        <section class="section projects">
-            <h2><i class="fas fa-university"></i> Projetos FATEC</h2>
-            <p>Projetos desenvolvidos durante o curso superior de Gestão Comercial:</p>
-            
-            <div class="projects-container">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>1º Semestre</h3>
-                        <p>2026 | Concluído</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Trabalhos, pesquisas e atividades realizadas no primeiro semestre do curso.</p>
-                        <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/FATEC1GCOM/" class="btn" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Acessar projetos do 1º semestre
-                        </a>
+        <!-- Galeria de Imagens -->
+        <section class="section">
+            <h2><i class="fas fa-images"></i> Galeria</h2>
+            <div class="gallery">
+                <!-- Mapeamento imagem → descrição conforme fornecido -->
+                <div class="gallery-item">
+                    <img src="Panfleto_Original.jpeg" alt="Panfleto original do Clube de Xadrez">
+                    <div class="caption">
+                        <strong>Panfleto do Clube de Xadrez</strong>
+                        <span>Panfleto utilizado para a divulgação do clube.</span>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Cursos Complementares -->
-        <section class="section">
-            <h2><i class="fas fa-certificate"></i> Cursos Complementares</h2>
-            <div class="grid-container">
-                <div class="grid-item">
-                    <strong>Habilitação Profissional de Técnico em Administração</strong>
-                    <span>CPS – Centro Paula Souza | jan/2026</span>
-                    <a href="Certificados/ETEC/Doc_Conclusao_ETEC.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+                <div class="gallery-item">
+                    <img src="Panfleto1.jpeg" alt="Panfleto de divulgação versão 1">
+                    <div class="caption">
+                        <strong>Panfleto de Divulgação (versão 1)</strong>
+                        <span>Material de divulgação do projeto "Gambito da Etec".</span>
+                    </div>
                 </div>
-                <div class="grid-item">
-                    <strong>Microsoft Excel 2016 – Básico</strong>
-                    <span>Fundação Bradesco | abr/2025</span>
-                    <a href="Certificados/Bradesco/Certificado_(MICROSOFT_EXCEL_2016-BASICO).pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
-                </div>
-                <div class="grid-item">
-                    <strong>Microsoft PowerPoint 2016 – Básico</strong>
-                    <span>Fundação Bradesco | mai/2026</span>
-                    <a href="Certificados/Bradesco/Certificado_(MICROSOFT_POWERPOINT_2016-BASICO).pdf.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
-                </div>
-                <div class="grid-item">
-                    <strong>Microsoft Word 2016 – Básico</strong>
-                    <span>Fundação Bradesco | abr/2026</span>
-                    <a href="Certificados/Bradesco/Certificado_(MICROSOFT_WORD_2016-BASICO).pdf.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
-                </div>
-                <div class="grid-item">
-                    <strong>Produzindo podcast para utilização em sala de aula</strong>
-                    <span>UFSCar | abr/2026</span>
-                    <a href="Certificados/UFSCAR/Produzindo_podcast_para_utilizacao_em_sala_de_aula-Certificado_320120.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
-                </div>
-                <div class="grid-item">
-                    <strong>Gestão de Finanças Pessoais</strong>
-                    <span>Enap | abr/2025</span>
-                    <a href="Certificados/ENAP/gestao_de_financas_pessoais_turma_mar2025_certificado.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
-                </div>
-                <div class="grid-item">
-                    <strong>Princípios de Economia: Macroeconomia</strong>
-                    <span>Enap | jun/2025</span>
-                    <a href="Certificados/ENAP/principios_de_economia_macroeconomia_turma_mai2025_certificado.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
-                </div>
-                <div class="grid-item">
-                    <strong>ENGLISH – Nível Intermediário</strong>
-                    <span>Aeronet Cursos | abr/2022 (208h)</span>
-                    <a href="Certificados/Aeronet/INGLES.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
-                </div>
-                <div class="grid-item">
-                    <strong>INFORMÁTICA PRIME 2.0</strong>
-                    <span>Aeronet Cursos | dez/2020 (158h)</span>
-                    <a href="Certificados/Aeronet/INFORMATICA.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
-                </div>
-                <div class="grid-item">
-                    <strong>DESENVOLVENDO PROFISSIONAIS</strong>
-                    <span>Aeronet Cursos | jun/2018</span>
-                    <a href="Certificados/Aeronet/DESENVOLVENDO_PROFISSIONAIS.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
-                </div>
-                <div class="grid-item">
-                    <strong>SIPAT 2026 – Semana Interna de Prevenção de Acidentes</strong>
-                    <span>Even3 | mai/2026</span>
-                    <span class="cert-link" style="background:#eee; color:#999;"><i class="fas fa-clock"></i> Em breve</span>
-                </div>
-            </div>
-        </section>
 
-        <!-- NOVA SEÇÃO: Participação em Eventos -->
-        <section class="section">
-            <h2><i class="fas fa-calendar-check"></i> Participação em Eventos</h2>
-            <div class="grid-container">
-                <!-- 1º dia -->
-                <div class="grid-item">
-                    <strong>1º dia – 2ª Mostra Acadêmica Fatec Santana de Parnaíba</strong>
-                    <span>Even3 | jun/2026</span>
-                    <p>Participação no primeiro dia do evento acadêmico.</p>
-                    <div class="link-list">
-                        <a href="Certificados/even3/Fatec-2-Mostra-Academica-Dia_1-document.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
-                        <a href="https://fatecsdp.cps.sp.gov.br/mostra-academica-fatec-santana-de-parnaiba-1o-semestre-de-2026/" target="_blank" style="display:inline-block; margin-top:4px;"><i class="fas fa-globe"></i> Site do evento</a>
+                <div class="gallery-item">
+                    <img src="Panfleto_2.jpeg" alt="Panfleto de divulgação versão 2">
+                    <div class="caption">
+                        <strong>Panfleto de Divulgação (versão 2)</strong>
+                        <span>Outro modelo de panfleto para a Feira do Clube em 2025.</span>
                     </div>
                 </div>
-                <!-- 2º dia -->
-                <div class="grid-item">
-                    <strong>2º dia – 2ª Mostra Acadêmica Fatec Santana de Parnaíba</strong>
-                    <span>Even3 | jun/2026</span>
-                    <p>Participação no segundo dia do evento acadêmico.</p>
-                    <div class="link-list">
-                        <a href="Certificados/even3/Fatec-2-Mostra-Academica-Dia_2-document.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
-                        <a href="https://fatecsdp.cps.sp.gov.br/mostra-academica-fatec-santana-de-parnaiba-1o-semestre-de-2026/" target="_blank" style="display:inline-block; margin-top:4px;"><i class="fas fa-globe"></i> Site do evento</a>
-                    </div>
-                </div>
-                <!-- 3º dia (com links extras) -->
-                <div class="grid-item">
-                    <strong>3º dia – 2ª Mostra Acadêmica Fatec Santana de Parnaíba</strong>
-                    <span>Even3 | jun/2026</span>
-                    <p>Apresentação dos projetos do 1º semestre de Gestão Comercial. O portfólio do grupo e o website do projeto integrador estão disponíveis abaixo.</p>
-                    <div class="link-list">
-                        <a href="Certificados/even3/Fatec-2-Mostra-Academica-Dia_3-document.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
-                        <br>
-                        <a href="https://fatecsdp.cps.sp.gov.br/mostra-academica-fatec-santana-de-parnaiba-1o-semestre-de-2026/" target="_blank"><i class="fas fa-globe"></i> Site do evento</a>
-                        <br>
-                        <a href="https://web.archive.org/web/20260605151951/https://fatecsdp.cps.sp.gov.br/mostra-academica-fatec-santana-de-parnaiba-1o-semestre-de-2026/" target="_blank"><i class="fas fa-archive"></i> Versão arquivada (05 jun. 2026)</a>
-                        <br>
-                        <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/FATEC1GCOM/" target="_blank"><i class="fas fa-folder-open"></i> Portfólio do grupo (FATEC1GCOM)</a>
-                        <br>
-                        <a href="https://kawamoreira.github.io/Kawa-Moreira-Portfolio/FATEC1GCOM/Projeto-Integrador-1/index.html" target="_blank"><i class="fas fa-code"></i> Website do Projeto Integrador I</a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Reconhecimentos e Prêmios -->
-        <section class="section">
-            <h2><i class="fas fa-trophy"></i> Reconhecimentos e Prêmios</h2>
-            <div class="grid-container">
-                <div class="grid-item">
-                    <strong>Menção Honrosa – 20ª OBMEP 2025</strong>
-                    <span>IMPA – Instituto de Matemática Pura e Aplicada | jan/2026</span>
-                    <p>Reconhecimento nacional concedido a estudantes com desempenho de destaque na Olimpíada Brasileira de Matemática das Escolas Públicas. Classificado entre os participantes em nível estadual.</p>
-                    <p><i class="fas fa-link"></i> <a href="https://premiacao.obmep.org.br/20obmep/verRelatorioPremiadosGeral-SP.3.do.htm" target="_blank">Lista oficial de premiados – SP</a></p>
-                    <a href="Certificados/IMPA/image(7).png" target="_blank" class="cert-link"><i class="fas fa-image"></i> Comprovante</a>
+                <div class="gallery-item">
+                    <img src="panfleto_impresso.jpeg" alt="Panfleto impresso">
+                    <div class="caption">
+                        <strong>Panfleto impresso</strong>
+                        <span>Panfleto distribuído para os alunos ingressantes e dependências da Etec.</span>
+                    </div>
                 </div>
-                <div class="grid-item">
-                    <strong>Menção Honrosa – CUCO 2024</strong>
-                    <span>USP – Universidade de São Paulo | ago/2024</span>
-                    <p>Destaque em desempenho em conhecimentos gerais e raciocínio interdisciplinar na Competição USP de Conhecimentos e Oportunidades.</p>
-                    <p><i class="fas fa-key"></i> Código de Autenticidade: <strong>EA087-49F8F-974F3-FBBC0</strong></p>
-                    <a href="Certificados/USP/certificado-cuco-2023-EA087-49F8F-974F3-FBBC0.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+
+                <div class="gallery-item">
+                    <img src="Analise_Lichess.jpeg" alt="Análise de partida no Lichess">
+                    <div class="caption">
+                        <strong>Análise de partida por computador</strong>
+                        <span>Utilização do website Lichess para análise de partidas de xadrez.</span>
+                    </div>
                 </div>
-                <div class="grid-item">
-                    <strong>Participação – Roda de Conversa "Se liga na Emoção"</strong>
-                    <span>E.E. Basílio Bosniac | jul/2023</span>
-                    <p>Participação especial no programa de Eletiva de Psicologia, discutindo temas como stress, ansiedade, depressão e áreas da psicologia com os alunos da escola.</p>
-                    <a href="Certificados/E_E_Basilio_Bosniac/Eletiva_Psicologia.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> Certificado</a>
+
+                <div class="gallery-item">
+                    <img src="Diagramas_Xadrez.png" alt="Diagramas de xadrez">
+                    <div class="caption">
+                        <strong>Diagramas de Xadrez</strong>
+                        <span>Diagramas realizados para estruturação dos tabuleiros na Feira do Clube, retratando xeque-mate em alguns lances, indicados pela notação.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="diagrama1.jpeg" alt="Diagrama - Mate em 2">
+                    <div class="caption">
+                        <strong>Diagrama - Mate em 2</strong>
+                        <span>Exemplo criado para resolução em eventos. Solução: 1. Dxh7+, Dxh7 2. Cf7++</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="Tabuleiro_Fisico.jpeg" alt="Disposição do tabuleiro">
+                    <div class="caption">
+                        <strong>Disposição do Tabuleiro - Feira do Clube</strong>
+                        <span>Organização do tabuleiro com as peças posicionadas para uma partida.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira_cartaz.jpeg" alt="Cartaz na Feira">
+                    <div class="caption">
+                        <strong>Cartaz na Feira - GAMBITO DA ETEC</strong>
+                        <span>Cartaz disposto no mural para o evento Feira dos Clubes (Xadrez).</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira_cartaz (2).jpeg" alt="Cartaz da Feira versão 2">
+                    <div class="caption">
+                        <strong>Cartaz da Feira (versão 2)</strong>
+                        <span>Outra versão do cartaz de divulgação.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira_confecção_peões.jpeg" alt="Confecção dos peões decorativos">
+                    <div class="caption">
+                        <strong>Confecção dos Peões decorativos</strong>
+                        <span>Processo de confecção dos peões para a Feira do Clube de Xadrez em 2025.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira_peão.jpeg" alt="Peão decorativo">
+                    <div class="caption">
+                        <strong>Peão decorativo</strong>
+                        <span>Peão decorativo realizado para a Feira do Clube de Xadrez.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira_mesa1.jpeg" alt="Mesa da Feira (1)">
+                    <div class="caption">
+                        <strong>Mesa da Feira (1) | GAMBITO DA ETEC</strong>
+                        <span>Mesa com as peças decorativas confeccionadas.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira_mesa2.jpeg" alt="Mesa da Feira (2)">
+                    <div class="caption">
+                        <strong>Mesa da Feira (2) | GAMBITO DA ETEC</strong>
+                        <span>Mesa com todas as decorações e peças temáticas do jogo.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira_amistoso.jpeg" alt="Partida amistosa">
+                    <div class="caption">
+                        <strong>Partida amistosa</strong>
+                        <span>Momento de uma partida amistosa durante a Feira do Clube.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira1.jpeg" alt="Feira do Clube (1)">
+                    <div class="caption">
+                        <strong>FEIRA DO CLUBE DE XADREZ (1)</strong>
+                        <span>Disposição da mesa para apresentação em público. Fotografia 17/08/2025.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira2.jpeg" alt="Feira do Clube (2)">
+                    <div class="caption">
+                        <strong>FEIRA DO CLUBE DE XADREZ (2)</strong>
+                        <span>Outro ângulo da mesa exposta. Fotografia 17/08/2025.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira3.jpeg" alt="Feira do Clube (3)">
+                    <div class="caption">
+                        <strong>FEIRA DO CLUBE DE XADREZ (3)</strong>
+                        <span>Detalhe da organização. Fotografia 17/08/2025.</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="feira4.jpeg" alt="Feira do Clube (4)">
+                    <div class="caption">
+                        <strong>FEIRA DO CLUBE DE XADREZ (4)</strong>
+                        <span>Vista geral da mesa e interação com o público. Fotografia 17/08/2025.</span>
+                    </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Atividades Extracurriculares -->
-        <section class="section">
-            <h2><i class="fas fa-chess-board"></i> Atividades Extracurriculares</h2>
-            <div class="skill-item">
-                <h3>
-                    <a href="./Xadrez/" class="extracurricular-link" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> Clube de Xadrez da ETEC de Carapicuíba
-                    </a>
-                </h3>
-                <p>2024-2025 | Líder de projeto (2025) e participante (2024) – organização de encontros, recrutamento, participação no Intercurso, Feira do Clube e estudos com o professor Robson.</p>
-                <p style="font-size:0.9rem; color:#555; margin-top:4px;">
-                    <i class="fas fa-chess-queen"></i> Aprofundamento em aberturas, finais, análise de partidas com Lichess e Chess.com.
-                </p>
-            </div>
-            <div class="skill-item">
-                <h3>Participação em grupos de vôlei na ETEC de Carapicuíba</h3>
-                <p>2023-2025 | Desenvolve raciocínio rápido e trabalho em equipe</p>
-            </div>
-        </section>
-        
-        <!-- Informações Adicionais (oculto) -->
-        <!--
-        <section class="section hidden">
-            <h2><i class="fas fa-info-circle"></i> Informações Adicionais</h2>
-            <div class="skills-container">
-                <div class="skill-item">Disponível para estágio ou período de aprendizagem</div>
-                <div class="skill-item">Horário flexível (compatível com estudos)</div>
-            </div>
-        </section>
-        -->
     </div>
-    
+
+    <!-- ===== MODAL (LIGHTBOX) ===== -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close" onclick="event.stopPropagation(); closeModal();">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
     <footer>
         <div class="container">
-            <p>Portfólio desenvolvido para GitHub | Kawã Fernandes da Silva Moreira</p>
-            <p>Repositório: <a href="https://github.com/KavaBlox/Kawa-Moreira-Portfolio" class="github-link" target="_blank">https://github.com/KavaBlox/Kawa-Moreira-Portfolio</a></p>
-            <p>Atualizado em Julho de 2026</p>
+            <p>Projeto <strong>Gambito da Etec</strong> – Clube de Xadrez da ETEC de Carapicuíba</p>
+            <p><a href="../index.html"><i class="fas fa-arrow-left"></i> Voltar ao Portfólio Principal</a></p>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const buttons = document.querySelectorAll('.btn');
-            buttons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    if (this.getAttribute('href') === '#' || !this.getAttribute('href')) {
-                        e.preventDefault();
-                        alert('Esta página está em desenvolvimento. Em breve estará disponível!');
-                    }
+            var modal = document.getElementById('imageModal');
+            var modalImg = document.getElementById('modalImage');
+            var images = document.querySelectorAll('.gallery-item img');
+
+            // Abrir modal ao clicar em qualquer imagem
+            images.forEach(function(img) {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    modal.style.display = 'flex';
+                    modalImg.src = this.src;
+                    document.body.style.overflow = 'hidden';
                 });
+            });
+
+            // Fechar modal (função global chamada pelo onclick do modal e do botão)
+            window.closeModal = function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            };
+
+            // Fechar com tecla ESC
+            window.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+
+            // Impedir que o clique na imagem feche o modal (propagação)
+            modalImg.addEventListener('click', function(e) {
+                e.stopPropagation();
             });
         });
     </script>
