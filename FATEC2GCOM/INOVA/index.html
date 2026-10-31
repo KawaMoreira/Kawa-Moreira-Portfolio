@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimercado Polvilho | O Futuro do Autoatendimento 24h</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            900: '#064e3b',
+                        },
+                        tech: {
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #059669 0%, #2563eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.08), transparent 50%),
+                        radial-gradient(circle at bottom left, rgba(37, 99, 235, 0.08), transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- LOGO -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-tech-600 flex items-center justify-center text-white shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform duration-300">
+                    <i class="fa-solid fa-store text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900 group-hover:text-brand-600 transition-colors">
+                        Minimercado<span class="text-brand-600">Polvilho</span>
+                    </span>
+                    <span class="text-[10px] font-semibold tracking-wider text-slate-400 uppercase flex items-center gap-1">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Autoatendimento 24h
+                    </span>
+                </div>
+            </a>
+
+            <!-- NAV LINKS -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+                <a href="#sobre" class="hover:text-brand-600 transition-colors">Sobre o Projeto</a>
+                <a href="#manifesto" class="hover:text-brand-600 transition-colors">Manifesto</a>
+                <a href="#mvp" class="hover:text-brand-600 transition-colors">Conheça o MVP</a>
+                <a href="#squad" class="hover:text-brand-600 transition-colors">Vagas Squad</a>
+            </nav>
+
+            <!-- CTA BUTTON -->
+            <div class="flex items-center gap-4">
+                <a href="#squad" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-tech-600 hover:from-brand-700 hover:to-tech-700 text-white font-semibold px-5 py-2.5 rounded-xl shadow-md shadow-brand-600/20 hover:shadow-lg hover:shadow-brand-600/30 transition-all duration-300 hover:-translate-y-0.5">
+                    <span>Fazer Parte do Squad</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden hero-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-rocket text-brand-600"></i> Hub 1 Juventude Transformadora · INOVA CPS
+                    </div>
+                    
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+                        O futuro do autoatendimento <span class="gradient-text">24h em Polvilho</span>, Cajamar.
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Estamos construindo uma solução autônoma e inteligente para transformar a conveniência no nosso bairro. Quer fazer parte dessa revolução? Buscamos talentos para formar o nosso Squad!
+                    </p>
+                    
+                    <!-- Feature Highlights -->
+                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4 text-sm font-medium text-slate-700">
+                        <span class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-lg shadow-sm border border-slate-200">
+                            <i class="fa-solid fa-bolt text-amber-500"></i> Autoatendimento PIX & Cartão
+                        </span>
+                        <span class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-lg shadow-sm border border-slate-200">
+                            <i class="fa-solid fa-shield-halved text-tech-500"></i> Entrada Controlada 24h
+                        </span>
+                        <span class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-lg shadow-sm border border-slate-200">
+                            <i class="fa-solid fa-users text-brand-500"></i> Impacto Comunitário Real
+                        </span>
+                    </div>
+
+                    <!-- Hero Actions -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#squad" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-900 hover:bg-slate-800 text-white font-semibold px-7 py-3.5 rounded-xl shadow-lg transition-all hover:-translate-y-0.5">
+                            <i class="fa-solid fa-user-plus text-brand-500"></i>
+                            <span>Quero me Juntar ao Squad</span>
+                        </a>
+                        <a href="#mvp" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-semibold px-6 py-3.5 rounded-xl shadow-sm transition-all">
+                            <i class="fa-solid fa-eye text-slate-500"></i>
+                            <span>Ver Protótipo do MVP</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Card / Visual -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Card background decoration -->
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-brand-500 to-tech-500 opacity-30 blur-xl"></div>
+                        
+                        <div class="relative bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 space-y-6">
+                            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                                <span class="font-heading font-bold text-slate-900 text-lg">Status do Projeto</span>
+                                <span class="px-3 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded-full border border-brand-200">
+                                    Missão 03 · Squad em Formação
+                                </span>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-4 p-3.5 rounded-xl bg-slate-50">
+                                    <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold">1</div>
+                                    <div>
+                                        <h4 class="font-semibold text-slate-900 text-sm">Problema Validado</h4>
+                                        <p class="text-xs text-slate-500">Moradores do Polvilho sem opções de conveniência no período noturno.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4 p-3.5 rounded-xl bg-slate-50">
+                                    <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 font-bold">2</div>
+                                    <div>
+                                        <h4 class="font-semibold text-slate-900 text-sm">Solução Desenhada</h4>
+                                        <p class="text-xs text-slate-500">Totem autônomo, catálogo essencial e atendimento via WhatsApp.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4 p-3.5 rounded-xl bg-brand-50 border border-brand-200">
+                                    <div class="w-9 h-9 rounded-lg bg-brand-600 text-white flex items-center justify-center shrink-0 font-bold">3</div>
+                                    <div>
+                                        <h4 class="font-semibold text-brand-900 text-sm">Recrutamento Aberto</h4>
+                                        <p class="text-xs text-brand-700 font-medium">Buscamos talentos de Tecnologia, Gestão e Marketing!</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-2 text-center">
+                                <span class="text-xs text-slate-400 font-medium">Projeto participante da Escola de Inovadores (Inova CPS)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE & MANIFESTO SECTION -->
+    <section id="manifesto" class="py-20 bg-white border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <h2 class="text-xs font-bold tracking-widest text-brand-600 uppercase">Nosso Propósito</h2>
+                <h3 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">
+                    O Manifesto do Minimercado Polvilho
+                </h3>
+                <p class="text-slate-600 text-lg">
+                    Transformando a indignação com a falta de comércio noturno em uma solução tecnológica e acessível para o bairro.
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- A Crença -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/70 hover:shadow-lg transition-shadow relative overflow-hidden group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-6 text-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-slate-900 mb-3">A Crença</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Nós acreditamos que a comunidade do bairro de Polvilho merece total praticidade, segurança e conveniência a qualquer hora do dia ou da noite, com respeito e inovação local.
+                    </p>
+                </div>
+
+                <!-- O Inconformismo -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/70 hover:shadow-lg transition-shadow relative overflow-hidden group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-6 text-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-slate-900 mb-3">O Inconformismo</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Não aceitamos que a falta de comércio após o horário tradicional trave a rotina de quem trabalha ou estuda até tarde, obrigando moradores a longos deslocamentos por compras simples.
+                    </p>
+                </div>
+
+                <!-- A Mudança -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/70 hover:shadow-lg transition-shadow relative overflow-hidden group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center mb-6 text-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-slate-900 mb-3">A Mudança</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Criamos o Minimercado Polvilho! Um modelo autônomo 24h, com pagamento 100% digital via Totem e PIX, garantindo itens essenciais sem filas e pertinho de casa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MVP SHOWCASE SECTION -->
+    <section id="mvp" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs font-bold tracking-widest text-tech-600 uppercase">Mínimo Produto Viável</h2>
+                <h3 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">
+                    Estrutura Detalhada do Nosso Protótipo
+                </h3>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Confira a arquitetura da solução que validamos com os moradores do bairro: desde a jornada do cliente até as telas de autoatendimento.
+                </p>
+            </div>
+
+            <!-- GRID DOS CARDS DO MVP COM PLACEHOLDERS DAS IMAGENS -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- CARD 1: FLUXOGRAMA -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300">
+                    <div class="p-6 bg-slate-900 text-white flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-route text-brand-500 text-xl"></i>
+                            <h4 class="font-heading font-bold text-lg">1. Jornada do Cliente</h4>
+                        </div>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Fluxograma</span>
+                    </div>
+                    
+                    <!-- Container da Imagem 1 -->
+                    <div class="relative bg-slate-100 min-h-[260px] flex flex-col items-center justify-center p-6 text-center border-b border-slate-200 group">
+                        <img src="fluxograma-jornada.png" 
+                             alt="Fluxograma da Jornada do Cliente" 
+                             class="w-full h-auto max-h-[240px] object-contain hidden"
+                             onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden')"
+                             onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden')" />
+                        
+                        <!-- Placeholder visível enquanto a imagem não estiver na pasta -->
+                        <div class="space-y-3 p-4">
+                            <div class="w-14 h-14 mx-auto rounded-full bg-slate-200 text-slate-500 flex items-center justify-center text-2xl group-hover:bg-brand-100 group-hover:text-brand-600 transition-colors">
+                                <i class="fa-solid fa-diagram-project"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p class="text-xs font-bold text-slate-700 uppercase tracking-wide">Arquivo esperado:</p>
+                                <code class="text-xs bg-slate-200 text-brand-700 px-2 py-1 rounded font-mono font-semibold">fluxograma-jornada.png</code>
+                            </div>
+                            <p class="text-xs text-slate-500 max-w-xs">
+                                <strong>Descrição:</strong> Diagrama visual da jornada (Entrada via QR Code &rarr; Escolha de produtos &rarr; Pagamento no Totem/PIX).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Mapeamento completo dos pontos de contato do cliente, garantindo um fluxo intuitivo, seguro e rápido de compra autônoma em qualquer horário.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARD 2: TELAS APP E TOTEM -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300">
+                    <div class="p-6 bg-slate-900 text-white flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-mobile-screen-button text-tech-500 text-xl"></i>
+                            <h4 class="font-heading font-bold text-lg">2. Interface & Totem</h4>
+                        </div>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Telas Simuladas</span>
+                    </div>
+                    
+                    <!-- Container da Imagem 2 -->
+                    <div class="relative bg-slate-100 min-h-[260px] flex flex-col items-center justify-center p-6 text-center border-b border-slate-200 group">
+                        <img src="telas-app-totem.png" 
+                             alt="Telas simuladas do aplicativo e totem" 
+                             class="w-full h-auto max-h-[240px] object-contain hidden"
+                             onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden')"
+                             onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden')" />
+                        
+                        <!-- Placeholder visível enquanto a imagem não estiver na pasta -->
+                        <div class="space-y-3 p-4">
+                            <div class="w-14 h-14 mx-auto rounded-full bg-slate-200 text-slate-500 flex items-center justify-center text-2xl group-hover:bg-tech-100 group-hover:text-tech-600 transition-colors">
+                                <i class="fa-solid fa-display"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p class="text-xs font-bold text-slate-700 uppercase tracking-wide">Arquivo esperado:</p>
+                                <code class="text-xs bg-slate-200 text-tech-700 px-2 py-1 rounded font-mono font-semibold">telas-app-totem.png</code>
+                            </div>
+                            <p class="text-xs text-slate-500 max-w-xs">
+                                <strong>Descrição:</strong> Interface gráfica do Totem/App com seleção de snack/bebida e tela final de checkout PIX.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Mockups interativos da tela de seleção de itens e pagamento via QR Code PIX instantâneo, projetados para simplicidade absoluta no autoatendimento.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARD 3: CARTAZ DE DIVULGAÇÃO -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300">
+                    <div class="p-6 bg-slate-900 text-white flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-bullhorn text-amber-500 text-xl"></i>
+                            <h4 class="font-heading font-bold text-lg">3. Cartaz & Marketing</h4>
+                        </div>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Material Visual</span>
+                    </div>
+                    
+                    <!-- Container da Imagem 3 -->
+                    <div class="relative bg-slate-100 min-h-[260px] flex flex-col items-center justify-center p-6 text-center border-b border-slate-200 group">
+                        <img src="cartaz-divulgacao.png" 
+                             alt="Cartaz digital de divulgação" 
+                             class="w-full h-auto max-h-[240px] object-contain hidden"
+                             onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden')"
+                             onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden')" />
+                        
+                        <!-- Placeholder visível enquanto a imagem não estiver na pasta -->
+                        <div class="space-y-3 p-4">
+                            <div class="w-14 h-14 mx-auto rounded-full bg-slate-200 text-slate-500 flex items-center justify-center text-2xl group-hover:bg-amber-100 group-hover:text-amber-600 transition-colors">
+                                <i class="fa-solid fa-image"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p class="text-xs font-bold text-slate-700 uppercase tracking-wide">Arquivo esperado:</p>
+                                <code class="text-xs bg-slate-200 text-amber-700 px-2 py-1 rounded font-mono font-semibold">cartaz-divulgacao.png</code>
+                            </div>
+                            <p class="text-xs text-slate-500 max-w-xs">
+                                <strong>Descrição:</strong> Cartaz para redes sociais/panfleto impresso para divulgação em pontos parceiros (ex: padarias).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Campanha visual criada para atrair moradores locais no Instagram e em pontos físicos parceiros no bairro Polvilho, destacando o acesso 24 horas.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO RECRUTAMENTO DO SQUAD -->
+    <section id="squad" class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-800 text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-user-group"></i> Monte o Futuro Conosco
+                </div>
+                <h3 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">
+                    Vagas Abertas no Nosso Squad!
+                </h3>
+                <p class="text-slate-600 text-lg">
+                    Para tirar este projeto do papel e escalar na Arena Inova CPS, estamos formando um time de alto impacto. Veja qual perfil combina com você:
+                </p>
+            </div>
+
+            <!-- CARDS DE PERFIS PROCURADOS -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- PERFIL 1: TECNOLOGIA & AUTOMAÇÃO -->
+                <div class="bg-slate-50 rounded-2xl p-8 border-2 border-slate-200 hover:border-tech-500 transition-all duration-300 relative flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-tech-500 text-white flex items-center justify-center text-2xl shadow-md shadow-tech-500/30">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-slate-900">Tecnologia & Automação</h4>
+                        <p class="text-xs font-semibold text-tech-600 uppercase tracking-wider">Perfil Técnico</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Responsável por estruturar a lógica do totem, sistemas de pagamento via QR Code/PIX e prototipar integrações digitais de autoatendimento.
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-2 pt-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-tech-500"></i> Interesse em hardware/totens ou software</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-tech-500"></i> Resolução prática de problemas</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6">
+                        <a href="mailto:kawafernandez564@gmail.com?subject=Interesse%20Squad%20-%20Perfil%20Tecnologia" class="w-full inline-flex items-center justify-center gap-2 bg-tech-600 hover:bg-tech-700 text-white text-sm font-semibold py-3 px-4 rounded-xl transition-colors">
+                            <span>Quero esta Vaga</span>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PERFIL 2: MARKETING & COMUNICAÇÃO -->
+                <div class="bg-slate-50 rounded-2xl p-8 border-2 border-slate-200 hover:border-brand-500 transition-all duration-300 relative flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-500 text-white flex items-center justify-center text-2xl shadow-md shadow-brand-500/30">
+                            <i class="fa-solid fa-hashtag"></i>
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-slate-900">Marketing & Comunicação</h4>
+                        <p class="text-xs font-semibold text-brand-600 uppercase tracking-wider">Perfil Criativo</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Responsável pelas redes sociais (Instagram, WhatsApp Business), criação de conteúdo de divulgação e engajamento da comunidade de Polvilho.
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-2 pt-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Criação de posts e storytelling</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Gestão do WhatsApp e relacionamento</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6">
+                        <a href="mailto:kawafernandez564@gmail.com?subject=Interesse%20Squad%20-%20Perfil%20Marketing" class="w-full inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold py-3 px-4 rounded-xl transition-colors">
+                            <span>Quero esta Vaga</span>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PERFIL 3: OPERAÇÕES & GESTÃO -->
+                <div class="bg-slate-50 rounded-2xl p-8 border-2 border-slate-200 hover:border-amber-500 transition-all duration-300 relative flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-2xl shadow-md shadow-amber-500/30">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-slate-900">Operações & Gestão</h4>
+                        <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider">Perfil Organizacional</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Focado no controle de insumos/estoque, relacionamento com fornecedores locais (como padarias) e otimização dos fluxos operacionais.
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-2 pt-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Organização e processos práticos</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Parcerias comerciais estratégicas</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6">
+                        <a href="mailto:kawafernandez564@gmail.com?subject=Interesse%20Squad%20-%20Perfil%20Operacoes" class="w-full inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold py-3 px-4 rounded-xl transition-colors">
+                            <span>Quero esta Vaga</span>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CONTATO DIRETO BOX -->
+            <div class="mt-16 bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-8 sm:p-12 text-white text-center shadow-xl relative overflow-hidden">
+                <div class="relative z-10 max-w-2xl mx-auto space-y-6">
+                    <h4 class="font-heading text-2xl sm:text-3xl font-bold">Pronto para transformar o Polvilho conosco?</h4>
+                    <p class="text-slate-300 text-sm sm:text-base">
+                        Envie uma mensagem direta para o líder do projeto manifestando seu interesse. Vamos agendar uma conversa e alinhar nossa parceria no Squad!
+                    </p>
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="mailto:kawafernandez564@gmail.com" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-500 hover:bg-brand-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all hover:scale-105">
+                            <i class="fa-solid fa-envelope text-lg"></i>
+                            <span>kawafernandez564@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
+                
+                <!-- Coluna 1: Branding -->
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-brand-500 text-white flex items-center justify-center">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <span class="font-heading font-bold text-white text-lg">Minimercado Polvilho</span>
+                    </div>
+                    <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+                        Iniciativa autônoma de conveniência 24h desenvolvida no âmbito do Hub 1 Juventude Transformadora / Escola de Inovadores do Inova CPS (21ª Edição).
+                    </p>
+                </div>
+
+                <!-- Coluna 2: Links Rápidos -->
+                <div>
+                    <h5 class="text-white text-xs font-bold uppercase tracking-wider mb-4">Navegação</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#sobre" class="hover:text-white transition-colors">Sobre</a></li>
+                        <li><a href="#manifesto" class="hover:text-white transition-colors">Manifesto</a></li>
+                        <li><a href="#mvp" class="hover:text-white transition-colors">Protótipo MVP</a></li>
+                        <li><a href="#squad" class="hover:text-white transition-colors">Vagas Squad</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Contato -->
+                <div>
+                    <h5 class="text-white text-xs font-bold uppercase tracking-wider mb-4">Contato Oficial</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-brand-500"></i>
+                            <a href="mailto:kawafernandez564@gmail.com" class="hover:text-white transition-colors">kawafernandez564@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-solid fa-location-dot text-brand-500"></i>
+                            <span>Polvilho, Cajamar - SP</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+                <p>&copy; 2026 Minimercado Polvilho. Todos os direitos reservados.</p>
+                <p class="text-slate-500">Desenvolvido para a Escola de Inovadores · INOVA CPS</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
