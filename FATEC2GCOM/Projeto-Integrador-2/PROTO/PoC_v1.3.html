@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milênio Medicamentos | Prova de Conceito (PoC)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-brand-600 text-white p-2.5 rounded-xl font-bold text-xl tracking-wider">MM</div>
+                <div>
+                    <span class="text-xl font-bold text-slate-900 block leading-tight">Milênio Medicamentos</span>
+                    <span class="text-xs text-brand-700 font-medium uppercase tracking-wider">Logística & Distribuição B2B</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-600">
+                <a href="#negocio" class="hover:text-brand-600 transition">Modelo B2B</a>
+                <a href="#planejamento" class="hover:text-brand-600 transition">Planejamento & 5W1H</a>
+                <a href="#operacoes" class="hover:text-brand-600 transition">Operações (Samuel)</a>
+                <a href="#estrategia" class="hover:text-brand-600 transition">Porter & BCG</a>
+                <a href="#csc" class="hover:text-brand-600 transition">CSC & Estatística</a>
+                <a href="#kpis" class="hover:text-brand-600 transition">KPIs</a>
+            </nav>
+            <div>
+                <a href="#kpis" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow transition">Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-brand-900 via-brand-800 to-slate-900 text-white py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="inline-block bg-brand-500/20 text-brand-300 border border-brand-500/30 text-xs font-semibold px-3 py-1 rounded-full mb-6 uppercase tracking-widest">Projeto Integrador 2 • Fatec Santana de Parnaíba</span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6">Soluções Inteligentes em Logística Farmacêutica</h1>
+            <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                Prova de Conceito (PoC) integrando a gestão comercial B2B (Luana), operações logísticas e WMS (Samuel), Centro de Serviços Compartilhados e rastreabilidade regulatória.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#operacoes" class="bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-6 py-3 rounded-xl shadow-lg transition">Ver Operações (Samuel)</a>
+                <a href="#negocio" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-6 py-3 rounded-xl backdrop-blur transition">Modelo Comercial (Luana)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Indicadores de Mercado -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
+                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Mercado Farmacêutico (2025)</p>
+                <p class="text-3xl font-extrabold text-slate-900 mt-2">R$ 241,6 Bilhões</p>
+                <p class="text-sm text-brand-600 mt-1 font-medium">↑ Crescimento de 11,30% (IQVIA)</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
+                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tempo de Separação (Samuel)</p>
+                <p class="text-3xl font-extrabold text-slate-900 mt-2">11 Minutos</p>
+                <p class="text-sm text-slate-500 mt-1">Estudo de tempos e movimentos no WMS</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
+                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Controle de Validade</p>
+                <p class="text-3xl font-extrabold text-slate-900 mt-2">Método FEFO</p>
+                <p class="text-sm text-brand-600 mt-1 font-medium">Primeiro que vence, primeiro que sai</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Modelo B2B (Luana) -->
+    <section id="negocio" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-xs font-bold text-brand-600 tracking-widest uppercase mb-2">Gestão Comercial & B2B (Luana)</h2>
+            <h3 class="text-3xl font-bold text-slate-900">Core Business e Proposta de Valor</h3>
+            <p class="text-slate-600 mt-4">Organização, armazenamento, distribuição e logística reversa voltada a laboratórios e redes de farmácias na Região Metropolitana de São Paulo.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="w-12 h-12 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6">01</div>
+                <h4 class="text-xl font-bold text-slate-900 mb-3">Modelo B2B & Segmentação</h4>
+                <p class="text-slate-600 text-sm leading-relaxed">Atendimento focado em empresas (B2B), operando com Medicamentos Prescritos (MPX) e Isentos de Prescrição (MIPS) em temperatura ambiente controlada.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="w-12 h-12 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6">02</div>
+                <h4 class="text-xl font-bold text-slate-900 mb-3">Funil de Vendas & CRM</h4>
+                <p class="text-slate-600 text-sm leading-relaxed">Estruturação comercial desde a prospecção até o pós-venda, utilizando CRM para controle de contratos e acompanhamento de satisfação.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="w-12 h-12 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6">03</div>
+                <h4 class="text-xl font-bold text-slate-900 mb-3">Logística Reversa Sustentável</h4>
+                <p class="text-slate-600 text-sm leading-relaxed">Destinação adequada de resíduos em conformidade com a Política Nacional de Resíduos Sólidos, fortalecendo a responsabilidade socioambiental.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Planejamento e 5W1H -->
+    <section id="planejamento" class="bg-slate-100 py-20 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold text-brand-600 tracking-widest uppercase mb-2">Planejamento Estratégico</h2>
+                <h3 class="text-3xl font-bold text-slate-900">Matriz 5W1H do Projeto</h3>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 overflow-x-auto mb-12">
+                <img src="5W1H.png" alt="Matriz 5W1H" class="w-full rounded-lg shadow-sm max-h-[400px] object-contain mx-auto">
+            </div>
+
+            <!-- Processo Farmacêutico (Embalagem / Inbound) -->
+            <div class="text-center max-w-3xl mx-auto mb-8">
+                <h3 class="text-2xl font-bold text-slate-900">Fluxo: Do Fornecimento à Embalagem</h3>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <img src="embalagem-amoxicilina.png" alt="Processo Farmacêutico: Fornecimento à Embalagem" class="w-full rounded-lg shadow-sm object-contain mx-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Operações e Logística (Samuel) -->
+    <section id="operacoes" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-xs font-bold text-brand-600 tracking-widest uppercase mb-2">Setor Operacional de Produção (Samuel)</h2>
+            <h3 class="text-3xl font-bold text-slate-900">Mapeamento de Processos, Layout e WMS</h3>
+            <p class="text-slate-600 mt-4">Estruturação completa das 13 etapas operacionais, controle FEFO e otimização do layout de estoque.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <h4 class="text-xl font-bold text-slate-900 mb-4">Gestão de Armazenagem & FEFO</h4>
+                <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                    Utilização do método <strong>FEFO (First Expire, First Out - Primeiro que vence, primeiro que sai)</strong> para assegurar prioridade na separação de lotes com vencimento próximo, reduzindo perdas e desperdícios.
+                </p>
+                <ul class="space-y-2 text-sm text-slate-700">
+                    <li>✓ <strong>Inbound:</strong> Seleção, transporte, recebimento e conferência de lote/validade.</li>
+                    <li>✓ <strong>Layout Otimizado:</strong> Separação por giro (alta, média e baixa rotatividade) para diminuir o esforço e deslocamento dos operadores.</li>
+                </ul>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <h4 class="text-xl font-bold text-slate-900 mb-4">Tecnologia Aplicada (ERP, WMS e TMS)</h4>
+                <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                    Integração total dos sistemas para garantir rastreabilidade regulatória e agilidade:
+                </p>
+                <ul class="space-y-2 text-sm text-slate-700">
+                    <li>✓ <strong>ERP:</strong> Integra compras, estoque, financeiro e vendas.</li>
+                    <li>✓ <strong>WMS:</strong> Controla a exata localização física e endereçamento dos produtos.</li>
+                    <li>✓ <strong>TMS:</strong> Gerencia a frota, roteirização e entregas de última milha.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Estudo de Tempos e Movimentos / Gráfico -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <h4 class="text-xl font-bold text-slate-900 mb-4 text-center">Estudo de Tempos e Movimentos (Separação de Pedidos)</h4>
+            <p class="text-slate-600 text-sm text-center mb-8">Tempo total estimado em 11 minutos por pedido, destacando a etapa de localização como principal foco de melhoria.</p>
+            <div class="max-w-4xl mx-auto">
+                <img src="distribuicao-tempo-separacao.png" alt="Distribuição do tempo estimado no processo de separação" class="w-full rounded-lg shadow-sm object-contain">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Análise Estratégica (Porter e BCG) -->
+    <section id="estrategia" class="bg-slate-100 py-20 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-600 tracking-widest uppercase mb-2">Análise Estratégica de Mercado</h2>
+                <h3 class="text-3xl font-bold text-slate-900">Cinco Forças de Porter & Matriz BCG</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                    <h4 class="font-bold text-lg text-slate-900 mb-4 text-center">As Cinco Forças de Porter</h4>
+                    <img src="5-F-PORTER.png" alt="As Cinco Forças de Porter aplicadas à Milênio Medicamentos" class="w-full rounded-lg shadow-sm object-contain">
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                    <h4 class="font-bold text-lg text-slate-900 mb-4 text-center">Matriz BCG Aplicada ao Portfólio</h4>
+                    <img src="matriz-bcg.png" alt="Matriz BCG" class="w-full rounded-lg shadow-sm object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Centro de Serviços Compartilhados (CSC) -->
+    <section id="csc" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-xs font-bold text-brand-600 tracking-widest uppercase mb-2 block">Governança Corporativa</span>
+                <h3 class="text-3xl font-bold text-slate-900 mb-6">Centro de Serviços Compartilhados (CSC)</h3>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                    O CSC centraliza os processos administrativos, financeiros e contábeis de suporte, padronizando rotinas e cruzando dados estatísticos operacionais com o faturamento e contas a pagar/receber.
+                </p>
+                <ul class="space-y-3 text-sm text-slate-700">
+                    <li class="flex items-center space-x-3">
+                        <span class="w-5 h-5 bg-brand-100 text-brand-700 rounded-full flex items-center justify-center font-bold text-xs">✓</span>
+                        <span>Redução de duplicidade e custos administrativos.</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <span class="w-5 h-5 bg-brand-100 text-brand-700 rounded-full flex items-center justify-center font-bold text-xs">✓</span>
+                        <span>Painel integrado unificando dimensões financeira, administrativa, operacional e comercial.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-brand-900 text-white p-8 rounded-2xl shadow-xl">
+                <h4 class="text-lg font-bold mb-4 text-brand-300">Dimensões do Painel Integrado de KPIs</h4>
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div class="bg-white/10 p-4 rounded-xl border border-white/10">
+                        <span class="font-bold block text-brand-400">Financeira</span>
+                        <span class="text-xs text-slate-300">Faturamento & Ticket Médio</span>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-xl border border-white/10">
+                        <span class="font-bold block text-brand-400">Administrativa</span>
+                        <span class="text-xs text-slate-300">Tempo de atendimento & Erros</span>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-xl border border-white/10">
+                        <span class="font-bold block text-brand-400">Operacional</span>
+                        <span class="text-xs text-slate-300">Tempo de separação & Prazos</span>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-xl border border-white/10">
+                        <span class="font-bold block text-brand-400">Comercial</span>
+                        <span class="text-xs text-slate-300">Volume de vendas & NPS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Painel de KPIs -->
+    <section id="kpis" class="bg-slate-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-400 tracking-widest uppercase mb-2">Monitoramento de Desempenho</h2>
+                <h3 class="text-3xl font-bold">Painel de KPIs (Simulação PoC)</h3>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                    <span class="text-xs text-slate-400 uppercase font-semibold">Pedidos no Prazo</span>
+                    <p class="text-3xl font-bold text-brand-400 mt-2">98.4%</p>
+                    <span class="text-xs text-emerald-400 mt-1 block">↑ Acima da meta estipulada</span>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                    <span class="text-xs text-slate-400 uppercase font-semibold">Taxa de Erro nos Pedidos</span>
+                    <p class="text-3xl font-bold text-amber-400 mt-2">0.32%</p>
+                    <span class="text-xs text-slate-400 mt-1 block">Controlado pelo WMS</span>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                    <span class="text-xs text-slate-400 uppercase font-semibold">Custo Adm. por Pedido</span>
+                    <p class="text-3xl font-bold text-white mt-2">R$ 14,80</p>
+                    <span class="text-xs text-brand-400 mt-1 block">Otimizado via CSC</span>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                    <span class="text-xs text-slate-400 uppercase font-semibold">Giro de Estoque</span>
+                    <p class="text-3xl font-bold text-brand-400 mt-2">6.2x</p>
+                    <span class="text-xs text-slate-400 mt-1 block">Método FEFO ativo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-500 py-12 border-t border-slate-900 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <p class="font-semibold text-slate-300">Milênio Medicamentos • Projeto Integrador 2</p>
+                <p class="text-xs text-slate-600 mt-1">Fatec Santana de Parnaíba — CST em Gestão Comercial</p>
+            </div>
+            <p class="text-xs text-slate-600">Desenvolvido por Kawã, Luana, Luiz, Patrícia e Samuel (2026).</p>
+        </div>
+    </footer>
+
+</body>
+</html>
